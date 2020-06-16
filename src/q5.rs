@@ -16,9 +16,7 @@ mod q5 {
     // 首先以第一个数为中心，向左右扩展，如果都相等，则正确
     // 接着以这个数的右边空挡为中心，向
     pub fn longest_palindrome(s: String) -> String {
-        if s.len() < 1 {
-            return s;
-        }
+        if s.len() < 1 { return s; }
         let (mut start, mut end) = (0, 0);
         for i in 0..s.len() {
             let len1 = expend_center(&s, i, i);

@@ -8,35 +8,50 @@ mod q_977 {
     }
 
     pub fn sorted_squares(mut a: Vec<i32>) -> Vec<i32> {
-        let mut t = 0;
+        // 方法1
+        // let mut t = 0;
+        // for i in 0..a.len() {
+        //     if a[i] >= 0 {
+        //         t = i;
+        //         break;
+        //     }
+        // }
+        //
+        // let mut left = t as i32 - 1;
+        // let mut right = t;
+        // let mut res = Vec::new();
+        // while right < a.len() && left >= 0 {
+        //     if a[left as usize].abs() < a[right].abs() {
+        //         res.push(a[left as usize] * a[left as usize]);
+        //         left -= 1;
+        //     } else {
+        //         res.push(a[right] * a[right]);
+        //         right += 1;
+        //     }
+        // }
+        //
+        // while left >= 0 {
+        //     res.push(a[left as usize] * a[left as usize]);
+        //     left -= 1;
+        // }
+        //
+        // while right < a.len() {
+        //     res.push(a[right] * a[right]);
+        //     right += 1;
+        // }
+        // res
+        // 方法2
+        let mut bag = vec![0; 10001];
         for i in 0..a.len() {
-            if a[i] >= 0 {
-                t = i;
-                break;
-            }
+            bag[a[i].abs() as usize] += 1;
         }
-
-        let mut left = t as i32 - 1;
-        let mut right = t;
         let mut res = Vec::new();
-        while right < a.len() && left >= 0 {
-            if a[left as usize].abs() < a[right].abs() {
-                res.push(a[left as usize] * a[left as usize]);
-                left -= 1;
-            } else {
-                res.push(a[right] * a[right]);
-                right += 1;
+        for i in 0..bag.len() {
+            if bag[i] > 0 {
+                for j in 0..bag[i] {
+                    res.push(i.pow(2) as i32);
+                }
             }
-        }
-
-        while left >= 0 {
-            res.push(a[left as usize] * a[left as usize]);
-            left -= 1;
-        }
-
-        while right < a.len() {
-            res.push(a[right] * a[right]);
-            right += 1;
         }
         res
     }
