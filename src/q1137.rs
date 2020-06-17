@@ -7,7 +7,7 @@ mod q1137 {
             2 => t2,
             _ => {
                 let mut sum = 0;
-                for i in 3..=n {
+                for _ in 3..=n {
                     sum = t0 + t1 + t2;
                     t0 = t1;
                     t1 = t2;

@@ -30,8 +30,6 @@ mod q1005 {
 
         // 方法2
         let mut bag = vec![0; 201];
-        let mut k = k;
-
         for i in 0..a.len() {
             bag[(100 + a[i]) as usize] += 1;
         }

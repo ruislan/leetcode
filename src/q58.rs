@@ -1,5 +1,5 @@
 mod q58 {
-    pub fn length_of_last_word(mut s: String) -> i32 {
+    pub fn length_of_last_word(s: String) -> i32 {
         // 方法1
         // let mut count = 0i32;
         // loop {

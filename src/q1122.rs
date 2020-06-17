@@ -6,13 +6,13 @@ mod q1122 {
         }
         let mut res = Vec::new();
         for i in 0..arr2.len() {
-            for j in 0..bag[arr2[i] as usize] {
+            for _ in 0..bag[arr2[i] as usize] {
                 res.push(arr2[i]);
                 bag[arr2[i] as usize] -= 1;
             }
         }
         for i in 0..bag.len() {
-            for j in 0..bag[i] {
+            for _ in 0..bag[i] {
                 res.push(i as i32);
             }
         }

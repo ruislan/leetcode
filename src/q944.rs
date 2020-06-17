@@ -1,6 +1,6 @@
 mod q944 {
     pub fn min_deletion_size(a: Vec<String>) -> i32 {
-        let mut mutex: Vec<Vec<u8>> = a.iter().map(|x| x.bytes().collect::<Vec<u8>>()).collect();
+        let mutex: Vec<Vec<u8>> = a.iter().map(|x| x.bytes().collect::<Vec<u8>>()).collect();
         let mut count = 0;
 
         for i in 0..mutex[0].len() {

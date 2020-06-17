@@ -4,7 +4,7 @@ mod q811 {
         for cpdomain in cpdomains {
             let mut iter = cpdomain.split_ascii_whitespace();
             let times = u32::from_str_radix(iter.next().unwrap(), 10).unwrap();
-            let mut domain = iter.next().unwrap();
+            let domain = iter.next().unwrap();
             let mut ds: Vec<&str> = domain.split('.').collect();
             let mut hs = String::new();
             while let Some(x) = ds.pop() {

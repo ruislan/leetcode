@@ -30,10 +30,10 @@ mod q5 {
         s[start..=end].to_string()
     }
 
-    fn expend_center(s: &str, mut left: usize, mut right: usize) -> i32 {
+    fn expend_center(s: &str, left: usize, right: usize) -> i32 {
         let chars = s.as_bytes();
-        let mut left: i32 = left as i32;
-        let mut right: i32 = right as i32;
+        let mut left = left as i32;
+        let mut right = right as i32;
         while left >= 0 && right < s.len() as i32 && chars[left as usize] == chars[right as usize] {
             left -= 1;
             right += 1;

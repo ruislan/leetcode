@@ -27,7 +27,7 @@ mod q_824 {
     */
     pub fn to_goat_latin(s: String) -> String {
         let mut res = String::new();
-        let mut words = s.split_ascii_whitespace().collect::<Vec<&str>>();
+        let words = s.split_ascii_whitespace().collect::<Vec<&str>>();
         let mut pos = 0;
         let len = words.len();
         for word in words {
@@ -43,7 +43,7 @@ mod q_824 {
             }
             word.push_str("ma");
             pos += 1;
-            for i in 0..pos {
+            for _ in 0..pos {
                 word.push('a');
             }
             res.push_str(&word);

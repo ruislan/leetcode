@@ -11,16 +11,16 @@ mod q_860 {
     }
 
     pub fn lemonade_change(bills: Vec<i32>) -> bool {
-        let (mut d20, mut d10, mut d5) = (0_i32, 0_i32, 0_i32);
+        let (mut d10, mut d5) = (0_i32, 0_i32);
         for i in 0..bills.len() {
             match bills[i] {
                 20 => {
                     if d10 > 0 && d5 > 0 {
-                        d20 += 1;
+                        // d20 += 1;
                         d10 -= 1;
                         d5 -= 1;
                     } else if d10 == 0 && d5 >= 3 {
-                        d20 += 1;
+                        // d20 += 1;
                         d5 -= 3;
                     } else {
                         return false;

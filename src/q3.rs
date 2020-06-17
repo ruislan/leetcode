@@ -28,8 +28,8 @@ mod q3 {
         use std::collections::HashMap;
         let chars = s.chars().collect::<Vec<char>>();
         let mut map_char: HashMap<char, usize> = HashMap::new();
-        let (mut i, mut j, mut ans, mut len) = (0, 0, 0, s.len());
-        while j < len {
+        let (mut i, mut j, mut ans) = (0, 0, 0);
+        while j < s.len() {
             if map_char.contains_key(&chars[j]) {
                 i = max(*map_char.get(&chars[j]).unwrap(), i);
             }

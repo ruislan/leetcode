@@ -30,7 +30,7 @@ mod q347 {
         }
 
         let mut res = Vec::new();
-        for i in 0..k {
+        for _ in 0..k {
             res.push(vs.pop().unwrap().1);
         }
         res

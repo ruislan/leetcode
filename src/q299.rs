@@ -57,8 +57,8 @@ mod q299 {
 
         // 方法2
         let mut bulls = 0;
-        let mut s_chars: Vec<char> = secret.chars().collect();
-        let mut g_chars: Vec<char> = guess.chars().collect();
+        let s_chars: Vec<char> = secret.chars().collect();
+        let g_chars: Vec<char> = guess.chars().collect();
         let mut v_s = vec![0u32; 10];
         let mut v_g = vec![0u32; 10];
 

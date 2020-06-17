@@ -5,7 +5,7 @@ mod q682 {
             if &op == "C" {
                 scores.pop();
             } else if &op == "D" {
-                if let Some(x) = scores.last() {
+                if let Some(&x) = scores.last() {
                     scores.push(x << 1);
                 }
             } else if &op == "+" {

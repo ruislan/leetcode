@@ -9,7 +9,7 @@ mod q_849 {
     }
 
     pub fn max_dist_to_closest(seats: Vec<i32>) -> i32 {
-        let (mut dist_s, mut dist_e, mut dist_m) = (0_i32, 0_i32, 0_i32);
+        let (mut dist_s, mut dist_m) = (0_i32, 0_i32);
         let mut last_i = -1;
         for i in 0..seats.len() {
             if 1 == seats[i] {
@@ -21,7 +21,7 @@ mod q_849 {
                 last_i = i as i32;
             }
         }
-        dist_e = seats.len() as i32 - 1 - std::cmp::max(0, last_i);
+        let dist_e = seats.len() as i32 - 1 - std::cmp::max(0, last_i);
         std::cmp::max(dist_m, std::cmp::max(dist_s, dist_e))
     }
 }

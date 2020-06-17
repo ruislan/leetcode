@@ -3,7 +3,7 @@ mod q696 {
         let nums = s.chars().collect::<Vec<char>>();
         let (mut ans, mut prev, mut cur) = (0, 0, 1);
         for i in 1..s.len() {
-            if (nums[i - 1] != nums[i]) {
+            if nums[i - 1] != nums[i] {
                 ans += std::cmp::min(prev, cur);
                 prev = cur;
                 cur = 1;

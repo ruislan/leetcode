@@ -25,9 +25,8 @@ mod q167 {
         // vec![]
 
         // 方法3
-        let mut len = numbers.len();
         let mut left = 0;
-        let mut right = len - 1;
+        let mut right = numbers.len() - 1;
         while left < right {
             let sum = numbers[left] + numbers[right];
             if sum > target {

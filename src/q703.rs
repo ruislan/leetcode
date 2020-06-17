@@ -25,7 +25,7 @@ mod q703 {
         }
 
         fn add(&mut self, val: i32) -> i32 {
-            let mut nums = &mut self.nums;
+            let nums = &mut self.nums;
             let k = self.k as usize;
             if nums.len() < k { nums.push(Reverse(val)); } else if nums.peek().unwrap().0 < val {
                 nums.pop();

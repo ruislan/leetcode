@@ -4,18 +4,18 @@ mod q877 {
         let (mut alex, mut lee) = (0, 0);
 
         while left + 1 < right - 1 {
-            let (nL, nLL, nRR, nR) = (piles[left], piles[left + 1], piles[right - 1], piles[right]);
-            let (mut tmpA0, mut tmpA1) = (nL, nR);
+            let (n_l, n_ll, n_rr, n_r) = (piles[left], piles[left + 1], piles[right - 1], piles[right]);
+            let (mut tmp_a0, mut tmp_a1) = (n_l, n_r);
 
-            tmpA0 += if nLL > nR { std::cmp::max(nRR, nR) } else { std::cmp::max(nLL, nRR) };
-            tmpA1 += if nL > nRR { std::cmp::max(nLL, nRR) } else { std::cmp::max(nL, nLL) };
+            tmp_a0 += if n_ll > n_r { std::cmp::max(n_rr, n_r) } else { std::cmp::max(n_ll, n_rr) };
+            tmp_a1 += if n_l > n_rr { std::cmp::max(n_ll, n_rr) } else { std::cmp::max(n_l, n_ll) };
 
-            if tmpA0 > tmpA1 {
-                alex += nL;
-                lee += nR;
+            if tmp_a0 > tmp_a1 {
+                alex += n_l;
+                lee += n_r;
             } else {
-                alex += nR;
-                lee += nL;
+                alex += n_r;
+                lee += n_l;
             }
 
             left += 1;

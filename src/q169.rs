@@ -1,5 +1,5 @@
 mod q169 {
-    pub fn majority_element(mut nums: Vec<i32>) -> i32 {
+    pub fn majority_element(nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut map = std::collections::HashMap::new();
         // for num in nums {

@@ -1,5 +1,5 @@
 mod q136 {
-    pub fn single_number(mut nums: Vec<i32>) -> i32 {
+    pub fn single_number(nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut map = std::collections::HashMap::new();
         // while let Some(num) = nums.pop() {

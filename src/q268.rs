@@ -1,5 +1,5 @@
 mod q268 {
-    pub fn missing_number(mut nums: Vec<i32>) -> i32 {
+    pub fn missing_number(nums: Vec<i32>) -> i32 {
         // 方法1
         // nums.sort();
         // let mut lost = 0i32;

@@ -2,7 +2,7 @@ mod q541 {
     pub fn reverse_str(s: String, k: i32) -> String {
         let k = k as usize;
         let mut s = s;
-        let mut phase = s.len() / k;
+        let phase = s.len() / k;
         if phase < 1 { return s.get_mut(..).unwrap().chars().rev().collect::<String>(); }
 
         let mut res = String::new();

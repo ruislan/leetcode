@@ -7,7 +7,7 @@ mod q_977 {
         );
     }
 
-    pub fn sorted_squares(mut a: Vec<i32>) -> Vec<i32> {
+    pub fn sorted_squares(a: Vec<i32>) -> Vec<i32> {
         // 方法1
         // let mut t = 0;
         // for i in 0..a.len() {
@@ -48,7 +48,7 @@ mod q_977 {
         let mut res = Vec::new();
         for i in 0..bag.len() {
             if bag[i] > 0 {
-                for j in 0..bag[i] {
+                for _ in 0..bag[i] {
                     res.push(i.pow(2) as i32);
                 }
             }

@@ -11,14 +11,14 @@ mod q819 {
                 word.push(ch.to_ascii_lowercase());
             } else {
                 if !word.is_empty() && !set.contains(&word) {
-                    let mut h = dic.entry(word.clone()).or_insert(0);
+                    let h = dic.entry(word.clone()).or_insert(0);
                     *h += 1;
                 }
                 word = String::new();
             }
         }
         if !word.is_empty() && !set.contains(&word) {
-            let mut h = dic.entry(word).or_insert(0);
+            let h = dic.entry(word).or_insert(0);
             *h += 1;
         }
         let (mut w, mut n) = (String::new(), 0);
