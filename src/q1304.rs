@@ -27,13 +27,13 @@ mod q1304 {
         // res
 
         // 只是方法1的不同写法
-        // let mut res = Vec::new();
-        // (1..(n / 2)).for_each(|x| {
-        //     res.push(x);
-        //     res.push(-x);
-        // });
-        // if n & 1 != 0 { res.push(0); }
-        // res
+        let mut res = Vec::new();
+        (1..(n / 2)).for_each(|x| {
+            res.push(x);
+            res.push(-x);
+        });
+        if n & 1 != 0 { res.push(0); }
+        res
 
         // 方法2（看的别人的题解）：1 - n即是n 的另外半边少1，然后我们只需要每隔1个取值即可
         // 例如 n = 3， -2, -1, 0, 1, 2, 3， 取值 -2, 0, 2
