@@ -28,18 +28,9 @@ mod q1310 {
         // 方法二
         // 求出arr的0-1，0-2，0-N的所有XOR的值
         // 迭代queries的每个q, 取出0..q[0]的XOR值 ^ 0..=q[1]即是q[0]..=q[1]的值
-        // Passed 12ms 3.9mb
+        // Passed 8ms 3.9mb (16ms 3.9mb)
         let mut arr = arr;
-        for i in 1..arr.len() {
-            arr[i] ^= arr[i - 1];
-        }
-
-        queries.iter().map(|q|
-            if q[0] == 0 {
-                arr[q[1] as usize]
-            } else {
-                arr[q[0] as usize - 1] ^ arr[q[1] as usize]
-            }
-        ).collect()
+        (1..arr.len()).for_each(|i| arr[i] ^= arr[i - 1]);
+        queries.iter().map(|q| if q[0] == 0 { arr[q[1] as usize] } else { arr[(q[0] - 1) as usize] ^ arr[q[1] as usize] }).collect()
     }
 }
