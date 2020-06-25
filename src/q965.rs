@@ -1,8 +1,8 @@
 mod q965 {
-    use std::rc::Rc;
+    use std::borrow::Borrow;
     use std::cell::RefCell;
     use std::ops::Deref;
-    use std::borrow::{Borrow, BorrowMut};
+    use std::rc::Rc;
 
     // Definition for a binary tree node.
     #[derive(Debug, PartialEq, Eq)]
