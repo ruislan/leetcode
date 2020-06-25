@@ -1,7 +1,5 @@
 mod q965 {
-    use std::borrow::Borrow;
     use std::cell::RefCell;
-    use std::ops::Deref;
     use std::rc::Rc;
 
     // Definition for a binary tree node.
