@@ -215,4 +215,5 @@ mod q1313;
 mod q1317;
 mod q1323;
 mod q1331;
+mod q1332;
 mod interview_16_01;
