@@ -32,9 +32,9 @@ mod q1365 {
         // 计算小于当前数的前缀和存储到当前数
         // 迭代nums的每个值，然后查出arr[i]的前缀和数量
         // Passed 0ms 2mb
-        // let mut arr = vec![(0, 0); 101];
-        // nums.iter().for_each(|&x| { arr[x as usize].0 += 1; });
-        // (1..arr.len()).for_each(|i| { arr[i].1 = arr[i - 1].0 + arr[i - 1].1; });
+        let mut arr = vec![(0, 0); 101];
+        nums.iter().for_each(|&x| { arr[x as usize].0 += 1; });
+        (1..arr.len()).for_each(|i| { arr[i].1 = arr[i - 1].0 + arr[i - 1].1; });
         nums.iter().map(|&x| arr[x as usize].1).collect()
     }
 }
