@@ -14,7 +14,7 @@ impl Solution {
             long = nums.iter();
             short = chars.iter();
         }
-        let (mut res, mut len) = (String::new(), nums.len() + chars.len());
+        let (mut res, len) = (String::new(), nums.len() + chars.len());
         while res.len() != len {
             if let Some(&a) = long.next() { res.push(a); }
             if let Some(&b) = short.next() { res.push(b); }
