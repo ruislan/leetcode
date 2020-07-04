@@ -11,8 +11,7 @@ impl Solution {
         //          count += 1;
         //          max = max.max(count).unwrap();
         //       else ...
-
-
+        0
         // 方法2
         // 试试看能不能利用partition来分组，然后直接取最大长度的组？这个不确定
     }
