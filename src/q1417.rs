@@ -1,4 +1,4 @@
-struct Solution;
+use crate::Solution;
 
 impl Solution {
     pub fn reformat(s: String) -> String {
