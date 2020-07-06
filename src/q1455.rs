@@ -7,6 +7,18 @@ impl Solution {
         // 然后iter中find，用word.starts_with(search_word)来判断是否是前缀
         // 找到的话即可返回这个iter的index+1
         // 没有找到的话则返回-1
-        -1
+        if let Some((i, word)) = sentence.split_ascii_whitespace()
+            .enumerate()
+            .find(|&(i, word)| word.starts_with(&search_word)) { i as i32 + 1 } else { -1 }
     }
+}
+
+#[test]
+fn test() {
+    assert_eq!(Solution::is_prefix_of_word("i".to_string(), "i".to_string()), 1);
+    assert_eq!(Solution::is_prefix_of_word("i love eating burger".to_string(), "burg".to_string()), 4);
+    assert_eq!(Solution::is_prefix_of_word("this problem is an easy problem".to_string(), "pro".to_string()), 2);
+    assert_eq!(Solution::is_prefix_of_word("i am tired".to_string(), "you".to_string()), -1);
+    assert_eq!(Solution::is_prefix_of_word("i use triple pillow".to_string(), "pill".to_string()), 4);
+    assert_eq!(Solution::is_prefix_of_word("hello from the other side".to_string(), "they".to_string()), -1);
 }
