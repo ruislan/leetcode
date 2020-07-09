@@ -17,7 +17,7 @@ mod q1323 {
         // Passed 0ms 2.1mb
         match num.to_string().replacen("6", "9", 1).parse::<i32>() {
             Ok(n) => n,
-            Err(e) => num,
+            Err(_) => num,
         }
 
         // 方法2：

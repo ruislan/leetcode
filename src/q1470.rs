@@ -47,7 +47,7 @@ impl Solution {
         // 当然这里的解决方法既可以是结果&1023，也可以是在一开始拼接的时候就直接只要10位，也即是先 & 1023
         // Passed 0ms 2mb
         let (mut nums, n) = (nums, n as usize);
-        (0..2 * n).for_each(|i| nums[i] |= (if i & 1 == 0 { nums[i / 2] } else { nums[(i / 2) + n] } << 10));
+        (0..2 * n).for_each(|i| nums[i] |= if i & 1 == 0 { nums[i / 2] } else { nums[(i / 2) + n] } << 10);
         (0..2 * n).for_each(|i| nums[i] = (nums[i] >> 10) & 1023);
         nums
     }

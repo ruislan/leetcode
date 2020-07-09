@@ -4,18 +4,9 @@ impl Solution {
     pub fn final_prices(prices: Vec<i32>) -> Vec<i32> {
         // 方法1
         // 暴力解决
-        // res = Vec::new()
-        // for i in prices 0..len:
-        //     for j in (i + 1)..len:
-        //         if prices[i] >= prices[j]:
-        //             discount = prices[j], break;
-        //         else:
-        //             discount = 0;
-        //     res[i] = prices[i] - discount;
-        // return res
         let mut res = vec![0; prices.len()];
         (0..prices.len()).for_each(|i| {
-            res[i] = prices[i] - *prices.iter().skip(i).find(|&&x| x <= prices[i]).unwrap_or(&0);
+            res[i] = prices[i] - ((i + 1)..prices.len()).find(|&j| prices[j] <= prices[i]).map_or(0, |j| prices[j]);
         });
         res
     }

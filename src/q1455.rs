@@ -7,9 +7,9 @@ impl Solution {
         // 然后iter中find，用word.starts_with(search_word)来判断是否是前缀
         // 找到的话即可返回这个iter的index+1
         // 没有找到的话则返回-1
-        if let Some((i, word)) = sentence.split_ascii_whitespace()
+        if let Some((i, _)) = sentence.split_ascii_whitespace()
             .enumerate()
-            .find(|&(i, word)| word.starts_with(&search_word)) { i as i32 + 1 } else { -1 }
+            .find(|&(_, word)| word.starts_with(&search_word)) { i as i32 + 1 } else { -1 }
     }
 }
 

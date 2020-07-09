@@ -38,7 +38,7 @@ mod q423 {
         res[9] = bag[b'i' as usize - 97] - res[6] - res[8] - res[5];
 
         res.iter().enumerate()
-            .filter(|(i, &num)| num > 0)
+            .filter(|(_, &num)| num > 0)
             .map(|(i, &num)| vec![(i as u8 + 48) as char; num])
             .flatten()
             .collect()
