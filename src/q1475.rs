@@ -13,8 +13,18 @@ impl Solution {
         //             discount = 0;
         //     res[i] = prices[i] - discount;
         // return res
-
-        //
-        vec![]
+        let mut res = vec![0; prices.len()];
+        (0..prices.len()).for_each(|i| {
+            res[i] = prices[i] - *prices.iter().skip(i).find(|&&x| x <= prices[i]).unwrap_or(&0);
+        });
+        res
     }
+}
+
+#[test]
+fn test() {
+    // assert_eq!(Solution::final_prices(vec![]), vec![]);
+    assert_eq!(Solution::final_prices(vec![8, 4, 6, 2, 3]), vec![4, 2, 4, 2, 3]);
+    assert_eq!(Solution::final_prices(vec![1, 2, 3, 4, 5]), vec![1, 2, 3, 4, 5]);
+    assert_eq!(Solution::final_prices(vec![10, 1, 1, 6]), vec![9, 0, 1, 6]);
 }
