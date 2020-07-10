@@ -43,6 +43,7 @@ mod q215;
 mod q217;
 mod q219;
 mod q231;
+mod q242;
 mod q258;
 mod q263;
 mod q268;
@@ -250,6 +251,8 @@ mod q1475;
 mod q1480;
 mod q1486;
 mod q1491;
+mod q1496;
+mod q1502;
 mod interview_16_01;
 
 pub struct Solution;
