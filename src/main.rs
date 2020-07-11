@@ -251,6 +251,7 @@ mod q1475;
 mod q1480;
 mod q1486;
 mod q1491;
+mod q1492;
 mod q1496;
 mod q1502;
 mod interview_16_01;
