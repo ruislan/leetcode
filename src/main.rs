@@ -255,6 +255,7 @@ mod q1492;
 mod q1496;
 mod q1502;
 mod q1507;
+mod q1512;
 mod interview_16_01;
 
 pub struct Solution;
