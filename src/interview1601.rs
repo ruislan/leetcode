@@ -1,10 +1,6 @@
-mod interview_16_01 {
-    #[test]
-    fn test_interview_16_01() {
-        assert_eq!(vec![1, 3], swap_numbers(vec![3, 1]));
-        assert_eq!(vec![1, -3], swap_numbers(vec![-3, 1]));
-    }
+use crate::Solution;
 
+impl Solution {
     pub fn swap_numbers(numbers: Vec<i32>) -> Vec<i32> {
         // 方法一，xor操作三次
         // let mut numbers = numbers;
@@ -20,4 +16,10 @@ mod interview_16_01 {
         numbers[0] = numbers[0] + numbers[1];
         numbers
     }
+}
+
+#[test]
+fn test_interview_16_01() {
+    assert_eq!(vec![1, 3], Solution::swap_numbers(vec![3, 1]));
+    assert_eq!(vec![1, -3], Solution::swap_numbers(vec![-3, 1]));
 }
