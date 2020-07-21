@@ -47,6 +47,7 @@ mod q215;
 mod q217;
 mod q219;
 mod q231;
+mod q240;
 mod q242;
 mod q258;
 mod q263;
@@ -270,6 +271,11 @@ mod lcp01;
 mod lcp06;
 
 mod interview1601;
+
+mod offer03;
+mod offer04;
+mod offer05;
+mod offer06;
 
 pub struct Solution;
 
