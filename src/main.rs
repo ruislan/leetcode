@@ -277,7 +277,10 @@ mod offer04;
 mod offer05;
 mod offer06;
 
+mod sorter;
+
 pub struct Solution;
+
 
 fn main() {
     let s = "abbba";
@@ -288,7 +291,7 @@ fn main() {
     println!("{:?} is palindrome", is_palindrome("abb"));
 }
 
-fn is_palindrome(s: &str) -> bool {
+pub fn is_palindrome(s: &str) -> bool {
     let (mut left, mut right) = (0, s.len() - 1);
     while left <= right {
         if s[left..=left] != s[right..=right] { return false; }
