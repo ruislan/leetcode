@@ -1,3 +1,8 @@
+use std::cell::RefCell;
+use std::rc::Rc;
+
+use crate::Solution;
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -17,10 +22,6 @@ impl TreeNode {
     }
 }
 
-use std::rc::Rc;
-use std::cell::RefCell;
-use crate::Solution;
-
 impl Solution {
     pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         // 方法1
@@ -30,6 +31,15 @@ impl Solution {
         // 如果都为None则继续迭代， 如果值不等或者有一个节点为None，则返回false
         // 将le.left和re.right与le.right和re.left作为两个对位节点放入queue中，持续迭代到queue为空为止
         // 迭代完返回true
+        // let mut queue = std::collections::VecDeque::new();
+        // queue.push_back(&root);
+        // queue.push_back(&root);
+        // while !queue.is_empty() {
+        //     let mut le = queue.pop_front().unwrap();
+        //     let mut re = queue.pop_front().unwrap();
+        //     if *le == None && *re == None { continue; }
+        //     if *le == None || *re == None { return false; }
+        // }
 
         // 方法2
         // 用递归方式
