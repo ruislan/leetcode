@@ -266,6 +266,7 @@ mod q1502;
 mod q1507;
 mod q1512;
 mod q1518;
+mod q5456;
 
 mod lcp01;
 mod lcp06;
@@ -276,6 +277,12 @@ mod offer03;
 mod offer04;
 mod offer05;
 mod offer06;
+mod offer10i;
+mod offer10ii;
+mod offer11;
+mod offer17;
+mod offer21;
+
 
 mod sorter;
 
