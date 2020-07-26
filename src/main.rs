@@ -267,6 +267,7 @@ mod q1507;
 mod q1512;
 mod q1518;
 mod q5456;
+mod q5472;
 
 mod lcp01;
 mod lcp06;
