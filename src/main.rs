@@ -271,6 +271,7 @@ mod q5472;
 
 mod lcp01;
 mod lcp06;
+mod lcp07;
 
 mod interview1601;
 
