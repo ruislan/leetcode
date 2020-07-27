@@ -1,7 +1,6 @@
 use crate::lcp::Solution;
 
 impl Solution {
-    // 这里的方法应该是num_ways，为了避免和其他
     pub fn num_ways(n: i32, relation: Vec<Vec<i32>>, k: i32) -> i32 {
         // 方法1
         // 创建长度为n的数组arr，arr[i]存储了每个节点到其他节点的列表arr[i] : Vec<i32>
