@@ -13,6 +13,17 @@ impl Solution {
         // 令f0 = 0, f1 = 1，n = 0返回f0,n = 1返回f1，当n > 1，迭代2..=n，
         //     每次fn = (f0 + f1) % 1e9+7, f0 = f1, f1 = fn
         // 最后返回fn即可
-        0
+        (1..=n).fold((0, 1), |(p0, p1), _| (p1, (p0 + p1) % 1000000007)).1
     }
+}
+
+#[test]
+fn test() {
+    assert_eq!(Solution::num_ways(1), 1);
+    assert_eq!(Solution::num_ways(2), 2);
+    assert_eq!(Solution::num_ways(3), 3);
+    assert_eq!(Solution::num_ways(4), 5);
+    assert_eq!(Solution::num_ways(5), 8);
+    assert_eq!(Solution::num_ways(6), 13);
+    assert_eq!(Solution::num_ways(7), 21);
 }
