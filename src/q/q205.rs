@@ -21,10 +21,10 @@ impl Solution {
         });
 
         let (mut arr_s, mut arr_t) = (vec![vec![]; s.len()], vec![vec![]; t.len()]);
-        map_s.into_iter().for_each(|(k, v)| {
+        map_s.into_iter().for_each(|(_, v)| {
             arr_s[v[0]] = v.to_owned();
         });
-        map_t.into_iter().for_each(|(k, v)| {
+        map_t.into_iter().for_each(|(_, v)| {
             arr_t[v[0]] = v.to_owned();
         });
 
