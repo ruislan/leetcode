@@ -1,21 +1,23 @@
-mod q1290 {
-    // Definition for singly-linked list.
-    #[derive(PartialEq, Eq, Clone, Debug)]
-    pub struct ListNode {
-        pub val: i32,
-        pub next: Option<Box<ListNode>>,
-    }
+use crate::q::Solution;
 
-    impl ListNode {
-        #[inline]
-        fn new(val: i32) -> Self {
-            ListNode {
-                next: None,
-                val,
-            }
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>,
+}
+
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        ListNode {
+            next: None,
+            val,
         }
     }
+}
 
+impl Solution {
     pub fn get_decimal_value(head: Option<Box<ListNode>>) -> i32 {
         // 方法一：用vec重新存储所有的数字，然后用堆栈先进后出来进行10进制计算
         // Passed 0ms 2mb

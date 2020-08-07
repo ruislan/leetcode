@@ -18,10 +18,14 @@ impl Solution {
         let (n, m) = (matrix.len(), if matrix.is_empty() { 0 } else { matrix[0].len() });
         let mut row: usize = 0;
         let mut column: usize = m - 1;
-        while column >= 0 && row < n && column < m {
-            if matrix[row][column] < target { row += 1; }
-            else if matrix[row][column] > target { column -= 1; }
-            else { return true; }
+        while row < n && column < m {
+            if matrix[row][column] < target {
+                row += 1;
+            } else if matrix[row][column] > target {
+                column -= 1;
+            } else {
+                return true;
+            }
         }
         false
     }
