@@ -26,37 +26,60 @@ impl Solution {
         // 将这个节点的prev节点的next指向这个节点的next
         // 注意如果删除第一个节点，那么将第一个节点的下一个节点作为头结点即可
         // 如果删除最后一个节点，那么只需要将最后一个节点的前一个节点的next指向None即可
-
-        // head.map(|mut head| {
-        //     let mut prev: Option<Box<ListNode>> = None;
-        //     let mut cur = head.as_mut();
-        //     while cur.val != val {
-        //         cur = cur.clone().next.unwrap().as_mut();
-        //     }
-        //     match prev {
-        //         None => head.next.unwrap(),
-        //         Some(prev) => {
-        //             // prev.next = cur.next;
-        //             head
-        //         }
-        //     }
-        // })
-        // let mut head: Option<Box<ListNode>> = None;
-        // let mut prev: Option<&Box<ListNode>> = None.as_ref();
-        // let mut cur = head.as_ref();
-        // while let Some(&node) = cur {
-        //     node.map(|x| {});
-        //     if node.val == val {
-        //         if prev.is_none() {
-        //             head = node.next;
-        //         } else {
-        //             prev.unwrap().next = node.next;
-        //         }
-        //         break;
-        //     }
-        //     prev = Some(&node);
-        //     cur = node.next.as_ref();
+        // Passed 0ms 2.1mb
+        // let mut head = &head;
+        // let mut vals = vec![];
+        // while let Some(node) = head {
+        //     if node.val != val { vals.push(node.val); }
+        //     head = &node.next;
         // }
+        // let mut head = None;
+        // while let Some(val) = vals.pop() {
+        //     head = Some(Box::new(ListNode { val, next: head }));
+        // }
+        // head
+
+        // 方法2
+        // 创建一个前置节点head的next指向当前节点head
+        // 然后创建一个可变指针进行迭代，如果当前值相等，就拿走后面的链表
+        // Passed 0ms 2.1mb
+        // let mut head = Some(Box::new(ListNode { val: 0, next: head }));
+        // let mut cur = &mut head;
+        // while let Some(node) = cur {
+        //     let next = &mut node.next;
+        //     match next {
+        //         None => break,
+        //         Some(next) => {
+        //             if next.val == val {
+        //                 node.next = next.next.take();
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //     cur = &mut node.next;
+        // }
+        // head.unwrap().next
+
+        // 方法3
+        // 创建一个前置节点head的next指向当前节点head
+        // 直接判断当前节点，如果是第一个，返回后面的，如果不是，则把当前节点定为prev，然后检查prev.next
+        // Passed 0ms 2.1mb
+        if head.is_none() { return head; }
+        if head.as_ref().unwrap().val == val { return head.unwrap().next; }
+        let mut head = head;
+        let mut node = head.as_mut();
+        while let Some(prev) = node {
+            match prev.next.as_mut() {
+                None => break,
+                Some(cur) => {
+                    if cur.val == val {
+                        prev.next = cur.next.take();
+                        break;
+                    }
+                }
+            }
+            node = prev.next.as_mut();
+        }
         head
     }
 }
