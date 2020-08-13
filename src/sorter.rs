@@ -19,6 +19,24 @@ pub fn selection(arr: &mut Vec<i32>) {
 }
 
 
+//这个quicksort不是最优的，但是把快速排序的思想弄出来了
+pub fn quicksort(arr: Vec<i32>) -> Vec<i32> {
+    return if arr.len() < 2 {
+        arr
+    } else {
+        let mut less = (1..arr.len()).filter(|&i| arr[i] < arr[0]).map(|i| arr[i]).collect::<Vec<i32>>();
+        let mut more = (1..arr.len()).filter(|&i| arr[i] >= arr[0]).map(|i| arr[i]).collect::<Vec<i32>>();
+        less = quicksort(less);
+        more = quicksort(more);
+
+        // combine arr
+        less.push(arr[0]);
+        less.append(&mut more);
+        less
+    };
+}
+
+
 #[test]
 fn test() {
     let arrays = vec![
@@ -35,5 +53,9 @@ fn test() {
     for mut x in arrays.clone().into_iter() {
         selection(&mut x.0);
         assert_eq!(x.0, x.1);
+    }
+
+    for mut x in arrays.clone().into_iter() {
+        assert_eq!(quicksort(x.0), x.1);
     }
 }
