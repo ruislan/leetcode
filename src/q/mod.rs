@@ -267,7 +267,8 @@ mod q1502;
 mod q1507;
 mod q1512;
 mod q1518;
-mod q5456;
-mod q5472;
+mod q1523;
+mod q1528;
+mod q1539;
 
 pub struct Solution;
