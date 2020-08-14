@@ -50,7 +50,7 @@ impl Solution {
         let mut head = head;
         let mut node = None;
         while head.is_some() {
-            let mut next = head.as_mut()?.next.take();
+            let next = head.as_mut()?.next.take();
             head.as_mut()?.next = node;
             node = head;
             head = next;

@@ -10,6 +10,7 @@ mod offer18;
 mod offer21;
 mod offer22;
 mod offer24;
+mod offer25;
 mod offer39;
 mod offer40;
 mod offer50;
