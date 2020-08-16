@@ -7,7 +7,7 @@ impl Solution {
         // 如果当前字符与stack.last() 互为相同字符的大小写，则pop()
         // 否则压入stack
         // 最后将stack组合成字符串即是结果
-        // Passed 0ms 2.1mb
+        // Passed 0ms 2mb
         let mut stack = Vec::new();
         for ch in s.bytes() {
             let last = stack.last();
@@ -21,6 +21,8 @@ impl Solution {
 
         // 方法2
         // 方法1的另外一种写法，看看会不会更好
+        // Passed 0ms 2mb
+        // 结果是方法1更好
         // let mut stack = Vec::new();
         // for ch in s.chars() {
         //     stack.push(ch);
