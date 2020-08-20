@@ -31,7 +31,11 @@ impl Solution {
         let (mut le, mut ri) = (0, numbers.len() - 1);
         while le < ri {
             let mid = (le + ri) / 2;
-            if numbers[mid] < numbers[ri] { ri = mid; } else if numbers[mid] > numbers[ri] { le = mid + 1; } else { ri -= 1; }
+            match numbers[mid].cmp(&numbers[ri]) {
+                std::cmp::Ordering::Less => ri = mid,
+                std::cmp::Ordering::Greater => le = mid + 1,
+                std::cmp::Ordering::Equal => ri -= 1,
+            }
         }
         numbers[le]
     }

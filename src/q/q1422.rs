@@ -23,7 +23,7 @@ impl Solution {
         // 然后从左到右 - 1，遇到0，个数加1，遇到1，个数减1，取最大值
         let mut sum = s.bytes().filter(|&ch| ch == b'1').count();
         let mut max = 0;
-        &s[..(s.len() - 1)].bytes().for_each(|ch| {
+        s[..(s.len() - 1)].bytes().for_each(|ch| {
             if ch == b'0' { sum += 1; } else { sum -= 1; }
             max = max.max(sum);
         });

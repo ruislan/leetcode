@@ -1,15 +1,6 @@
-mod q1360 {
-    #[test]
-    fn test_q1360() {
-        assert_eq!(days_between_dates("1971-06-29".to_string(), "2010-09-23".to_string()), 14331);
-        assert_eq!(days_between_dates("2019-06-29".to_string(), "2019-06-30".to_string()), 1);
-        assert_eq!(days_between_dates("2019-06-30".to_string(), "2019-06-29".to_string()), 1);
-        assert_eq!(days_between_dates("2019-06-29".to_string(), "2019-06-29".to_string()), 0);
-        assert_eq!(days_between_dates("2020-01-15".to_string(), "2019-12-31".to_string()), 15);
-        assert_eq!(days_between_dates("2000-03-30".to_string(), "2019-03-30".to_string()), 6939);
-        assert_eq!(days_between_dates("1971-02-01".to_string(), "2020-06-28".to_string()), 18045);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn days_between_dates(date1: String, date2: String) -> i32 {
         // 方法1
         // 得到abs(year1 - year2) * 365，注意中间如果有润年，则要加366
@@ -83,9 +74,9 @@ mod q1360 {
         // 方法1需要知道谁大谁小，增加了一些代码量，我们知道输入的日期是从1971年开始，所以，我们只需要求出
         // ymd1 - 1971-01-01 的days1和 ymd2 - 1971-01-01的days2，两个相减的绝对值即可，不需要知道谁大谁小
         // Passed 0ms 2.1mb
-        let ymd1: Vec<i32> = date1.split("-").map(|s| s.parse().unwrap_or(0)).collect();
-        let ymd2: Vec<i32> = date2.split("-").map(|s| s.parse().unwrap_or(0)).collect();
-        (days_from_1971(ymd1) - days_from_1971(ymd2)).abs()
+        let ymd1: Vec<i32> = date1.split('-').map(|s| s.parse().unwrap_or(0)).collect();
+        let ymd2: Vec<i32> = date2.split('-').map(|s| s.parse().unwrap_or(0)).collect();
+        (Self::days_from_1971(ymd1) - Self::days_from_1971(ymd2)).abs()
     }
 
     fn days_from_1971(ymd: Vec<i32>) -> i32 {
@@ -104,4 +95,15 @@ mod q1360 {
             }
         }).sum()
     }
+}
+
+#[test]
+fn test_q1360() {
+    assert_eq!(Solution::days_between_dates("1971-06-29".to_string(), "2010-09-23".to_string()), 14331);
+    assert_eq!(Solution::days_between_dates("2019-06-29".to_string(), "2019-06-30".to_string()), 1);
+    assert_eq!(Solution::days_between_dates("2019-06-30".to_string(), "2019-06-29".to_string()), 1);
+    assert_eq!(Solution::days_between_dates("2019-06-29".to_string(), "2019-06-29".to_string()), 0);
+    assert_eq!(Solution::days_between_dates("2020-01-15".to_string(), "2019-12-31".to_string()), 15);
+    assert_eq!(Solution::days_between_dates("2000-03-30".to_string(), "2019-03-30".to_string()), 6939);
+    assert_eq!(Solution::days_between_dates("1971-02-01".to_string(), "2020-06-28".to_string()), 18045);
 }

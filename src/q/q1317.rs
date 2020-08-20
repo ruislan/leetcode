@@ -27,6 +27,6 @@ mod q1317 {
 
         // 方法2：转换成string，检查是否含有0字符
         // Passed 0ms 2.1mb
-        (1..=(n / 2)).find(|&i| !(i.to_string() + &(n - i).to_string()).contains("0")).map_or(vec![], |i| vec![i, n - i])
+        (1..=(n / 2)).find(|&i| !(i.to_string() + &(n - i).to_string()).contains('0')).map_or(vec![], |i| vec![i, n - i])
     }
 }

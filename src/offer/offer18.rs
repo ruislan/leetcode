@@ -1,6 +1,4 @@
 use crate::offer::Solution;
-use std::borrow::{BorrowMut, Borrow};
-use std::ops::Deref;
 
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]

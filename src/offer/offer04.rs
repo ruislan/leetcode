@@ -19,12 +19,10 @@ impl Solution {
         let mut row: usize = 0;
         let mut column: usize = m - 1;
         while row < n && column < m {
-            if matrix[row][column] < target {
-                row += 1;
-            } else if matrix[row][column] > target {
-                column -= 1;
-            } else {
-                return true;
+            match matrix[row][column].cmp(&target) {
+                std::cmp::Ordering::Less => row += 1,
+                std::cmp::Ordering::Greater => column -= 1,
+                std::cmp::Ordering::Equal => return true,
             }
         }
         false
