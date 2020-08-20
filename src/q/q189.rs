@@ -1,11 +1,15 @@
-mod q_189 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         // 方法1
         // let len = nums.len();
-        // let k = k as usize % len;
-        // reverse(nums, 0, len - 1);
-        // reverse(nums, 0, k);
-        // reverse(nums, k, len - k);
+        // let k = k as usize;
+        // let k = if k > len { k - len } else { k };
+        // if k == 0 { return; }
+        // Solution::reverse(nums, 0, len - 1);
+        // Solution::reverse(nums, 0, k - 1);
+        // Solution::reverse(nums, k, len - 1);
 
         // 方法2
         // let mut count = 0;
@@ -30,9 +34,7 @@ mod q_189 {
             let mut prev = nums[start];
             loop {
                 let next = (current + k) % nums.len();
-                let temp = nums[next];
-                nums[next] = prev;
-                prev = temp;
+                std::mem::swap(&mut nums[next], &mut prev);
                 current = next;
                 count += 1;
                 if start == current { break; }
@@ -41,11 +43,11 @@ mod q_189 {
         }
     }
 
-    fn reverse(nums: &mut Vec<i32>, from: usize, to: usize) {
-        while from <= to {
-            let temp = nums[from];
-            nums[from] = nums[to];
-            nums[to] = temp;
+    fn reverse(nums: &mut Vec<i32>, mut from: usize, mut to: usize) {
+        while from < to {
+            nums.swap(from, to);
+            from += 1;
+            to -= 1;
         }
     }
 }
