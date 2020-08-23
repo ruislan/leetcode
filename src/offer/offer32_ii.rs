@@ -22,7 +22,7 @@ use std::cell::RefCell;
 use crate::offer::Solution;
 
 impl Solution {
-    pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
+    pub fn level_order_ii(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
         // 方法1
         // 用arr存储每层的节点，从左到右依次存储子节点
         let (mut root, mut arr, mut res) = (root, Vec::new(), Vec::new());
