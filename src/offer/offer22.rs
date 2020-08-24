@@ -1,5 +1,4 @@
 use crate::offer::Solution;
-use std::cell::RefCell;
 
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
