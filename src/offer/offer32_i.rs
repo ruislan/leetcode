@@ -28,7 +28,7 @@ impl Solution {
         // 创建一个arr用来存储每层的节点，按照从上到下，从左到右的顺序依次访问root
         // 将每个节点的值存储到res
         // Passed 0ms 2.1mb
-        let (mut root, mut res, mut arr) = (root, Vec::new(), Vec::new());
+        let (mut res, mut arr) = (Vec::new(), Vec::new());
         if root.is_some() { arr.push(root); }
         while !arr.is_empty() {
             let mut children = Vec::new();

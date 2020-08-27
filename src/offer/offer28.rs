@@ -20,7 +20,6 @@ impl TreeNode {
 use std::rc::Rc;
 use std::cell::RefCell;
 use crate::offer::Solution;
-use std::ops::Deref;
 
 impl Solution {
     pub fn is_symmetric(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
@@ -29,7 +28,6 @@ impl Solution {
         // 如果两个遍历的相同位置的值不一样，则返回False
         // 这里大着胆子clone，因为Rc的clone就是多了一个访问同一内存的Rc指针而已
         // 注意Option的clone实际就是内部的clone，而内部就是Rc，而Rc的clone和Rc::clone()是一个意思
-        let mut root = root;
         let mut stack = Vec::new();
         stack.push(root.clone());
         stack.push(root.clone());

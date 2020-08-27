@@ -1,5 +1,3 @@
-use crate::offer::Solution;
-
 struct MinStack {
     arr: Vec<(i32, Option<i32>)>,
     min: Option<i32>,

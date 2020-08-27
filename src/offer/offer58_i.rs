@@ -1,5 +1,4 @@
 use crate::offer::Solution;
-use std::borrow::BorrowMut;
 
 impl Solution {
     pub fn reverse_words(s: String) -> String {

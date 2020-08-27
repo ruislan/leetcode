@@ -57,7 +57,7 @@ impl Solution {
         // 将不为空的那个子节点放入stack
         // Unsafe
         // Passed 0ms 2.1mb
-        let (mut root, mut arr) = (root, Vec::new());
+        let mut arr = Vec::new();
         root.map(|root| unsafe {
             arr.push(root.as_ptr());
             while !arr.is_empty() {

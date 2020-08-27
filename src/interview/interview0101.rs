@@ -1,5 +1,4 @@
 use crate::interview::Solution;
-use std::ops::BitXor;
 
 impl Solution {
     pub fn is_unique(astr: String) -> bool {

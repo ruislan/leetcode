@@ -50,7 +50,7 @@ impl Solution {
         // 改进方法1，不用在最后reverse，创建一个是否翻转的标志rev，每次while循环，rev对自己取反
         // 如果rev为真，则翻转values，否则不用翻转
         // Passed 0ms 2.1mb
-        let (mut root, mut arr, mut rev) = (root, Vec::new(), false);
+        let (mut arr, mut rev) = (Vec::new(), false);
         let mut res = Vec::new();
         if root.is_some() { arr.push(root); }
         while !arr.is_empty() {

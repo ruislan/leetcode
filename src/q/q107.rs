@@ -26,7 +26,7 @@ impl Solution {
         // 方法1
         // 这里其实用广度优先遍历即可，建立一个数组arr存储所有的节点，每层建立一个数组children存储该层所有的数组，
         // 最后翻转arr即可
-        let (mut root, mut arr, mut res) = (root, Vec::new(), Vec::new());
+        let (mut arr, mut res) = (Vec::new(), Vec::new());
         if root.is_some() { arr.push(root); }
         while !arr.is_empty() {
             let (mut children, mut values) = (Vec::new(), Vec::new());
