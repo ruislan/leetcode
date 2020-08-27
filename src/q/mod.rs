@@ -18,6 +18,7 @@ mod q28;
 mod q35;
 mod q38;
 mod q53;
+mod q54;
 mod q58;
 mod q66;
 mod q67;
