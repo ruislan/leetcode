@@ -11,10 +11,6 @@ impl Solution {
         s.split_ascii_whitespace().rev().collect::<Vec<&str>>().join(" ")
 
         // 方法2
-        // 一次成型，创建一个res为String和空格计数gap
-        // s.chars()，如果不是空格，空格计数大于0，就res.push(空格)和res.push(ch)，
-        // 并将空格计数计入空，如果是空格，就不Push，将空格计数加一gap += 1
-        // 返回res
         // Passed 0ms 2.2mb
         // let mut res = Vec::new();
         // let mut str = String::new();
