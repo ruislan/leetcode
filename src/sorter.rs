@@ -55,7 +55,7 @@ fn test() {
         assert_eq!(x.0, x.1);
     }
 
-    for mut x in arrays.clone().into_iter() {
+    for x in arrays.clone().into_iter() {
         assert_eq!(quicksort(x.0), x.1);
     }
 }
