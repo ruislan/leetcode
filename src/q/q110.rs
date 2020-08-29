@@ -1,7 +1,7 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
-use crate::offer::Solution;
+use crate::q::Solution;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -21,7 +21,7 @@ impl TreeNode {
     }
 }
 
-// 与q110相同
+// 与offer55_ii相同
 impl Solution {
     pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         // 方法1

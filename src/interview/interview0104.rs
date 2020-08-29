@@ -1,5 +1,4 @@
 use crate::interview::Solution;
-use std::hash::Hash;
 
 impl Solution {
     pub fn can_permute_palindrome(s: String) -> bool {
