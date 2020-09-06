@@ -10,7 +10,7 @@ impl Solution {
             if res[i] == '?' {
                 let left = if i == 0 { None } else { Some(res[i - 1]) };
                 let right = if i == s.len() - 1 { None } else { Some(res[i + 1]) };
-                res[i] = ('a' as u8..='z' as u8).find(|&x| Some(x as char) != left && Some(x as char) != right).unwrap() as char;
+                res[i] = ('a'..='z').into_iter().find(|&x| Some(x) != left && Some(x) != right).unwrap();
             }
         });
         res.into_iter().collect()
