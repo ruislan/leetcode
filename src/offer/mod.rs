@@ -34,5 +34,6 @@ mod offer57_ii;
 mod offer58_i;
 mod offer58_ii;
 mod offer59_i;
+mod offer62;
 
 struct Solution;
