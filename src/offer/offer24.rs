@@ -1,4 +1,5 @@
 use crate::offer::Solution;
+use std::option::Option::Some;
 
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -47,12 +48,20 @@ impl Solution {
         // 方法3
         // 改良方法2，在原链表上进行操作，不用新的
         // Passed 0ms 2.3mb
+        // let mut head = head;
+        // let mut node = None;
+        // while head.is_some() {
+        //     let next = head.as_mut()?.next.take();
+        //     head.as_mut()?.next = node;
+        //     node = head;
+        //     head = next;
+        // }
         let mut head = head;
         let mut node = None;
-        while head.is_some() {
-            let next = head.as_mut()?.next.take();
-            head.as_mut()?.next = node;
-            node = head;
+        while let Some(mut cur) = head {
+            let next = cur.next.take();
+            cur.next = node;
+            node = Some(cur);
             head = next;
         }
         node
