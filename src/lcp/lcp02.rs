@@ -22,6 +22,48 @@ impl Solution {
         // 翻转得到vec![2,1]，返回vec![1 * 2 + 2, 1]
         // 翻转得到vec![1,4]，返回vec![4 * 3 + 1, 4]
         // 结果为vec![13,4]，正好分子，分母的最大公约数是1
-        vec![]
+
+        // 方法1的递归解法
+        // Java Passed 0ms 37.6mb
+        // fn fraction(cont: &Vec<i32>, ptr: usize) -> Vec<i32> {
+        //     if ptr == cont.len() {
+        //         vec![1, 0]
+        //     } else {
+        //         let mut ret = fraction(cont, ptr + 1);
+        //         ret.swap(0, 1);
+        //         ret[0] = ret[1] * cont[ptr] + ret[0];
+        //         ret
+        //     }
+        // }
+        // fraction(&cont, 0)
+
+        // 方法1的循环解法1
+        // Rust only
+        // let mut cont = cont;
+        // let mut ret = vec![1, 0];
+        // while !cont.is_empty() {
+        //     let n = cont.pop().unwrap();
+        //     ret.swap(0, 1);
+        //     ret[0] = ret[1] * n + ret[0];
+        // }
+        // ret
+
+        // 方法1的循环解法2
+        // Java Passed 0ms 37.6mb
+        let mut ptr = cont.len() as i32 - 1;
+        let mut ret = vec![1, 0];
+        while ptr >= 0 {
+            ret.swap(0, 1);
+            ret[0] = ret[1] * cont[ptr as usize] + ret[0];
+            ptr -= 1;
+        }
+        ret
     }
+}
+
+#[test]
+fn test() {
+    assert_eq!(Solution::fraction(vec![1]), vec![1, 1]);
+    assert_eq!(Solution::fraction(vec![3, 2, 0, 2]), vec![13, 4]);
+    assert_eq!(Solution::fraction(vec![0, 0, 3]), vec![3, 1]);
 }
