@@ -32,6 +32,8 @@ mod q108;
 mod q109;
 mod q110;
 mod q111;
+mod q112;
+mod q113;
 mod q118;
 mod q119;
 mod q121;
@@ -282,7 +284,7 @@ mod q1544;
 mod q1550;
 mod q1556;
 mod q1566;
+mod q1572;
 mod q1576;
-mod q5491;
 
 pub struct Solution;
