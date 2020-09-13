@@ -1,4 +1,4 @@
-use crate::interview::Solution;
+use crate::q::Solution;
 
 impl Solution {
     pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
