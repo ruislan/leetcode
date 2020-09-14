@@ -72,7 +72,7 @@ impl Solution {
         let mut right = right;
         let mut node = None;
         while let Some(mut cur) = right {
-            let mut next = cur.next.take();
+            let next = cur.next.take();
             cur.next = node;
             node = Some(cur);
             right = next;
