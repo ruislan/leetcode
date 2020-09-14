@@ -60,3 +60,32 @@ XOR 有很多有用的特性：
 
 遇到日期类的题目，首先想到的就是闰年，即是能被4整除但不能被100整除，或者是能被400整除的。
 闰年是366天，在2月份要多1天。
+
+
+## 树
+
+拿到树的题自然先想到的有几个，
+* 树是特殊的图，那么广度优先和深度优先就能使用，广度优先用queue，深度优先用stack
+* 树的前中后序遍历，用递归很简单
+    * 前序： 中 左 右
+    * 中序： 左 中 右
+    * 后序： 左 右 中
+```rust
+  fn pre_order(node: Node) {
+      process(node);
+      pre_order(node.left);
+      pre_order(node.right);
+  }
+
+  fn in_order(node: Node) {
+      in_order(node.left);
+      process(node);
+      in_order(node.right);
+  }
+
+  fn post_order(node: Node) {
+      post_order(node.left);
+      post_order(node.right);
+      process(node);
+  }
+```
