@@ -1,4 +1,6 @@
-mod q118 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
         let mut rows: Vec<Vec<i32>> = Vec::new();
         let num_rows = num_rows as usize;

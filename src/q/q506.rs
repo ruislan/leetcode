@@ -1,4 +1,6 @@
-mod q506 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_relative_ranks(nums: Vec<i32>) -> Vec<String> {
         let mut ng = Vec::new();
         for i in 0..nums.len() {

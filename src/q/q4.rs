@@ -1,4 +1,6 @@
-mod q4 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_median_sorted_arrays(mut nums1: Vec<i32>, mut nums2: Vec<i32>) -> f64 {
         nums1.append(&mut nums2);
         nums1.sort();

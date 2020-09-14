@@ -1,4 +1,6 @@
-mod q347 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
         // 方法1
         // let mut map = std::collections::HashMap::new();

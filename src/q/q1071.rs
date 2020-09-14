@@ -1,4 +1,6 @@
-mod q1071 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn gcd_of_strings(str1: String, str2: String) -> String {
         let _str_min = if str1.len() > str2.len() { str2.clone() } else { str1.clone() };
         let _str_max = if str1.len() > str2.len() { str1 } else { str2 };
@@ -14,7 +16,7 @@ mod q1071 {
                 return _str_min.clone();
             }
         }
-        
+
         for i in (1..=(_str_min.len() / 2)).rev() {
             if _str_min.len() % i == 0 {
                 let mut s = _str_min.clone();
@@ -34,8 +36,7 @@ mod q1071 {
                 }
             }
         }
-
-
-        "".to_string()
+        
+        String::new()
     }
 }

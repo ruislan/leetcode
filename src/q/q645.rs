@@ -1,4 +1,6 @@
-mod q645 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_error_nums(nums: Vec<i32>) -> Vec<i32> {
         let mut bucket = vec![0; nums.len()];
         let mut dup = 0;

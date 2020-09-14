@@ -1,13 +1,6 @@
-mod q1275 {
-    #[test]
-    fn test_q1275() {
-        // assert_eq!(tictactoe(vec![vec![]]), "".to_string());
-        assert_eq!(tictactoe(vec![vec![0, 0], vec![2, 0], vec![1, 1], vec![2, 1], vec![2, 2]]), "A".to_string());
-        assert_eq!(tictactoe(vec![vec![0, 0], vec![1, 1], vec![0, 1], vec![0, 2], vec![1, 0], vec![2, 0], vec![0, 0], vec![1, 1], vec![0, 1], vec![0, 2], vec![1, 0], vec![2, 0]]), "B".to_string());
-        assert_eq!(tictactoe(vec![vec![0, 0], vec![1, 1], vec![2, 0], vec![1, 0], vec![1, 2], vec![2, 1], vec![0, 1], vec![0, 2], vec![2, 2]]), "Draw".to_string());
-        assert_eq!(tictactoe(vec![vec![0, 0], vec![1, 1]]), "Pending".to_string());
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn tictactoe(moves: Vec<Vec<i32>>) -> String {
         // 方法1
         // 构建一个3X3的board，然后迭代moves，将even的点填充为'A'（对应X），将odd的点填充为'B'（对应O）
@@ -32,4 +25,13 @@ mod q1275 {
         }
         if moves.len() == 9 { "Draw".to_string() } else { "Pending".to_string() }
     }
+}
+
+#[test]
+fn test_q1275() {
+    // assert_eq!(Solution::tictactoe(vec![vec![]]), "".to_string());
+    assert_eq!(Solution::tictactoe(vec![vec![0, 0], vec![2, 0], vec![1, 1], vec![2, 1], vec![2, 2]]), "A".to_string());
+    assert_eq!(Solution::tictactoe(vec![vec![0, 0], vec![1, 1], vec![0, 1], vec![0, 2], vec![1, 0], vec![2, 0], vec![0, 0], vec![1, 1], vec![0, 1], vec![0, 2], vec![1, 0], vec![2, 0]]), "B".to_string());
+    assert_eq!(Solution::tictactoe(vec![vec![0, 0], vec![1, 1], vec![2, 0], vec![1, 0], vec![1, 2], vec![2, 1], vec![0, 1], vec![0, 2], vec![2, 2]]), "Draw".to_string());
+    assert_eq!(Solution::tictactoe(vec![vec![0, 0], vec![1, 1]]), "Pending".to_string());
 }

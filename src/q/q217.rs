@@ -1,4 +1,6 @@
-mod q217 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn contains_duplicate(mut nums: Vec<i32>) -> bool {
         // 方法1
         // for i in 0..nums.len() {

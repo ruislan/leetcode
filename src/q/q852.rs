@@ -1,16 +1,6 @@
-mod q_852 {
-    #[test]
-    fn test_q_852() {
-        assert_eq!(1, peak_index_in_mountain_array(vec![0, 1, 0]));
-        assert_eq!(1, peak_index_in_mountain_array(vec![0, 2, 1, 0]));
-        assert_eq!(1, peak_index_in_mountain_array(vec![0, 3, 1, 0]));
-        assert_eq!(2, peak_index_in_mountain_array(vec![0, 1, 3, 0]));
-        assert_eq!(
-            5,
-            peak_index_in_mountain_array(vec![18, 29, 38, 59, 98, 100, 99, 98, 90])
-        );
-    }
+use crate::q::Solution;
 
+impl Solution {
     //
     // 我们把符合下列属性的数组 A 称作山脉：
     // A.length >= 3
@@ -25,4 +15,16 @@ mod q_852 {
         }
         -1
     }
+}
+
+#[test]
+fn test_q852() {
+    assert_eq!(1, Solution::peak_index_in_mountain_array(vec![0, 1, 0]));
+    assert_eq!(1, Solution::peak_index_in_mountain_array(vec![0, 2, 1, 0]));
+    assert_eq!(1, Solution::peak_index_in_mountain_array(vec![0, 3, 1, 0]));
+    assert_eq!(2, Solution::peak_index_in_mountain_array(vec![0, 1, 3, 0]));
+    assert_eq!(
+        5,
+        Solution::peak_index_in_mountain_array(vec![18, 29, 38, 59, 98, 100, 99, 98, 90])
+    );
 }

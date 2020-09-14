@@ -1,4 +1,6 @@
-mod q922 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn sort_array_by_parity_ii(a: Vec<i32>) -> Vec<i32> {
         // 方法2
         let mut a = a;

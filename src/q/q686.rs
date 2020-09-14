@@ -1,4 +1,6 @@
-mod q686 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn repeated_string_match(a: String, b: String) -> i32 {
         // 方法1
         // let mut s = a.clone();

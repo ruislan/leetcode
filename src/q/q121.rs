@@ -1,4 +1,6 @@
-mod q121 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn max_profit(prices: Vec<i32>) -> i32 {
         // 方法1
         // if prices.len() < 2 { return 0; }

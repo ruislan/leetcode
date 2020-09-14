@@ -1,11 +1,6 @@
-mod q1200 {
-    #[test]
-    pub fn test_q1200() {
-        assert_eq!(minimum_abs_difference(vec![4, 2, 1, 3]), vec![vec![1, 2], vec![2, 3], vec![3, 4]]);
-        assert_eq!(minimum_abs_difference(vec![1, 3, 6, 10, 15]), vec![vec![1, 3]]);
-        assert_eq!(minimum_abs_difference(vec![3, 8, -10, 23, 19, -4, -14, 27]), vec![vec![-14, -10], vec![19, 23], vec![23, 27]]);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn minimum_abs_difference(arr: Vec<i32>) -> Vec<Vec<i32>> {
         // 方法一：先对数组进行升序排序，然后逐步找出两个相邻数之间的距离的绝对值，替换最小的那个
         // Passed 16ms, 3mb; 88.89%,100.0%
@@ -51,4 +46,11 @@ mod q1200 {
         // }
         // res
     }
+}
+
+#[test]
+pub fn test_q1200() {
+    assert_eq!(Solution::minimum_abs_difference(vec![4, 2, 1, 3]), vec![vec![1, 2], vec![2, 3], vec![3, 4]]);
+    assert_eq!(Solution::minimum_abs_difference(vec![1, 3, 6, 10, 15]), vec![vec![1, 3]]);
+    assert_eq!(Solution::minimum_abs_difference(vec![3, 8, -10, 23, 19, -4, -14, 27]), vec![vec![-14, -10], vec![19, 23], vec![23, 27]]);
 }

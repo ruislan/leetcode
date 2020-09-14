@@ -1,4 +1,6 @@
-mod q14 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn longest_common_prefix(strs: Vec<String>) -> String {
         // 方法1
         // if strs.is_empty() {

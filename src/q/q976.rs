@@ -1,4 +1,6 @@
-mod q976 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn largest_perimeter(a: Vec<i32>) -> i32 {
         let mut a = a;
         a.sort();

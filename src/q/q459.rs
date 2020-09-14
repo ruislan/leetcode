@@ -1,4 +1,6 @@
-mod q459 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn repeated_substring_pattern(s: String) -> bool {
         // 方法1
         // let len = s.len();

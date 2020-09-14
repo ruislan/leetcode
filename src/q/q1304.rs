@@ -1,12 +1,6 @@
-mod q1304 {
-    #[test]
-    fn test_q1304() {
-        let n = 10;
-        (0..n).for_each(|n| {
-            assert_eq!(0, sum_zero(n).iter().sum());
-        });
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn sum_zero(n: i32) -> Vec<i32> {
         // 方法1：数组内部相加等于0最好的方式就是这个数和它的负数，如(1,-1),(2,-2)
         // 我们罗列n=1,2,3,4,5,6
@@ -41,4 +35,12 @@ mod q1304 {
         // 对比方法1，这个方法简洁美观，但是迭代数据多出了一半（性能影响极低，都是O(n)），装逼非常有用
         // ((1 - n)..n).step_by(2).collect()
     }
+}
+
+#[test]
+fn test_q1304() {
+    let n = 10;
+    (0..n).for_each(|n| {
+        assert_eq!(0, Solution::sum_zero(n).iter().sum());
+    });
 }

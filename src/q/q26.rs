@@ -1,4 +1,6 @@
-mod q26 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
         // 方法1
         // if nums.len() < 2 { return nums.len() as i32; }

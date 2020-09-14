@@ -1,4 +1,6 @@
-mod q908 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn smallest_range_i(a: Vec<i32>, k: i32) -> i32 {
         // 方法1
         // let mut a = a;

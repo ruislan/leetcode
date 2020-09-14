@@ -1,4 +1,6 @@
-mod q784 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn letter_case_permutation(s: String) -> Vec<String> {
         let mut vec = vec![String::new(); 1];
         for ch in s.chars() {

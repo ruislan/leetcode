@@ -1,4 +1,6 @@
-mod q28 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn str_str(haystack: String, needle: String) -> i32 {
         // 方法1
         // let s = haystack.find(&needle);

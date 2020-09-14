@@ -1,4 +1,6 @@
-mod q819 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn most_common_word(paragraph: String, banned: Vec<String>) -> String {
         let mut set = std::collections::HashSet::new();
         for ban in banned {

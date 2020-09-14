@@ -1,4 +1,6 @@
-mod q198 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn rob(nums: Vec<i32>) -> i32 {
         let mut prev_max = 0;
         let mut curr_max = 0;

@@ -1,4 +1,6 @@
-mod q66 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn plus_one(mut digits: Vec<i32>) -> Vec<i32> {
         // 方法1
         // let mut carry = 1;

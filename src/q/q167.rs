@@ -1,5 +1,8 @@
-mod q167 {
-    pub fn two_sum(numbers: Vec<i32>, target: i32) -> Vec<i32> {
+use crate::q::Solution;
+
+impl Solution {
+    // 方法名two_sum与q1相同，更名为two_sum_ii
+    pub fn two_sum_ii(numbers: Vec<i32>, target: i32) -> Vec<i32> {
         // 方法1
         // for i in 0..numbers.len() {
         //     for j in (i + 1)..numbers.len() {

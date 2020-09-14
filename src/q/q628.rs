@@ -1,4 +1,6 @@
-mod q628 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn maximum_product(nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut nums = nums;

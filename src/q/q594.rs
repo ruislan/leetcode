@@ -1,4 +1,6 @@
-mod q594 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_lhs(nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut sum = 0;

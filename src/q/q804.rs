@@ -1,4 +1,6 @@
-mod q804 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn unique_morse_representations(words: Vec<String>) -> i32 {
         let codes = vec![".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."];
         let mut set = std::collections::HashSet::new();

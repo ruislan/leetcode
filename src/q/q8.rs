@@ -1,35 +1,6 @@
-mod q_8 {
-    #[test]
-    fn test_atoi() {
-        assert_eq!(-2147483648, my_atoi("-2147483648".to_string()));
-        assert_eq!(131204, my_atoi("+00131204".to_string()));
-        assert_eq!(10, my_atoi("010".to_string()));
-        assert_eq!(0, my_atoi("+-2".to_string()));
-        assert_eq!(
-            -1,
-            my_atoi("-000000000000000000000000000000000000000000000000001".to_string())
-        );
-        assert_eq!(12345678, my_atoi("  0000000000012345678".to_string()));
-        assert_eq!(42, my_atoi("42".to_string()));
-        assert_eq!(-42, my_atoi("   -42".to_string()));
-        assert_eq!(4193, my_atoi("4193 with words".to_string()));
-        assert_eq!(0, my_atoi("words and 987".to_string()));
-        assert_eq!(3, my_atoi("3*14".to_string()));
-        assert_eq!(3, my_atoi("3.14159".to_string()));
-        assert_eq!(0, my_atoi(".1".to_string()));
-        assert_eq!(0, my_atoi("++".to_string()));
-        assert_eq!(1, my_atoi("1+".to_string()));
-        assert_eq!(-2147483648, my_atoi("-91283472332".to_string()));
-        assert_eq!(
-            i32::min_value(),
-            my_atoi("-912834723320000000000000000000".to_string())
-        );
-        assert_eq!(
-            i32::max_value(),
-            my_atoi("912834723320000000000000000000".to_string())
-        );
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn my_atoi(str: String) -> i32 {
         let mut negative = false;
         let mut res = 0i64;
@@ -61,4 +32,35 @@ mod q_8 {
             res as i32
         }
     }
+}
+
+#[test]
+fn test_atoi() {
+    assert_eq!(-2147483648, Solution::my_atoi("-2147483648".to_string()));
+    assert_eq!(131204, Solution::my_atoi("+00131204".to_string()));
+    assert_eq!(10, Solution::my_atoi("010".to_string()));
+    assert_eq!(0, Solution::my_atoi("+-2".to_string()));
+    assert_eq!(
+        -1,
+        Solution::my_atoi("-000000000000000000000000000000000000000000000000001".to_string())
+    );
+    assert_eq!(12345678, Solution::my_atoi("  0000000000012345678".to_string()));
+    assert_eq!(42, Solution::my_atoi("42".to_string()));
+    assert_eq!(-42, Solution::my_atoi("   -42".to_string()));
+    assert_eq!(4193, Solution::my_atoi("4193 with words".to_string()));
+    assert_eq!(0, Solution::my_atoi("words and 987".to_string()));
+    assert_eq!(3, Solution::my_atoi("3*14".to_string()));
+    assert_eq!(3, Solution::my_atoi("3.14159".to_string()));
+    assert_eq!(0, Solution::my_atoi(".1".to_string()));
+    assert_eq!(0, Solution::my_atoi("++".to_string()));
+    assert_eq!(1, Solution::my_atoi("1+".to_string()));
+    assert_eq!(-2147483648, Solution::my_atoi("-91283472332".to_string()));
+    assert_eq!(
+        i32::min_value(),
+        Solution::my_atoi("-912834723320000000000000000000".to_string())
+    );
+    assert_eq!(
+        i32::max_value(),
+        Solution::my_atoi("912834723320000000000000000000".to_string())
+    );
 }

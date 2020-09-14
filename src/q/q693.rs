@@ -1,4 +1,6 @@
-mod q693 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn has_alternating_bits(n: i32) -> bool {
         let mut last_bit = None;
         let mut n = n;

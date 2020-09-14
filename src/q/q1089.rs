@@ -1,4 +1,6 @@
-mod q1089 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn duplicate_zeros(arr: &mut Vec<i32>) {
         let mut len = 0;
         let mut a_len = 0;

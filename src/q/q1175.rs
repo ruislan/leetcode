@@ -1,4 +1,6 @@
-mod q1175 {
+use crate::q::Solution;
+
+impl Solution {
     /// 找出素数
     /// 计算素数个数和非素数个数
     /// 组合（素数个数）*组合（非素数个数） 取mod 10^7 + 7

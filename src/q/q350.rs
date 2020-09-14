@@ -1,4 +1,6 @@
-mod q350 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn intersect(nums1: Vec<i32>, mut nums2: Vec<i32>) -> Vec<i32> {
         // 方法1
         // let mut res: Vec<i32> = Vec::new();

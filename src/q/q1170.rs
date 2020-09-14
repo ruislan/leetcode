@@ -1,31 +1,31 @@
 use crate::q::Solution;
 
 impl Solution {
-    pub fn f(v: &Vec<String>) -> Vec<i32> {
-        let mut res = Vec::new();
-        for i in 0..v.len() {
-            let mut min = (255, 0);
-            for b in v[i].bytes() {
-                if min.0 > b {
-                    min = (b, 1);
-                } else if min.0 == b {
-                    min.1 += 1;
-                }
-            }
-            res.push(min.1);
-        }
-        res
-    }
-
     pub fn num_smaller_by_frequency(queries: Vec<String>, words: Vec<String>) -> Vec<i32> {
         // 方法1
         // 首先统计words中每个word的最小字母频次，存储在数组a中，
         // 然后依次统计queries中每个query的最小字母频次，并与数组a中的数字进行对比
         // 只要数组a中的数字比query的数字大，结果就+1，
         // 对比的结果存储在数组res
-        let mut f_words = Self::f(&words);
+        fn f(v: &Vec<String>) -> Vec<i32> {
+            let mut res = Vec::new();
+            for i in 0..v.len() {
+                let mut min = (255, 0);
+                for b in v[i].bytes() {
+                    if min.0 > b {
+                        min = (b, 1);
+                    } else if min.0 == b {
+                        min.1 += 1;
+                    }
+                }
+                res.push(min.1);
+            }
+            res
+        }
+
+        let mut f_words = f(&words);
         f_words.sort();
-        let f_queries = Self::f(&queries);
+        let f_queries = f(&queries);
 
         let mut res = Vec::new();
         for i in 0..f_queries.len() {

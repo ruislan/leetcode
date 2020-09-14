@@ -1,4 +1,6 @@
-mod q462 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn min_moves2(mut nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut min_moves = i32::max_value();

@@ -1,4 +1,6 @@
-mod q344 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn reverse_string(s: &mut Vec<char>) {
         // 方法1
         // s.reverse()

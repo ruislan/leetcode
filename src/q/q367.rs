@@ -1,4 +1,6 @@
-mod q367 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn is_perfect_square(num: i32) -> bool {
         let mut left = 0;
         let mut right = num;

@@ -1,6 +1,6 @@
-mod q1 {
-    use std::collections::HashMap;
+use crate::q::Solution;
 
+impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         // 方法1
         // let mut nums_hash:HashMap<i32, i32> = HashMap::new();
@@ -49,7 +49,7 @@ mod q1 {
         // return Vec::new();
 
         // 方法4
-        let mut nums_hash: HashMap<i32, i32> = HashMap::new();
+        let mut nums_hash = std::collections::HashMap::new();
         for i in 0..nums.len() {
             let n = nums[i];
             let num = target - n;

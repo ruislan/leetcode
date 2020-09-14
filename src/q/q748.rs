@@ -1,4 +1,6 @@
-mod q748 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn shortest_completing_word(license_plate: String, words: Vec<String>) -> String {
         let mut bucket = vec![0; 26];
         for ch in license_plate.chars() {

@@ -1,4 +1,6 @@
-mod q401 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn read_binary_watch(num: i32) -> Vec<String> {
         let mut res = Vec::new();
         let num = num as u32;

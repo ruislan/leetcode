@@ -1,4 +1,6 @@
-mod q941 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn valid_mountain_array(a: Vec<i32>) -> bool {
         if a.len() < 3 { return false; }
         let mut top = None;

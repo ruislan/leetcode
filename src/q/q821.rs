@@ -1,24 +1,6 @@
-mod q_821 {
-    #[test]
-    fn test_q_821() {
-        // assert_eq!(
-        //     vec![3i32, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0],
-        //     shortest_to_char("loveleetcode".to_string(), 'e')
-        // );
-        // assert_eq!(vec![0i32, 0, 0], shortest_to_char("eee".to_string(), 'e'));
-        // assert_eq!(
-        //     vec![0i32, 0, 0, 0, 0, 0, 0],
-        //     shortest_to_char("eeeeeee".to_string(), 'e')
-        // );
-        // assert_eq!(vec![1i32, 0], shortest_to_char("ke".to_string(), 'e'));
-        // assert_eq!(vec![0i32, 1], shortest_to_char("ek".to_string(), 'e'));
-        // assert_eq!(vec![0i32], shortest_to_char("e".to_string(), 'e'));
-        assert_eq!(
-            vec![1i32, 0, 0, 0, 1],
-            shortest_to_char("leeel".to_string(), 'e')
-        );
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn shortest_to_char(s: String, c: char) -> Vec<i32> {
         let mut res = Vec::new();
         let mut last_index_of_ch = -1i32;
@@ -48,7 +30,6 @@ mod q_821 {
         }
 
         // tail
-        println!("last: {}, cur_i: {}", last_index_of_ch, cur_i);
         if last_index_of_ch < cur_i - 1 {
             for i in 1..(cur_i - last_index_of_ch) {
                 res.push(i);
@@ -57,4 +38,24 @@ mod q_821 {
 
         res
     }
+}
+
+#[test]
+fn test_q821() {
+    assert_eq!(
+        vec![3i32, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0],
+        Solution::shortest_to_char("loveleetcode".to_string(), 'e')
+    );
+    assert_eq!(vec![0i32, 0, 0], Solution::shortest_to_char("eee".to_string(), 'e'));
+    assert_eq!(
+        vec![0i32, 0, 0, 0, 0, 0, 0],
+        Solution::shortest_to_char("eeeeeee".to_string(), 'e')
+    );
+    assert_eq!(vec![1i32, 0], Solution::shortest_to_char("ke".to_string(), 'e'));
+    assert_eq!(vec![0i32, 1], Solution::shortest_to_char("ek".to_string(), 'e'));
+    assert_eq!(vec![0i32], Solution::shortest_to_char("e".to_string(), 'e'));
+    assert_eq!(
+        vec![1i32, 0, 0, 0, 1],
+        Solution::shortest_to_char("leeel".to_string(), 'e')
+    );
 }

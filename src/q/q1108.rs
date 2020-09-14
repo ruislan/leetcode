@@ -1,4 +1,6 @@
-mod q1108 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn defang_i_paddr(address: String) -> String {
         let mut res = String::new();
         for ch in address.chars() {

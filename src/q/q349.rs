@@ -1,4 +1,6 @@
-mod q349 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn intersection(nums1: Vec<i32>, nums2: Vec<i32>) -> Vec<i32> {
         // 方法1
         // let mut map: std::collections::HashMap<i32, i32> = std::collections::HashMap::new();

@@ -1,4 +1,6 @@
-mod q884 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn uncommon_from_sentences(a: String, b: String) -> Vec<String> {
         let mut map = std::collections::HashMap::new();
         for word in a.split_whitespace() {

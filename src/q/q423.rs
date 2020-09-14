@@ -1,13 +1,6 @@
-mod q423 {
-    #[test]
-    fn test_q423() {
-        assert_eq!(original_digits("".to_string()), "".to_string());
-        assert_eq!(original_digits("zeroonetwothreefourfivesixseveneightnine".to_string()), "0123456789".to_string());
-        assert_eq!(original_digits("owoztneoer".to_string()), "012".to_string());
-        assert_eq!(original_digits("owoztneoerthreethreeeighteight".to_string()), "0123388".to_string());
-        assert_eq!(original_digits("fviefuro".to_string()), "45".to_string());
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn original_digits(s: String) -> String {
         // 方法1
         // 创建一个[a-z]的桶bag，将s的每个字符都计数在桶里
@@ -43,4 +36,13 @@ mod q423 {
             .flatten()
             .collect()
     }
+}
+
+#[test]
+fn test_q423() {
+    assert_eq!(Solution::original_digits("".to_string()), "".to_string());
+    assert_eq!(Solution::original_digits("zeroonetwothreefourfivesixseveneightnine".to_string()), "0123456789".to_string());
+    assert_eq!(Solution::original_digits("owoztneoer".to_string()), "012".to_string());
+    assert_eq!(Solution::original_digits("owoztneoerthreethreeeighteight".to_string()), "0123388".to_string());
+    assert_eq!(Solution::original_digits("fviefuro".to_string()), "45".to_string());
 }

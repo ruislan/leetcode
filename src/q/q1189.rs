@@ -1,13 +1,6 @@
-mod q1189 {
-    #[test]
-    pub fn test_q1189() {
-        assert_eq!(1, max_number_of_balloons("nlaebolko".to_string()));
-        assert_eq!(2, max_number_of_balloons("loonbalxballpoon".to_string()));
-        assert_eq!(0, max_number_of_balloons("leetcode".to_string()));
-        assert_eq!(0, max_number_of_balloons("nlaebolk".to_string()));
-        assert_eq!(0, max_number_of_balloons("a".to_string()));
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn max_number_of_balloons(text: String) -> i32 {
         // 方法二：记录word每个字符的数量，o,l两个字符除以2，然后找出5个字符中频次最小的那个
         // Passed 0ms 2.0mb
@@ -45,4 +38,13 @@ mod q1189 {
         // }
         // sum
     }
+}
+
+#[test]
+pub fn test_q1189() {
+    assert_eq!(1, Solution::max_number_of_balloons("nlaebolko".to_string()));
+    assert_eq!(2, Solution::max_number_of_balloons("loonbalxballpoon".to_string()));
+    assert_eq!(0, Solution::max_number_of_balloons("leetcode".to_string()));
+    assert_eq!(0, Solution::max_number_of_balloons("nlaebolk".to_string()));
+    assert_eq!(0, Solution::max_number_of_balloons("a".to_string()));
 }

@@ -1,4 +1,6 @@
-mod q20 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn is_valid(s: String) -> bool {
         let mut stack: Vec<char> = Vec::new();
         for ch in s.chars() {

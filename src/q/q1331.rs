@@ -1,12 +1,6 @@
-mod q1331 {
-    #[test]
-    fn test_q1331() {
-        // assert_eq!(array_rank_transform(vec![]), vec![]);
-        assert_eq!(array_rank_transform(vec![40, 10, 20, 30]), vec![4, 1, 2, 3]);
-        assert_eq!(array_rank_transform(vec![100, 100, 100]), vec![1, 1, 1]);
-        assert_eq!(array_rank_transform(vec![37, 12, 28, 9, 100, 56, 80, 5, 12]), vec![5, 3, 4, 2, 8, 6, 7, 1, 3]);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn array_rank_transform(arr: Vec<i32>) -> Vec<i32> {
         // 方法1
         // 排序arr为o_arr，删除重复的值，然后迭代o_arr将index和数字放入hashmap中
@@ -35,4 +29,12 @@ mod q1331 {
         (1..bag.len()).for_each(|i| { bag[i] += bag[i - 1]; });
         arr.iter().map(|&x| bag[(x - min) as usize]).collect()
     }
+}
+
+#[test]
+fn test_q1331() {
+    // assert_eq!(Solution::array_rank_transform(vec![]), vec![]);
+    assert_eq!(Solution::array_rank_transform(vec![40, 10, 20, 30]), vec![4, 1, 2, 3]);
+    assert_eq!(Solution::array_rank_transform(vec![100, 100, 100]), vec![1, 1, 1]);
+    assert_eq!(Solution::array_rank_transform(vec![37, 12, 28, 9, 100, 56, 80, 5, 12]), vec![5, 3, 4, 2, 8, 6, 7, 1, 3]);
 }

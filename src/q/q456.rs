@@ -1,4 +1,6 @@
-mod q456 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find132pattern(nums: Vec<i32>) -> bool {
         // 方法1
         // if nums.len() < 3 { return false; }

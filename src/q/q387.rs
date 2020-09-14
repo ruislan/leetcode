@@ -1,4 +1,6 @@
-mod q387 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn first_uniq_char(s: String) -> i32 {
         let mut bucket = vec![0; 256];
         for ch in s.bytes() {

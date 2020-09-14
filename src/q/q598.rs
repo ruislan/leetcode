@@ -1,4 +1,6 @@
-mod q598 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn max_count(m: i32, n: i32, ops: Vec<Vec<i32>>) -> i32 {
         // 方法1
         // if ops.len() < 1 { return m * n; }

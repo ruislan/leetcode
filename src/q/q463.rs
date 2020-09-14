@@ -1,4 +1,6 @@
-mod q463 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn island_perimeter(grid: Vec<Vec<i32>>) -> i32 {
         let mut res = 0i32;
         for i in 0..grid.len() {

@@ -1,4 +1,6 @@
-mod q925 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn is_long_pressed_name(name: String, typed: String) -> bool {
         let mut n = Vec::new();
         let mut ch = None;

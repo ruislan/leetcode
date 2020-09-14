@@ -1,9 +1,6 @@
-mod q1299 {
-    #[test]
-    fn test_q1299() {
-        assert_eq!(replace_elements(vec![17, 18, 5, 4, 6, 1]), vec![18, 6, 6, 6, 1, -1]);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn replace_elements(arr: Vec<i32>) -> Vec<i32> {
         // 方法1，用一个初始值为-1的变量max来存储右边最大的值，从后向前迭代arr，遇到max被替换之前，替换当前的值为max
         // Passed 0ms 2.1mb (4ms 2.1mb)
@@ -28,4 +25,9 @@ mod q1299 {
         }
         res
     }
+}
+
+#[test]
+fn test_q1299() {
+    assert_eq!(Solution::replace_elements(vec![17, 18, 5, 4, 6, 1]), vec![18, 6, 6, 6, 1, -1]);
 }

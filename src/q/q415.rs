@@ -1,4 +1,6 @@
-mod q415 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn add_strings(mut num1: String, mut num2: String) -> String {
         // 方法1
         // let mut res = String::new();

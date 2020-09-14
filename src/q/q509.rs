@@ -1,4 +1,6 @@
-mod q509 {
+use crate::q::Solution;
+
+impl Solution {
     fn fib(n: usize) -> usize {
         if n == 0 {
             return 0;

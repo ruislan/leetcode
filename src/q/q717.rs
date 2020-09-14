@@ -1,4 +1,6 @@
-mod q717 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn is_one_bit_character(bits: Vec<i32>) -> bool {
         let mut i = 0;
         while i < bits.len() {

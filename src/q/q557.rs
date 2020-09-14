@@ -1,4 +1,6 @@
-mod q557 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn reverse_words(s: String) -> String {
         let s: Vec<&str> = s.split(' ').collect();
         let mut res = String::new();

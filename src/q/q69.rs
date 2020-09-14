@@ -1,4 +1,6 @@
-mod q69 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn my_sqrt(n: i32) -> i32 {
         // 方法1
         // let mut res = 0;

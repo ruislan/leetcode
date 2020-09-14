@@ -1,4 +1,6 @@
-mod q520 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn detect_capital_use(word: String) -> bool {
         let len = word.len();
         let mut upper = 0;

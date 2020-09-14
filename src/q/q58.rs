@@ -1,4 +1,6 @@
-mod q58 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn length_of_last_word(s: String) -> i32 {
         // 方法1
         // let mut count = 0i32;

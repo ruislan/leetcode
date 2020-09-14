@@ -1,4 +1,6 @@
-mod q136 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn single_number(nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut map = std::collections::HashMap::new();

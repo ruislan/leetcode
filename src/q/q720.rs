@@ -1,4 +1,6 @@
-mod q720 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn longest_word(words: Vec<String>) -> String {
         // 方法1
         // Passed 44ms 2.2mb

@@ -1,13 +1,6 @@
-mod q1295 {
-    #[test]
-    fn test_q1295() {
-        assert_eq!(find_numbers(vec![12, 345, 2, 6, 7896]), 2);
-        assert_eq!(find_numbers(vec![555, 901, 482, 1771]), 1);
-        assert_eq!(find_numbers(vec![555]), 0);
-        assert_eq!(find_numbers(vec![100000]), 1);
-        assert_eq!(find_numbers(vec![1]), 0);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn find_numbers(nums: Vec<i32>) -> i32 {
         // 方法一：迭代每位数字，数字每位除以10，在等于0的时候计算位数，位数是偶数的留下，再进行统计
         // Passed 0ms 2.1mb
@@ -30,4 +23,13 @@ mod q1295 {
         // Passed 0ms 2.5mb
         nums.iter().filter(|&&x| ((x as f32).log10() as i32 + 1) % 2 == 0).count() as i32
     }
+}
+
+#[test]
+fn test_q1295() {
+    assert_eq!(Solution::find_numbers(vec![12, 345, 2, 6, 7896]), 2);
+    assert_eq!(Solution::find_numbers(vec![555, 901, 482, 1771]), 1);
+    assert_eq!(Solution::find_numbers(vec![555]), 0);
+    assert_eq!(Solution::find_numbers(vec![100000]), 1);
+    assert_eq!(Solution::find_numbers(vec![1]), 0);
 }

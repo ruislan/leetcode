@@ -1,16 +1,6 @@
-mod q1346 {
-    #[test]
-    fn test_q1346() {
-        assert_eq!(check_if_exist(vec![3, 1, 7, 11]), false);
-        assert_eq!(check_if_exist(vec![10, 2, 5, 3]), true);
-        assert_eq!(check_if_exist(vec![7, 1, 14, 11]), true);
-        assert_eq!(check_if_exist(vec![10, 2]), false);
-        assert_eq!(check_if_exist(vec![-2, 4]), false);
-        assert_eq!(check_if_exist(vec![-2, -4]), true);
-        assert_eq!(check_if_exist(vec![-2, 0, 4]), false);
-        assert_eq!(check_if_exist(vec![-2, 0, 0]), true);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn check_if_exist(arr: Vec<i32>) -> bool {
         // 方法1
         // 将所有的数都放进map中，然后迭代每个数字，如果数字*2在map中能够找到则存在这个数
@@ -40,4 +30,16 @@ mod q1346 {
         }
         false
     }
+}
+
+#[test]
+fn test_q1346() {
+    assert_eq!(Solution::check_if_exist(vec![3, 1, 7, 11]), false);
+    assert_eq!(Solution::check_if_exist(vec![10, 2, 5, 3]), true);
+    assert_eq!(Solution::check_if_exist(vec![7, 1, 14, 11]), true);
+    assert_eq!(Solution::check_if_exist(vec![10, 2]), false);
+    assert_eq!(Solution::check_if_exist(vec![-2, 4]), false);
+    assert_eq!(Solution::check_if_exist(vec![-2, -4]), true);
+    assert_eq!(Solution::check_if_exist(vec![-2, 0, 4]), false);
+    assert_eq!(Solution::check_if_exist(vec![-2, 0, 0]), true);
 }

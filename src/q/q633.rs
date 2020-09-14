@@ -1,4 +1,6 @@
-mod q633 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn judge_square_sum(c: i32) -> bool {
         let mut a = 0i64;
         let mut b = (c as f64).sqrt().ceil() as i64;

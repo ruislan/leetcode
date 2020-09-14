@@ -1,4 +1,6 @@
-mod q937 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn reorder_log_files(logs: Vec<String>) -> Vec<String> {
         let mut words = Vec::new();
         let mut nums = Vec::new();

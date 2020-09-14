@@ -1,8 +1,6 @@
-mod q_474 {
-    // #[test]
-    // fn test_q_474() {
-    //     assert_eq!(false, find_max_form());
-    // }
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_max_form(strs: Vec<String>, m: i32, n: i32) -> i32 {
         let m = m as usize;
         let n = n as usize;

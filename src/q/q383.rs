@@ -1,4 +1,6 @@
-mod q383 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn can_construct(ransom_note: String, magazine: String) -> bool {
         let mut c = vec![0; 256];
         for b in magazine.bytes() {

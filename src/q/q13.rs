@@ -1,4 +1,6 @@
-mod q13 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn roman_to_int(s: String) -> i32 {
         // 方法1
         // let iter: Vec<char> = s.chars().collect();

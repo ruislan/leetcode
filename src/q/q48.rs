@@ -1,7 +1,8 @@
 use crate::q::Solution;
 
 impl Solution {
-    pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
+    // q189的方法名是'rotate'，这里重复了，所以这里重命名为rotate_matrix
+    pub fn rotate_matrix(matrix: &mut Vec<Vec<i32>>) {
         // 方法1
         // 矩阵为空，不需要操作
         // 设置两个变量begin=0和end=n-1，分别表示横竖的起点和终点，有
@@ -55,22 +56,22 @@ impl Solution {
 #[test]
 fn test() {
     let mut mat = vec![vec![]];
-    Solution::rotate(&mut mat);
+    Solution::rotate_matrix(&mut mat);
     assert_eq!(mat, vec![vec![]]);
 
     mat = vec![vec![1]];
-    Solution::rotate(&mut mat);
+    Solution::rotate_matrix(&mut mat);
     assert_eq!(mat, vec![vec![1]]);
 
     mat = vec![vec![1, 2], vec![1, 2]];
-    Solution::rotate(&mut mat);
+    Solution::rotate_matrix(&mut mat);
     assert_eq!(mat, vec![vec![1, 1], vec![2, 2]]);
 
     mat = vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]];
-    Solution::rotate(&mut mat);
+    Solution::rotate_matrix(&mut mat);
     assert_eq!(mat, vec![vec![7, 4, 1], vec![8, 5, 2], vec![9, 6, 3]]);
 
     mat = vec![vec![5, 1, 9, 11], vec![2, 4, 8, 10], vec![13, 3, 6, 7], vec![15, 14, 12, 16]];
-    Solution::rotate(&mut mat);
+    Solution::rotate_matrix(&mut mat);
     assert_eq!(mat, vec![vec![15, 13, 2, 5], vec![14, 3, 4, 1], vec![12, 6, 8, 9], vec![16, 7, 10, 11]]);
 }

@@ -1,20 +1,6 @@
-mod q_824 {
-    #[test]
-    fn test_q_824() {
-        assert_eq!(
-            "Imaa peaksmaaa oatGmaaaa atinLmaaaaa".to_string(),
-            to_goat_latin("I speak Goat Latin".to_string())
-        );
-        assert_eq!("imaa".to_string(), to_goat_latin("i".to_string()));
-        assert_eq!("iamaa".to_string(), to_goat_latin("ia".to_string()));
-        assert_eq!("hmaa".to_string(), to_goat_latin("h".to_string()));
-        assert_eq!("mhmaa".to_string(), to_goat_latin("hm".to_string()));
-        assert_eq!(
-            "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa".to_string(),
-            to_goat_latin("The quick brown fox jumped over the lazy dog".to_string())
-        );
-    }
+use crate::q::Solution;
 
+impl Solution {
     /**
     * 如果单词以元音开头（a, e, i, o, u），在单词后添加"ma"。
     * 例如，单词"apple"变为"applema"。
@@ -53,4 +39,21 @@ mod q_824 {
         }
         res
     }
+}
+
+
+#[test]
+fn test_q824() {
+    assert_eq!(
+        "Imaa peaksmaaa oatGmaaaa atinLmaaaaa".to_string(),
+        Solution::to_goat_latin("I speak Goat Latin".to_string())
+    );
+    assert_eq!("imaa".to_string(), Solution::to_goat_latin("i".to_string()));
+    assert_eq!("iamaa".to_string(), Solution::to_goat_latin("ia".to_string()));
+    assert_eq!("hmaa".to_string(), Solution::to_goat_latin("h".to_string()));
+    assert_eq!("mhmaa".to_string(), Solution::to_goat_latin("hm".to_string()));
+    assert_eq!(
+        "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa".to_string(),
+        Solution::to_goat_latin("The quick brown fox jumped over the lazy dog".to_string())
+    );
 }

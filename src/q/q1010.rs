@@ -1,4 +1,6 @@
-mod q1010 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn num_pairs_divisible_by60(time: Vec<i32>) -> i32 {
         // 方法1
         // let mut bag = vec![0;60];

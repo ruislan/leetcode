@@ -1,4 +1,6 @@
-mod q119 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn get_row(row_index: i32) -> Vec<i32> {
         // 方法1
         // let mut rows:Vec<Vec<i32>> = Vec::new();

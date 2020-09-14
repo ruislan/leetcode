@@ -1,23 +1,6 @@
-mod q949 {
-    #[test]
-    fn test_q949() {
-        let questions = vec![
-            (vec![5, 5, 5, 5], ""),
-            (vec![1, 2, 3, 4], "23:41"),
-            (vec![0, 0, 0, 0], "00:00"),
-            (vec![5, 9, 3, 4], ""),
-            (vec![5, 2, 3, 9], "23:59"),
-            (vec![0, 0, 0, 1], "10:00"),
-            (vec![2, 0, 6, 6], "06:26"),// 06:26
-            (vec![2, 0, 2, 6], "22:06"),// 22:06
-            (vec![0, 6, 2, 6], "06:26"),// 06:26
-            (vec![4, 1, 0, 0], "14:00"),// 14:00
-        ];
-        for q in questions {
-            assert_eq!(q.1, &largest_time_from_digits(q.0));
-        }
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn largest_time_from_digits(a: Vec<i32>) -> String {
         // solution 2
         let mut max = (0, vec![]);
@@ -91,5 +74,24 @@ mod q949 {
         //
         // if max.1.len() == 0 { return String::new(); }
         // format!("{}{}:{}{}", max.1[0], max.1[1], max.1[2], max.1[3])
+    }
+}
+
+#[test]
+fn test_q949() {
+    let questions = vec![
+        (vec![5, 5, 5, 5], ""),
+        (vec![1, 2, 3, 4], "23:41"),
+        (vec![0, 0, 0, 0], "00:00"),
+        (vec![5, 9, 3, 4], ""),
+        (vec![5, 2, 3, 9], "23:59"),
+        (vec![0, 0, 0, 1], "10:00"),
+        (vec![2, 0, 6, 6], "06:26"),// 06:26
+        (vec![2, 0, 2, 6], "22:06"),// 22:06
+        (vec![0, 6, 2, 6], "06:26"),// 06:26
+        (vec![4, 1, 0, 0], "14:00"),// 14:00
+    ];
+    for q in questions {
+        assert_eq!(q.1, &Solution::largest_time_from_digits(q.0));
     }
 }

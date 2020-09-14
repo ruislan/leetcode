@@ -1,4 +1,6 @@
-mod q811 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
         let mut map = std::collections::HashMap::new();
         for cpdomain in cpdomains {

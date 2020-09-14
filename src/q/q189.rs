@@ -3,6 +3,15 @@ use crate::q::Solution;
 impl Solution {
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         // 方法1
+
+        // fn reverse(nums: &mut Vec<i32>, mut from: usize, mut to: usize) {
+        //     while from < to {
+        //         nums.swap(from, to);
+        //         from += 1;
+        //         to -= 1;
+        //     }
+        // }
+        
         // let len = nums.len();
         // let k = k as usize;
         // let k = if k > len { k - len } else { k };
@@ -40,14 +49,6 @@ impl Solution {
                 if start == current { break; }
             }
             start += 1;
-        }
-    }
-
-    fn reverse(nums: &mut Vec<i32>, mut from: usize, mut to: usize) {
-        while from < to {
-            nums.swap(from, to);
-            from += 1;
-            to -= 1;
         }
     }
 }

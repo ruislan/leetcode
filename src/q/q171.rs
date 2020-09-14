@@ -1,4 +1,6 @@
-mod q171 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn title_to_number(mut s: String) -> i32 {
         let mut res = 0;
         let mut i = 0;

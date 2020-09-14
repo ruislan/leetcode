@@ -1,4 +1,6 @@
-mod q1009 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn bitwise_complement(n: i32) -> i32 {
         // 方法1
         // if n == 0 { return 1; }

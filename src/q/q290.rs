@@ -1,4 +1,6 @@
-mod q290 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn word_pattern(pattern: String, str: String) -> bool {
         let mut ch_map = std::collections::HashMap::<char, &str>::new();
         let mut word_map = std::collections::HashMap::<&str, char>::new();

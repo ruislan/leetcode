@@ -1,4 +1,6 @@
-mod q7 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn reverse(x: i32) -> i32 {
         // 方法1
         // let mut rev = 0;
@@ -30,10 +32,10 @@ mod q7 {
                 rev_str.parse::<i64>().unwrap()
             };
 
-        return if rev > i32::max_value() as i64 || rev < i32::min_value() as i64 {
+        if rev > i32::max_value() as i64 || rev < i32::min_value() as i64 {
             0
         } else {
             rev as i32
-        };
+        }
     }
 }

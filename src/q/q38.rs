@@ -1,7 +1,9 @@
-mod q38 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn count_and_say(n: i32) -> String {
         if n == 1 { return String::from("1"); }
-        let last_str = self::count_and_say(n - 1);
+        let last_str = Self::count_and_say(n - 1);
         let mut curr_str = String::new();
         let mut last_char = None;
         let mut last_char_count = 0;

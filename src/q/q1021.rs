@@ -1,4 +1,6 @@
-mod q1021 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn remove_outer_parentheses(s: String) -> String {
         // 方法1
         // Passed 96ms 2.2mb

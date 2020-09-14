@@ -1,4 +1,6 @@
-mod q1078 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_ocurrences(text: String, first: String, second: String) -> Vec<String> {
         let vec_text = text.split_ascii_whitespace().collect::<Vec<&str>>();
         let mut res = Vec::new();

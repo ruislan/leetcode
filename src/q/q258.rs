@@ -1,5 +1,7 @@
-mod q258 {
-    pub fn add_digits(num: i32) -> i32 {
+use crate::q::Solution;
+
+impl Solution {
+pub fn add_digits(num: i32) -> i32 {
         // 方法1
         // if num < 10 { return num; }
         // let mut num = num;

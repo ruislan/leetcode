@@ -1,4 +1,6 @@
-mod q696 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn count_binary_substrings(s: String) -> i32 {
         let nums = s.chars().collect::<Vec<char>>();
         let (mut ans, mut prev, mut cur) = (0, 0, 1);

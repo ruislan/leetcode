@@ -1,4 +1,6 @@
-mod q868 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn binary_gap(n: i32) -> i32 {
         let mut ones = Vec::new();
         let mut i = 0;

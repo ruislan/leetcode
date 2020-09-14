@@ -1,21 +1,23 @@
-mod q21 {
-    // Definition for singly-linked list.
-    #[derive(PartialEq, Eq, Clone, Debug)]
-    pub struct ListNode {
-        pub val: i32,
-        pub next: Option<Box<ListNode>>,
-    }
+// Definition for singly-linked list.
+#[derive(PartialEq, Eq, Clone, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>,
+}
 
-    impl ListNode {
-        #[inline]
-        fn new(val: i32) -> Self {
-            ListNode {
-                next: None,
-                val,
-            }
+impl ListNode {
+    #[inline]
+    fn new(val: i32) -> Self {
+        ListNode {
+            next: None,
+            val,
         }
     }
+}
 
+use crate::q::Solution;
+
+impl Solution {
     pub fn merge_two_lists(mut l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // 方法1
         // let mut res = Box::new(ListNode::new(0));
@@ -35,7 +37,7 @@ mod q21 {
         // if l1 == None { prev.next = l2; }
         // else { prev.next = l1; }
         // res.next
-        
+
         // 方法2
         let mut nums = Vec::new();
         loop {

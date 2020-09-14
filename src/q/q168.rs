@@ -1,4 +1,6 @@
-mod q168 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn convert_to_title(n: i32) -> String {
         let mut res = String::new();
         let mut n = n;

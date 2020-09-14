@@ -1,14 +1,6 @@
-mod q_859 {
-    #[test]
-    fn test_q_859() {
-        assert_eq!(true, buddy_strings("ba".to_string(), "ab".to_string()));
-        assert_eq!(false, buddy_strings("ab".to_string(), "ab".to_string()));
-        assert_eq!(false, buddy_strings("abc".to_string(), "abc".to_string()));
-        assert_eq!(false, buddy_strings("abcd".to_string(), "abcd".to_string()));
-        assert_eq!(true, buddy_strings("aba".to_string(), "aba".to_string()));
-        assert_eq!(true, buddy_strings("aa".to_string(), "aa".to_string()));
-    }
+use crate::q::Solution;
 
+impl Solution {
     // 给定两个由小写字母构成的字符串 A 和 B ，只要我们可以通过交换 A 中的两个字母得到与 B 相等的结果，就返回 true ；否则返回 false 。
     // 0 <= A.length <= 20000
     // 0 <= B.length <= 20000
@@ -49,4 +41,14 @@ mod q_859 {
         }
         count != 0
     }
+}
+
+#[test]
+fn test_q859() {
+    assert_eq!(true, Solution::buddy_strings("ba".to_string(), "ab".to_string()));
+    assert_eq!(false, Solution::buddy_strings("ab".to_string(), "ab".to_string()));
+    assert_eq!(false, Solution::buddy_strings("abc".to_string(), "abc".to_string()));
+    assert_eq!(false, Solution::buddy_strings("abcd".to_string(), "abcd".to_string()));
+    assert_eq!(true, Solution::buddy_strings("aba".to_string(), "aba".to_string()));
+    assert_eq!(true, Solution::buddy_strings("aa".to_string(), "aa".to_string()));
 }

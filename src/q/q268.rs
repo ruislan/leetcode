@@ -1,4 +1,6 @@
-mod q268 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn missing_number(nums: Vec<i32>) -> i32 {
         // 方法1
         // nums.sort();

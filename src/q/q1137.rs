@@ -1,4 +1,6 @@
-mod q1137 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn tribonacci(n: i32) -> i32 {
         let (mut t0, mut t1, mut t2) = (0, 1, 1);
         return match n {

@@ -1,22 +1,6 @@
-mod q_953 {
-    #[test]
-    fn test_q_953() {
-        assert_eq!(
-            false,
-            is_alien_sorted(
-                vec!["aa".to_string(), "a".to_string()],
-                "abqwertyuioplkjhgfdszxcvnm".to_string(),
-            )
-        );
-        assert_eq!(
-            true,
-            is_alien_sorted(
-                vec!["hello".to_string(), "leetcode".to_string()],
-                "hlabcdefgijkmnopqrstuvwxyz".to_string(),
-            )
-        );
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn is_alien_sorted(words: Vec<String>, order: String) -> bool {
         let mut dic = std::collections::HashMap::new();
         let mut order_iter = order.char_indices();
@@ -49,4 +33,22 @@ mod q_953 {
 
         true
     }
+}
+
+#[test]
+fn test_q953() {
+    assert_eq!(
+        false,
+        Solution::is_alien_sorted(
+            vec!["aa".to_string(), "a".to_string()],
+            "abqwertyuioplkjhgfdszxcvnm".to_string(),
+        )
+    );
+    assert_eq!(
+        true,
+        Solution::is_alien_sorted(
+            vec!["hello".to_string(), "leetcode".to_string()],
+            "hlabcdefgijkmnopqrstuvwxyz".to_string(),
+        )
+    );
 }

@@ -1,11 +1,6 @@
-mod q1260 {
-    #[test]
-    fn test_q1260() {
-        // assert_eq!(vec![vec![]], shift_grid(vec![vec![]], ));
-        assert_eq!(vec![vec![9, 1, 2], vec![3, 4, 5], vec![6, 7, 8]], shift_grid(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]], 1));
-        assert_eq!(vec![vec![12, 0, 21, 13], vec![3, 8, 1, 9], vec![19, 7, 2, 5], vec![4, 6, 11, 10]], shift_grid(vec![vec![3, 8, 1, 9], vec![19, 7, 2, 5], vec![4, 6, 11, 10], vec![12, 0, 21, 13]], 4));
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn shift_grid(grid: Vec<Vec<i32>>, k: i32) -> Vec<Vec<i32>> {
         // 有前提条件，50 >= grid.len >= 1, 50 >= grid[i].len >= 1
         // 方法1，根据公式 (n_cur_position + k) % n = n_new_position得到新的列地址
@@ -28,4 +23,11 @@ mod q1260 {
         flat.rotate_right(k % (m * n));
         flat.chunks(n).map(|v| v.to_vec()).collect()
     }
+}
+
+#[test]
+fn test_q1260() {
+    // assert_eq!(vec![vec![]], shift_grid(vec![vec![]], ));
+    assert_eq!(vec![vec![9, 1, 2], vec![3, 4, 5], vec![6, 7, 8]], Solution::shift_grid(vec![vec![1, 2, 3], vec![4, 5, 6], vec![7, 8, 9]], 1));
+    assert_eq!(vec![vec![12, 0, 21, 13], vec![3, 8, 1, 9], vec![19, 7, 2, 5], vec![4, 6, 11, 10]], Solution::shift_grid(vec![vec![3, 8, 1, 9], vec![19, 7, 2, 5], vec![4, 6, 11, 10], vec![12, 0, 21, 13]], 4));
 }

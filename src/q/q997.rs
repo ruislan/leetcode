@@ -1,4 +1,6 @@
-mod q997 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_judge(n: i32, trust: Vec<Vec<i32>>) -> i32 {
         // 方法1
         // if n == 1 { return 1; }

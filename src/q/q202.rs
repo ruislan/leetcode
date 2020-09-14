@@ -1,4 +1,6 @@
-mod q202 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn is_happy(n: i32) -> bool {
         let mut n = n;
         let mut result = 0;

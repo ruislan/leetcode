@@ -28,7 +28,7 @@ impl Solution {
         // 当出现某个节点左右子节点都没有的时候，返回这个深度
         match root {
             None => 0,
-            Some(mut root) => {
+            Some(root) => {
                 let (mut depth, mut arr) = (1, vec![root]);
                 'found: while !arr.is_empty() {
                     let mut children = Vec::new();

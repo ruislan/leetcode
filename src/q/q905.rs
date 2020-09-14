@@ -1,4 +1,6 @@
-mod q905 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn sort_array_by_parity(a: Vec<i32>) -> Vec<i32> {
         let mut a = a;
         let (mut left, mut right) = (0, a.len() - 1);

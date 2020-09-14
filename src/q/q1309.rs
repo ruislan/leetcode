@@ -1,12 +1,6 @@
-mod q1309 {
-    #[test]
-    fn test_q1309() {
-        assert_eq!(&freq_alphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#".to_string()), "abcdefghijklmnopqrstuvwxyz");
-        assert_eq!(&freq_alphabets("25#".to_string()), "y");
-        assert_eq!(&freq_alphabets("1326#".to_string()), "acz");
-        assert_eq!(&freq_alphabets("10#11#12".to_string()), "jkab");
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn freq_alphabets(s: String) -> String {
         // 方法1：倒序迭代s，遇到'#'，则取#前两个，得到字母，没有则直接得到映射字母
         // Passed 0ms 2mb
@@ -62,4 +56,12 @@ mod q1309 {
         }
         res
     }
+}
+
+#[test]
+fn test_q1309() {
+    assert_eq!(&Solution::freq_alphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#".to_string()), "abcdefghijklmnopqrstuvwxyz");
+    assert_eq!(&Solution::freq_alphabets("25#".to_string()), "y");
+    assert_eq!(&Solution::freq_alphabets("1326#".to_string()), "acz");
+    assert_eq!(&Solution::freq_alphabets("10#11#12".to_string()), "jkab");
 }

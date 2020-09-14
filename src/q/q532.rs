@@ -1,4 +1,6 @@
-mod q532 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_pairs(nums: Vec<i32>, k: i32) -> i32 {
         // 方法1
         // let mut kv = std::collections::HashMap::new();

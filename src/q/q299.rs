@@ -1,4 +1,6 @@
-mod q299 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn get_hint(secret: String, guess: String) -> String {
         // 方法1
         // let mut a_count = 0;

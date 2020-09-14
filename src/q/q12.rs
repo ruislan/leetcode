@@ -1,4 +1,6 @@
-mod q12 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn int_to_roman(mut num: i32) -> String {
         let mut result = String::new();
         while num >= 1000 {

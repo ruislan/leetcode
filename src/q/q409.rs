@@ -1,5 +1,8 @@
-mod q409 {
-    pub fn longest_palindrome(s: String) -> i32 {
+use crate::q::Solution;
+
+impl Solution {
+    // longest_palindrome与q5名字冲突，更名为longest_palindrome_string
+    pub fn longest_palindrome_string(s: String) -> i32 {
         let mut bucket = vec![0i32; 256];
         for b in s.bytes() {
             bucket[b as usize] += 1;

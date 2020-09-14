@@ -1,4 +1,6 @@
-mod q744 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn next_greatest_letter(letters: Vec<char>, target: char) -> char {
         // 方法1
         // for i in 0..letters.len() {

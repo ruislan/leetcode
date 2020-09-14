@@ -1,9 +1,6 @@
-mod q_231 {
-    #[test]
-    fn test_q_231() {
-        assert_eq!(false, is_power_of_two(1073741825));
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn is_power_of_two(n: i32) -> bool {
         // 方法1
         // let mut left = 0;
@@ -27,8 +24,13 @@ mod q_231 {
 
         // 方法2
         // n > 0 && n.count_ones() == 1
-        
+
         // 方法3
         n > 0 && (n & (n - 1)) == 0
     }
+}
+
+#[test]
+fn test_q231() {
+    assert_eq!(false, Solution::is_power_of_two(1073741825));
 }

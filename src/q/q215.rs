@@ -1,4 +1,6 @@
-mod q215 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_kth_largest(nums: Vec<i32>, k: i32) -> i32 {
         // 方法1
         // let mut nums = nums;

@@ -1,4 +1,6 @@
-mod q788 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn rotated_digits(n: i32) -> i32 {
         let mut sum = 0;
         for num in 0..=n {

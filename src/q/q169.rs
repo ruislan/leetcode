@@ -1,4 +1,6 @@
-mod q169 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn majority_element(nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut map = std::collections::HashMap::new();

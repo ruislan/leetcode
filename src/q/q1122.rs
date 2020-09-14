@@ -1,4 +1,6 @@
-mod q1122 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn relative_sort_array(arr1: Vec<i32>, arr2: Vec<i32>) -> Vec<i32> {
         let mut bag = vec![0; 1001];
         for i in 0..arr1.len() {

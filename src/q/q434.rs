@@ -1,4 +1,6 @@
-mod q434 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn count_segments(s: String) -> i32 {
         // 方法1
         // let v: Vec<&str> = s.split(|c:char| c == ' ').collect();

@@ -1,4 +1,6 @@
-mod q896 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn is_monotonic(a: Vec<i32>) -> bool {
         let mut up = None;
         for i in 1..a.len() {

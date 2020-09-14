@@ -1,4 +1,6 @@
-mod q448 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {
         let len = nums.len();
 

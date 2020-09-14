@@ -1,4 +1,6 @@
-mod q704 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn search(nums: Vec<i32>, target: i32) -> i32 {
         let mut left = 0;
         let mut right = nums.len() as i32 - 1;

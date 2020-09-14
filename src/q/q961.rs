@@ -1,4 +1,6 @@
-mod q961 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn repeated_n_times(a: Vec<i32>) -> i32 {
         let mut bag = vec![0; 10000];
         for i in 0..a.len() {

@@ -1,15 +1,6 @@
-mod q1370 {
-    #[test]
-    fn test_q1370() {
-        // assert_eq!(sort_string("".to_string()), "".to_string());
-        assert_eq!(sort_string("aaaabbbbcccc".to_string()), "abccbaabccba".to_string());
-        assert_eq!(sort_string("rat".to_string()), "art".to_string());
-        assert_eq!(sort_string("leetcode".to_string()), "cdelotee".to_string());
-        assert_eq!(sort_string("ggggggg".to_string()), "ggggggg".to_string());
-        assert_eq!(sort_string("spo".to_string()), "ops".to_string());
-        assert_eq!(sort_string("g".to_string()), "g".to_string());
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn sort_string(s: String) -> String {
         // 方法1
         // 将所有的字符的频率放入0-25的数组bag中，
@@ -35,4 +26,15 @@ mod q1370 {
         }
         res
     }
+}
+
+#[test]
+fn test_q1370() {
+    // assert_eq!(Solution::sort_string("".to_string()), "".to_string());
+    assert_eq!(Solution::sort_string("aaaabbbbcccc".to_string()), "abccbaabccba".to_string());
+    assert_eq!(Solution::sort_string("rat".to_string()), "art".to_string());
+    assert_eq!(Solution::sort_string("leetcode".to_string()), "cdelotee".to_string());
+    assert_eq!(Solution::sort_string("ggggggg".to_string()), "ggggggg".to_string());
+    assert_eq!(Solution::sort_string("spo".to_string()), "ops".to_string());
+    assert_eq!(Solution::sort_string("g".to_string()), "g".to_string());
 }

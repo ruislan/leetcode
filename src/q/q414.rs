@@ -1,4 +1,6 @@
-mod q_414 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn third_max(nums: Vec<i32>) -> i32 {
         let mut max = vec![None; 3];
         for n in nums {

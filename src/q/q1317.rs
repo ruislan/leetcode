@@ -1,10 +1,6 @@
-mod q1317 {
-    #[test]
-    fn test_q1317() {
-        assert_eq!(get_no_zero_integers(10000), vec![1, 9999]);
-        assert_eq!(get_no_zero_integers(101010), vec![1111, 99899]);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn get_no_zero_integers(n: i32) -> Vec<i32> {
         // 方法1：
         // 判断一个数是否有0的方法是循环取10的余数，为0则有，不为0则没有
@@ -29,4 +25,10 @@ mod q1317 {
         // Passed 0ms 2.1mb
         (1..=(n / 2)).find(|&i| !(i.to_string() + &(n - i).to_string()).contains('0')).map_or(vec![], |i| vec![i, n - i])
     }
+}
+
+#[test]
+fn test_q1317() {
+    assert_eq!(Solution::get_no_zero_integers(10000), vec![1, 9999]);
+    assert_eq!(Solution::get_no_zero_integers(101010), vec![1111, 99899]);
 }

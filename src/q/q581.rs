@@ -1,4 +1,6 @@
-mod q581 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_unsorted_subarray(nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut nums_sorted = nums.clone();

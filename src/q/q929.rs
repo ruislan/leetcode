@@ -1,4 +1,6 @@
-mod q929 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn num_unique_emails(emails: Vec<String>) -> i32 {
         let mut set = std::collections::HashSet::new();
         for email in emails.iter() {

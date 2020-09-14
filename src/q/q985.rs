@@ -1,9 +1,6 @@
-mod q985 {
-    #[test]
-    fn test_q985() {
-        assert_eq!(sum_even_after_queries(vec![1, 2, 3, 4], vec![vec![1, 0], vec![-3, 1], vec![-4, 0], vec![2, 3]]), vec![8, 6, 2, 4]);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn sum_even_after_queries(a: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
         // 方法1，创建结果数组res，和当前偶数和sum，迭代queries，
         //  首先如果a[queries[i][1]]是偶数，那么sum先减去这个值
@@ -21,4 +18,9 @@ mod q985 {
         }
         res
     }
+}
+
+#[test]
+fn test_q985() {
+    assert_eq!(Solution::sum_even_after_queries(vec![1, 2, 3, 4], vec![vec![1, 0], vec![-3, 1], vec![-4, 0], vec![2, 3]]), vec![8, 6, 2, 4]);
 }

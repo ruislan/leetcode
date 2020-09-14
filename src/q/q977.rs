@@ -1,12 +1,6 @@
-mod q_977 {
-    #[test]
-    fn test_q_977() {
-        assert_eq!(
-            vec![0, 1, 9, 16, 100],
-            sorted_squares(vec![-4_i32, -1_i32, 0_i32, 3_i32, 10_i32])
-        );
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn sorted_squares(a: Vec<i32>) -> Vec<i32> {
         // 方法1
         // let mut t = 0;
@@ -55,4 +49,12 @@ mod q_977 {
         }
         res
     }
+}
+
+#[test]
+fn test_q977() {
+    assert_eq!(
+        vec![0, 1, 9, 16, 100],
+        Solution::sorted_squares(vec![-4_i32, -1_i32, 0_i32, 3_i32, 10_i32])
+    );
 }

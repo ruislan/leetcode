@@ -1,4 +1,6 @@
-mod q1025 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn divisor_game(n: i32) -> bool {
         // 方法1
         // n & 1 == 0

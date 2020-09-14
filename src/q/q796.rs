@@ -1,4 +1,6 @@
-mod q796 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn rotate_string(a: String, b: String) -> bool {
         if a.is_empty() && b.is_empty() { return true; }
         if a.len() != b.len() { return false; }

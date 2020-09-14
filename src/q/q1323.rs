@@ -1,15 +1,6 @@
-mod q1323 {
-    #[test]
-    fn test_q1323() {
-        assert_eq!(maximum69_number(9669), 9969);
-        assert_eq!(maximum69_number(9969), 9999);
-        assert_eq!(maximum69_number(9999), 9999);
-        assert_eq!(maximum69_number(9), 9);
-        assert_eq!(maximum69_number(6), 9);
-        assert_eq!(maximum69_number(66666), 96666);
-    }
+use crate::q::Solution;
 
-
+impl Solution {
     pub fn maximum69_number(num: i32) -> i32 {
         // 方法1：
         // 转换成字符串，
@@ -30,4 +21,14 @@ mod q1323 {
         // }
         // num
     }
+}
+
+#[test]
+fn test_q1323() {
+    assert_eq!(Solution::maximum69_number(9669), 9969);
+    assert_eq!(Solution::maximum69_number(9969), 9999);
+    assert_eq!(Solution::maximum69_number(9999), 9999);
+    assert_eq!(Solution::maximum69_number(9), 9);
+    assert_eq!(Solution::maximum69_number(6), 9);
+    assert_eq!(Solution::maximum69_number(66666), 96666);
 }

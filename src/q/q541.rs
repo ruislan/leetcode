@@ -1,4 +1,6 @@
-mod q541 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn reverse_str(s: String, k: i32) -> String {
         let k = k as usize;
         let mut s = s;

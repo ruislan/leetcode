@@ -1,4 +1,6 @@
-mod q482 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn license_key_formatting(s: String, k: i32) -> String {
         let k = k as usize;
         let mut s = s;

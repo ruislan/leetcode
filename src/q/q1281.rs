@@ -1,13 +1,6 @@
-mod q1281 {
-    #[test]
-    fn test_q1281() {
-        assert_eq!(15, subtract_product_and_sum(234));
-        assert_eq!(21, subtract_product_and_sum(4421));
-        assert_eq!(-1, subtract_product_and_sum(100000));
-        assert_eq!(59004, subtract_product_and_sum(99999));
-        assert_eq!(0, subtract_product_and_sum(1));
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn subtract_product_and_sum(n: i32) -> i32 {
         // 方法一，数字除以10得到每位数字，算出每位数字的乘积和和，然后再相减
         // 注意i位上可能是0，如果是0，就是负数
@@ -22,4 +15,13 @@ mod q1281 {
         }
         multiply - sum
     }
+}
+
+#[test]
+fn test_q1281() {
+    assert_eq!(15, Solution::subtract_product_and_sum(234));
+    assert_eq!(21, Solution::subtract_product_and_sum(4421));
+    assert_eq!(-1, Solution::subtract_product_and_sum(100000));
+    assert_eq!(59004, Solution::subtract_product_and_sum(99999));
+    assert_eq!(0, Solution::subtract_product_and_sum(1));
 }

@@ -1,4 +1,6 @@
-mod q1184 {
+use crate::q::Solution;
+
+impl Solution {
     /// 环线只需要求出右行S0和左行S1中最小的那个
     pub fn distance_between_bus_stops(distance: Vec<i32>, start: i32, destination: i32) -> i32 {
         let (mut sum, mut sum0) = (0, 0);

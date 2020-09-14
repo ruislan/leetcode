@@ -1,4 +1,6 @@
-mod q67 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn add_binary(mut a: String, mut b: String) -> String {
         let mut carry = 0;
         let mut res = String::new();

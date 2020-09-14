@@ -1,4 +1,6 @@
-mod q3 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn length_of_longest_substring(s: String) -> i32 {
         // 方法1
         // if s.len() <= 1 { return s.len() as i32; }
@@ -24,16 +26,14 @@ mod q3 {
         // max as i32
 
         // 方法2
-        use std::cmp::max;
-        use std::collections::HashMap;
         let chars = s.chars().collect::<Vec<char>>();
-        let mut map_char: HashMap<char, usize> = HashMap::new();
+        let mut map_char = std::collections::HashMap::new();
         let (mut i, mut j, mut ans) = (0, 0, 0);
         while j < s.len() {
             if map_char.contains_key(&chars[j]) {
-                i = max(*map_char.get(&chars[j]).unwrap(), i);
+                i = std::cmp::max(*map_char.get(&chars[j]).unwrap(), i);
             }
-            ans = max(ans, j - i + 1);
+            ans = std::cmp::max(ans, j - i + 1);
             map_char.insert(chars[j], j + 1);
             j += 1;
         }

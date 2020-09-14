@@ -1,4 +1,6 @@
-mod q605 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
         let mut flowerbed = flowerbed;
         let mut flowers = 0;

@@ -1,8 +1,8 @@
-mod q1046 {
-    use std::collections::BinaryHeap;
+use crate::q::Solution;
 
+impl Solution {
     pub fn last_stone_weight(stones: Vec<i32>) -> i32 {
-        let mut sts = stones.iter().cloned().collect::<BinaryHeap<i32>>();
+        let mut sts = stones.iter().cloned().collect::<std::collections::BinaryHeap<i32>>();
         while sts.len() > 1 {
             let st1 = sts.pop().unwrap();
             let st2 = sts.pop().unwrap();

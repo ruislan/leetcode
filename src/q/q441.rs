@@ -1,4 +1,6 @@
-mod q441 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn arrange_coins(n: i32) -> i32 {
         // 方法1
         // let mut sum = n;

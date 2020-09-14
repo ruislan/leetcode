@@ -1,4 +1,6 @@
-mod q682 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn cal_points(ops: Vec<String>) -> i32 {
         let mut scores = Vec::new();
         for op in ops {

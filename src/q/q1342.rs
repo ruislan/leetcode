@@ -1,12 +1,6 @@
-mod q1342 {
-    #[test]
-    fn test_q1342() {
-        assert_eq!(number_of_steps(0), 0);
-        assert_eq!(number_of_steps(8), 4);
-        assert_eq!(number_of_steps(123), 12);
-        assert_eq!(number_of_steps(14), 6);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn number_of_steps(num: i32) -> i32 {
         // 方法1
         // if num % 2 == 0, num /= 2，次数加1
@@ -33,4 +27,12 @@ mod q1342 {
         // 例如8是1000，则是 4 + 1 - 1 = 4
         (2 * num.count_ones() + num.count_zeros() - num.leading_zeros()).saturating_sub(1) as i32
     }
+}
+
+#[test]
+fn test_q1342() {
+    assert_eq!(Solution::number_of_steps(0), 0);
+    assert_eq!(Solution::number_of_steps(8), 4);
+    assert_eq!(Solution::number_of_steps(123), 12);
+    assert_eq!(Solution::number_of_steps(14), 6);
 }

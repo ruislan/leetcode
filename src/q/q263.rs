@@ -1,4 +1,6 @@
-mod q263 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn is_ugly(num: i32) -> bool {
         // 方法1
         // if num == 0 { return false; }

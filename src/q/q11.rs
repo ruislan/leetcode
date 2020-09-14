@@ -1,4 +1,6 @@
-mod q11 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn max_area(height: Vec<i32>) -> i32 {
         // 方法1
         // Passed 552ms 2mb

@@ -1,4 +1,6 @@
-mod q6 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn convert(s: String, num_rows: i32) -> String {
         // 方法1
         // if num_rows < 2 { return s; }

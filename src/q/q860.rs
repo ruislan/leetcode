@@ -1,15 +1,6 @@
-mod q_860 {
-    #[test]
-    fn test_q_860() {
-        assert_eq!(false, lemonade_change(vec![10]));
-        assert_eq!(true, lemonade_change(vec![5]));
-        assert_eq!(false, lemonade_change(vec![20]));
-        assert_eq!(true, lemonade_change(vec![5, 5, 5, 10, 20]));
-        assert_eq!(true, lemonade_change(vec![5, 5, 10]));
-        assert_eq!(false, lemonade_change(vec![10, 10]));
-        assert_eq!(false, lemonade_change(vec![5, 5, 10, 10, 20]));
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn lemonade_change(bills: Vec<i32>) -> bool {
         let (mut d10, mut d5) = (0_i32, 0_i32);
         for i in 0..bills.len() {
@@ -41,4 +32,15 @@ mod q_860 {
         }
         true
     }
+}
+
+#[test]
+fn test_q860() {
+    assert_eq!(false, Solution::lemonade_change(vec![10]));
+    assert_eq!(true, Solution::lemonade_change(vec![5]));
+    assert_eq!(false, Solution::lemonade_change(vec![20]));
+    assert_eq!(true, Solution::lemonade_change(vec![5, 5, 5, 10, 20]));
+    assert_eq!(true, Solution::lemonade_change(vec![5, 5, 10]));
+    assert_eq!(false, Solution::lemonade_change(vec![10, 10]));
+    assert_eq!(false, Solution::lemonade_change(vec![5, 5, 10, 10, 20]));
 }

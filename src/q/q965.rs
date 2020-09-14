@@ -1,26 +1,28 @@
-mod q965 {
-    use std::cell::RefCell;
-    use std::rc::Rc;
+use std::cell::RefCell;
+use std::rc::Rc;
 
-    // Definition for a binary tree node.
-    #[derive(Debug, PartialEq, Eq)]
-    pub struct TreeNode {
-        pub val: i32,
-        pub left: Option<Rc<RefCell<TreeNode>>>,
-        pub right: Option<Rc<RefCell<TreeNode>>>,
-    }
+// Definition for a binary tree node.
+#[derive(Debug, PartialEq, Eq)]
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
+}
 
-    impl TreeNode {
-        #[inline]
-        pub fn new(val: i32) -> Self {
-            TreeNode {
-                val,
-                left: None,
-                right: None,
-            }
+impl TreeNode {
+    #[inline]
+    pub fn new(val: i32) -> Self {
+        TreeNode {
+            val,
+            left: None,
+            right: None,
         }
     }
+}
 
+use crate::q::Solution;
+
+impl Solution {
     pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         let mut q = Vec::new();
         let val = match root.as_ref() {

@@ -1,4 +1,6 @@
-mod q914 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn has_groups_size_x(deck: Vec<i32>) -> bool {
         // 方法1
         // let mut groups = vec![0;10000];
@@ -20,6 +22,10 @@ mod q914 {
 
 
         // 方法2
+        fn gcd(a: i32, b: i32) -> i32 {
+            if a == 0 { b } else { gcd(b % a, a) }
+        }
+
         let mut groups = vec![0; 10000];
         for i in 0..deck.len() {
             groups[deck[i] as usize] += 1;
@@ -29,14 +35,10 @@ mod q914 {
         for num in groups {
             if num > 0 {
                 if g == -1 { g = num; } else {
-                    g = self::gcd(g, num);
+                    g = gcd(g, num);
                 }
             }
         }
         g >= 2
-    }
-
-    fn gcd(a: i32, b: i32) -> i32 {
-        if a == 0 { b } else { self::gcd(b % a, a) }
     }
 }

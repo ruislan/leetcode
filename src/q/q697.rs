@@ -1,4 +1,6 @@
-mod q697 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_shortest_sub_array(nums: Vec<i32>) -> i32 {
         let mut map = std::collections::HashMap::new();
         for i in 0..nums.len() {

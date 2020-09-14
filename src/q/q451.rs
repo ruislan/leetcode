@@ -1,4 +1,6 @@
-mod q451 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn frequency_sort(s: String) -> String {
         let mut bucket = vec![(0, 0); 256];
         for b in s.bytes() {

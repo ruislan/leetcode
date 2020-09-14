@@ -1,4 +1,6 @@
-mod q728 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn self_dividing_numbers(left: i32, right: i32) -> Vec<i32> {
         let mut res = Vec::new();
         for i in left..=right {

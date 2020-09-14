@@ -1,4 +1,6 @@
-mod q665 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn check_possibility(nums: Vec<i32>) -> bool {
         let mut nums = nums;
         let mut count = 0;

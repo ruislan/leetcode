@@ -6,8 +6,8 @@ mod sorter;
 
 
 fn main() {
-    let s = "abbba";
     println!("{:?} is palindrome", is_ascii_palindrome("abb"));
+    println!("{:?} is palindrome", is_ascii_palindrome("abbba"));
 }
 
 pub fn is_ascii_palindrome(s: &str) -> bool {

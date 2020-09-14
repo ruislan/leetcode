@@ -1,4 +1,6 @@
-mod q877 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn stone_game(piles: Vec<i32>) -> bool {
         let (mut left, mut right) = (0, piles.len() - 1);
         let (mut alex, mut lee) = (0, 0);

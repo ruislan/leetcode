@@ -1,4 +1,6 @@
-mod q88 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn merge(nums1: &mut Vec<i32>, m: i32, nums2: &mut Vec<i32>, n: i32) {
         // 方法1
         // let (m,n) = (m as usize, n as usize);

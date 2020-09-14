@@ -1,4 +1,6 @@
-mod q443 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn compress(chars: &mut Vec<char>) -> i32 {
         let mut ptr = 0;
         let mut write = 0;

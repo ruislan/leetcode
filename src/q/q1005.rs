@@ -1,4 +1,6 @@
-mod q1005 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn largest_sum_after_k_negations(a: Vec<i32>, k: i32) -> i32 {
 
         // 方法1

@@ -1,4 +1,6 @@
-mod q970 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn powerful_integers(x: i32, y: i32, bound: i32) -> Vec<i32> {
         // 方法1
         // let mut res = std::collections::HashSet::new();

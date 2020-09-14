@@ -1,4 +1,6 @@
-mod q453 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn min_moves(nums: Vec<i32>) -> i32 {
         // 方法1
         // let mut nums = nums;

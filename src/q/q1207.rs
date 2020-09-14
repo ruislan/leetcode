@@ -1,12 +1,6 @@
-mod q1207 {
-    #[test]
-    pub fn test_q1207() {
-        assert_eq!(true, unique_occurrences(vec![1, 2, 2, 1, 1, 3]));
-        assert_eq!(false, unique_occurrences(vec![1, 2]));
-        assert_eq!(true, unique_occurrences(vec![1]));
-        assert_eq!(true, unique_occurrences(vec![-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]));
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn unique_occurrences(arr: Vec<i32>) -> bool {
         // 方法一：创建长度为2001的数组，分别存储[-1000, 1000]，统计每个数字出现的频次
         // 再创建一个hashset，将频次作为值，如果存在该值，则表示有相同频次的了
@@ -22,4 +16,12 @@ mod q1207 {
         }
         true
     }
+}
+
+#[test]
+pub fn test_q1207() {
+    assert_eq!(true, Solution::unique_occurrences(vec![1, 2, 2, 1, 1, 3]));
+    assert_eq!(false, Solution::unique_occurrences(vec![1, 2]));
+    assert_eq!(true, Solution::unique_occurrences(vec![1]));
+    assert_eq!(true, Solution::unique_occurrences(vec![-3, 0, 1, -3, 1, 1, 1, -3, 10, 0]));
 }

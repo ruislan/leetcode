@@ -1,4 +1,6 @@
-mod q1154 {
+use crate::q::Solution;
+
+impl Solution {
     /// Q1154 Passed 0ms 2.0mb
     pub fn day_of_year(date: String) -> i32 {
         let ymd = date.split("-").map(|x| x.parse::<i32>().unwrap()).collect::<Vec<i32>>();

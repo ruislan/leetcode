@@ -1,14 +1,6 @@
-mod q1332 {
-    #[test]
-    fn test_q1332() {
-        assert_eq!(remove_palindrome_sub("ababa".to_string()), 1);
-        assert_eq!(remove_palindrome_sub("abb".to_string()), 2);
-        assert_eq!(remove_palindrome_sub("baabb".to_string()), 2);
-        assert_eq!(remove_palindrome_sub("baabbaa".to_string()), 2);
-        assert_eq!(remove_palindrome_sub("bbaabaaa".to_string()), 2);
-        assert_eq!(remove_palindrome_sub("".to_string()), 0);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn remove_palindrome_sub(s: String) -> i32 {
         // 方法1
         // 如果是空字符串则返回0
@@ -19,4 +11,14 @@ mod q1332 {
         // Passed 0ms 2mb
         if s.is_empty() { 0 } else if s == s.chars().rev().collect::<String>() { 1 } else { 2 }
     }
+}
+
+#[test]
+fn test_q1332() {
+    assert_eq!(Solution::remove_palindrome_sub("ababa".to_string()), 1);
+    assert_eq!(Solution::remove_palindrome_sub("abb".to_string()), 2);
+    assert_eq!(Solution::remove_palindrome_sub("baabb".to_string()), 2);
+    assert_eq!(Solution::remove_palindrome_sub("baabbaa".to_string()), 2);
+    assert_eq!(Solution::remove_palindrome_sub("bbaabaaa".to_string()), 2);
+    assert_eq!(Solution::remove_palindrome_sub("".to_string()), 0);
 }

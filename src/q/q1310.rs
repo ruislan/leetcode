@@ -1,10 +1,6 @@
-mod q1310 {
-    #[test]
-    fn test_q1310() {
-        // assert_eq!(xor_queries(vec![], vec![vec![]]), vec![]);
-        assert_eq!(xor_queries(vec![1, 3, 4, 8], vec![vec![0, 1], vec![1, 2], vec![0, 3], vec![3, 3]]), vec![2, 7, 14, 8]);
-    }
+use crate::q::Solution;
 
+impl Solution {
     pub fn xor_queries(arr: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
         // 方法1
         // 迭代queries，取出每对(L,R)，再取出arr中的值进行xor计算即可
@@ -33,4 +29,10 @@ mod q1310 {
         (1..arr.len()).for_each(|i| arr[i] ^= arr[i - 1]);
         queries.iter().map(|q| if q[0] == 0 { arr[q[1] as usize] } else { arr[(q[0] - 1) as usize] ^ arr[q[1] as usize] }).collect()
     }
+}
+
+#[test]
+fn test_q1310() {
+    // assert_eq!(Solution::xor_queries(vec![], vec![vec![]]), vec![]);
+    assert_eq!(Solution::xor_queries(vec![1, 3, 4, 8], vec![vec![0, 1], vec![1, 2], vec![0, 3], vec![3, 3]]), vec![2, 7, 14, 8]);
 }

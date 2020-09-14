@@ -1,4 +1,6 @@
-mod q806 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn number_of_lines(widths: Vec<i32>, s: String) -> Vec<i32> {
         let mut cur = 0;
         let mut line = 1;

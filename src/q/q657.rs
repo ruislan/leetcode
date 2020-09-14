@@ -1,4 +1,6 @@
-mod q657 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn judge_circle(moves: String) -> bool {
         let mut lr = 0;
         let mut ud = 0;

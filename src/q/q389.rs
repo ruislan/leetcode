@@ -1,4 +1,6 @@
-mod q389 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn find_the_difference(s: String, t: String) -> char {
         // 方法1
         // let mut bucket = vec![0i32; 256];

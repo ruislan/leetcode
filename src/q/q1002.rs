@@ -1,4 +1,6 @@
-mod q1002 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn common_chars(a: Vec<String>) -> Vec<String> {
         // 方法1
         // let mut map = std::collections::HashMap::new();

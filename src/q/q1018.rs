@@ -1,4 +1,6 @@
-mod q1018 {
+use crate::q::Solution;
+
+impl Solution {
     pub fn prefixes_div_by5(a: Vec<i32>) -> Vec<bool> {
         let mut res = Vec::new();
         let mut num = 0;
