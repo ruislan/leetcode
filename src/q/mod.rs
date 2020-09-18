@@ -59,6 +59,7 @@ mod q202;
 mod q203;
 mod q204;
 mod q205;
+mod q206;
 mod q215;
 mod q217;
 mod q219;
