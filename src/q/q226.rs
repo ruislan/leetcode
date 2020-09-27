@@ -33,7 +33,7 @@ impl Solution {
                     let node = queue.pop_front().unwrap();
                     let mut node = node.borrow_mut();
 
-                    let mut left = node.left.take();
+                    let left = node.left.take();
                     node.left = node.right.take();
                     node.right = left;
 
