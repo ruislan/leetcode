@@ -27,11 +27,11 @@ impl Solution {
         let (mut l1, mut l2, mut carry, mut cur) = (l1, l2, 0, head.as_mut());
         while l1.is_some() || l2.is_some() {
             let mut num = carry;
-            if let Some(mut node) = l1 {
+            if let Some(node) = l1 {
                 num += node.val;
                 l1 = node.next;
             }
-            if let Some(mut node) = l2 {
+            if let Some(node) = l2 {
                 num += node.val;
                 l2 = node.next;
             }
