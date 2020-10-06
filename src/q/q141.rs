@@ -1,6 +1,3 @@
-use std::hash::Hash;
-use std::ops::Deref;
-
 use crate::q::Solution;
 
 #[derive(PartialEq, Eq, Clone, Debug)]
