@@ -3,16 +3,28 @@ use crate::q::Solution;
 impl Solution {
     pub fn reverse_string(s: &mut Vec<char>) {
         // 方法1
-        // s.reverse()
-
-        // 方法2
-        if s.len() <= 1 { return; }
-        let mut left = 0;
-        let mut right = s.len() - 1;
-        while left < right {
-            s.swap(left, right);
-            left += 1;
-            right -= 1;
+        // 双指针，直接交换
+        // Passed 20ms 5.3mb
+        let (mut le, mut ri) = (0, s.len() as i32 - 1);
+        while le < ri {
+            s.swap(le as usize, ri as usize);
+            le += 1;
+            ri -= 1;
         }
     }
+}
+
+#[test]
+fn test() {
+    let mut v = vec![];
+    Solution::reverse_string(&mut v);
+    assert_eq!(v, vec![]);
+
+    let mut v = vec!['h'];
+    Solution::reverse_string(&mut v);
+    assert_eq!(v, vec!['h']);
+
+    let mut v = vec!['h', 'e'];
+    Solution::reverse_string(&mut v);
+    assert_eq!(v, vec!['e', 'h']);
 }
