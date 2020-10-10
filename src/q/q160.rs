@@ -15,7 +15,6 @@ impl ListNode {
 }
 
 use crate::q::Solution;
-use std::ops::Deref;
 
 impl Solution {
     // 此题没有Rust的入口，所以用kotlin回答
