@@ -1,8 +1,3 @@
-use std::cell::RefCell;
-use std::rc::Rc;
-
-use crate::q::Solution;
-
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
@@ -21,12 +16,18 @@ impl TreeNode {
     }
 }
 
+use std::rc::Rc;
+use std::cell::RefCell;
+use crate::q::Solution;
+
 impl Solution {
-    pub fn get_minimum_difference(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    pub fn min_diff_in_bst(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+        // 关键词：BST，两点差的最小值
+        // 意味着：中序遍历就是递增顺序
+        // 问题转换成递增数组中两点差的最小值，递增数组的相邻两点的差值是最小的
         // 方法1
-        // 注意是一个BST树，那么任意两个节点的差值的绝对值的最小值，
-        // 实际上就是中序遍历的情况下，连续两个节点的差的绝对值的最小值
-        // Passed 0ms 2.8mb
+        // 中序遍历放入数组，然后直接求出前后两点差值，并找出最小值
+        // Passed 0ms 2mb
         fn in_order(node: Option<Rc<RefCell<TreeNode>>>, nums: &mut Vec<i32>) {
             if let Some(node) = node {
                 in_order(node.borrow_mut().left.take(), nums);

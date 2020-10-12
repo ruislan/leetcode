@@ -54,7 +54,7 @@ impl Solution {
             Some(node) => {
                 let (mut res, mut stack) = (Vec::new(), vec![node]);
                 while !stack.is_empty() {
-                    let mut node = stack.pop().unwrap();
+                    let node = stack.pop().unwrap();
                     res.push(node.borrow().val);
                     let left = node.borrow_mut().left.take();
                     let right = node.borrow_mut().right.take();

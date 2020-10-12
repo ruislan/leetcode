@@ -184,6 +184,7 @@ mod q747;
 mod q748;
 mod q762;
 mod q771;
+mod q783;
 mod q784;
 mod q788;
 mod q796;

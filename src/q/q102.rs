@@ -30,7 +30,7 @@ impl Solution {
         while !queue.is_empty() {
             let mut values = Vec::new();
             for _ in 0..queue.len() {
-                let mut node = queue.pop_front().unwrap().unwrap();
+                let node = queue.pop_front().unwrap().unwrap();
                 values.push(node.borrow().val);
 
                 let left = node.borrow_mut().left.take();
