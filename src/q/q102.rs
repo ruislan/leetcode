@@ -25,7 +25,7 @@ impl Solution {
         // 方法1
         // 按照广度优先遍历，然后收集所有的值即可
         // Passed 0ms 2.1mb
-        let (mut root, mut queue, mut res) = (root, std::collections::VecDeque::new(), Vec::new());
+        let (root, mut queue, mut res) = (root, std::collections::VecDeque::new(), Vec::new());
         if root.is_some() { queue.push_back(root); }
         while !queue.is_empty() {
             let mut values = Vec::new();

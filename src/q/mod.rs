@@ -14,6 +14,7 @@ mod q14;
 mod q19;
 mod q20;
 mod q21;
+mod q24;
 mod q26;
 mod q27;
 mod q28;
