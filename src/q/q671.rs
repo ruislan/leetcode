@@ -22,10 +22,20 @@ use crate::q::Solution;
 
 impl Solution {
     pub fn find_second_minimum_value(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-        // 特点：非空，都是正数，子节点要么都有，要么没有（2或者0），节点的值等于其两个子节点中较小的那个
-        // 意味着： 至少有一个节点；两个子节点的值有可能一样大；层数越深，节点的值越大，根节点的值永远是最小的（其中一个）；
         // 方法1
-        // 只需要判断根节点的两个子节点，如果子节点存在且不相等，那么直接取值大的那个即可
-        0
+        // 遍历节点放入数组，直接选出第二大的即可
+        // Passed 0ms 1.9mb
+        fn pre_order(node: Option<Rc<RefCell<TreeNode>>>, nums: &mut Vec<i32>) {
+            if let Some(node) = node {
+                nums.push(node.borrow().val);
+                pre_order(node.borrow_mut().left.take(), nums);
+                pre_order(node.borrow_mut().right.take(), nums);
+            }
+        }
+        let mut nums = Vec::new();
+        pre_order(root, &mut nums);
+        nums.sort_unstable();
+        nums.dedup();
+        if nums.len() < 2 { -1 } else { nums[1] }
     }
 }
