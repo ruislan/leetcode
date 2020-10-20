@@ -60,7 +60,7 @@ impl Solution {
             if node.next.is_none() || node.next.as_ref().unwrap().next.is_none() { break; }
             let mut cur = node.next.take();
             let mut next = cur.as_mut().unwrap().next.take();
-            let mut next_next = next.as_mut().unwrap().next.take();
+            let next_next = next.as_mut().unwrap().next.take();
             node.next = next;
             node.next.as_mut().unwrap().next = cur;
             node.next.as_mut().unwrap().next.as_mut().unwrap().next = next_next;
