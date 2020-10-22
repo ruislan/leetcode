@@ -69,7 +69,7 @@ XOR 有很多有用的特性：
 
 拿到树的题自然先想到的有几个，
 * 树是特殊的图，那么广度优先和深度优先就能使用，广度优先用queue，深度优先用stack
-* 树的前中后序遍历，用递归很简单
+* 树的前中后序遍历，用递归很简单，非递归都用stack，后序的非递归遍历稍微难一点，但是
     * 前序： 中 左 右
     * 中序： 左 中 右
     * 后序： 左 右 中
@@ -80,12 +80,42 @@ XOR 有很多有用的特性：
       pre_order(node.right);
   }
 
+  fn pre_order_iter(node: Node) {
+      let mut stack = vec![node];
+      while !stack.is_empty() {
+        node = stack.pop();
+        if node != None {
+            process(node);
+            stack.push(node.right);
+            stack.push(node.left);
+        }
+      }   
+  }
+```
+```rust
   fn in_order(node: Node) {
       in_order(node.left);
       process(node);
       in_order(node.right);
   }
 
+  fn in_order_iter(node: Node) {
+      let mut stack = vec![node];
+      while !stack.is_empty() {
+        node = stack.pop();
+        if node != None {
+            if node.left != None {
+                stack.push(node);
+                stack.push(node.left);
+            } else {
+                process(node);
+                stack.push(node.right);
+            }   
+        }
+      }
+  }
+```
+```rust
   fn post_order(node: Node) {
       post_order(node.left);
       post_order(node.right);
