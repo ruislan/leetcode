@@ -53,7 +53,7 @@ impl Solution {
         // 用kotlin做完才发现我半年前写的这代码太丑了，
         // 我决定重新搞一下,好看多了，下次再轮到这道题就用双指针解法吧
         // Passed 0ms 2.2mb
-        let (mut name, mut typed) = (name.into_bytes(), typed.into_bytes());
+        let (mut name, typed) = (name.into_bytes(), typed.into_bytes());
         let (mut a, mut b) = (vec![(name[0], 1)], vec![(typed[0], 1)]);
         (1..name.len()).for_each(|i| { if name[i] != name[i - 1] { a.push((name[i], 1)); } else { a.last_mut().unwrap().1 += 1; } });
         (1..typed.len()).for_each(|i| { if typed[i] != typed[i - 1] { b.push((typed[i], 1)); } else { b.last_mut().unwrap().1 += 1; } });
