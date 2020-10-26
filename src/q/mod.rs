@@ -147,6 +147,7 @@ mod q557;
 mod q559;
 mod q561;
 mod q563;
+mod q566;
 mod q575;
 mod q581;
 mod q589;
