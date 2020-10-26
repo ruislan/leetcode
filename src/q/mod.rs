@@ -246,6 +246,8 @@ mod q1010;
 mod q1013;
 mod q1018;
 mod q1021;
+mod q1022;
+mod q1024;
 mod q1025;
 mod q1029;
 mod q1033;
