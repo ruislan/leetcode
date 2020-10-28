@@ -23,7 +23,7 @@ impl Solution {
         // 其实我们不用两边都调整，只需要调整w即可
         // Passed 0ms 2.1mb
         let mut w = (area as f32).sqrt() as i32;
-        while w > 0 && area % w != 0 { w -= 1 }
+        while area % w != 0 { w -= 1 }
         vec![area / w, w]
     }
 }
