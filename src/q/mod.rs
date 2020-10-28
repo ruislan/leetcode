@@ -129,6 +129,7 @@ mod q474;
 mod q476;
 mod q482;
 mod q485;
+mod q492;
 mod q496;
 mod q500;
 mod q501;
