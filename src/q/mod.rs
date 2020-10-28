@@ -238,6 +238,7 @@ mod q976;
 mod q977;
 mod q985;
 mod q989;
+mod q993;
 mod q997;
 mod q1002;
 mod q1005;
