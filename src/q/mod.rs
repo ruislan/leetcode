@@ -229,6 +229,7 @@ mod q859;
 mod q860;
 mod q867;
 mod q868;
+mod q872;
 mod q876;
 mod q877;
 mod q884;
