@@ -12,6 +12,22 @@ fn main() {
     println!("{:?}", float_to_bits_string(0.75));
     println!("{:?}", float_to_bits_string(0.125));
     println!("{:?}", float_to_bits_vec(0.75).into_iter().map(|x| if x { '1' } else { '0' }).collect::<String>());
+    println!("{}", calculate_pi(100000000));
+}
+
+// 莱布尼茨公式计算pi
+// pi = 4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11..
+pub fn calculate_pi(terms: i32) -> f64 {
+    let mut pi = 0.0;
+    let mut op = 1.0;
+    let mut numerator = 4.0;
+    let mut denominator = 1.0;
+    for i in 0..terms {
+        pi += numerator / denominator * op;
+        denominator += 2.0;
+        op *= -1.0;
+    }
+    pi
 }
 
 // 标志位(1) - 指数位(7) - 尾数位(23)
