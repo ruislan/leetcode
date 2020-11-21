@@ -22,7 +22,7 @@ pub fn calculate_pi(terms: i32) -> f64 {
     let mut op = 1.0;
     let mut numerator = 4.0;
     let mut denominator = 1.0;
-    for i in 0..terms {
+    for _ in 0..terms {
         pi += numerator / denominator * op;
         denominator += 2.0;
         op *= -1.0;

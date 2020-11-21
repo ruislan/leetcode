@@ -34,6 +34,7 @@ mod offer57_ii;
 mod offer58_i;
 mod offer58_ii;
 mod offer59_i;
+mod offer61;
 mod offer62;
 mod offer64;
 

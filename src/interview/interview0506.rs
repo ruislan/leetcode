@@ -1,5 +1,4 @@
 use crate::interview::Solution;
-use crate::float_to_bits_vec;
 
 impl Solution {
     pub fn convert_integer(a: i32, b: i32) -> i32 {
