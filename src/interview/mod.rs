@@ -15,8 +15,11 @@ mod interview0402;
 mod interview0404;
 mod interview0506;
 mod interview0507;
+mod interview0806;
 mod interview1001;
 mod interview1601;
 mod interview1607;
+mod interview1617;
+mod interview1704;
 
 struct Solution;
