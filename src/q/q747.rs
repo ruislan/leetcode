@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn dominant_index(nums: Vec<i32>) -> i32 {
         let mut max = 0;

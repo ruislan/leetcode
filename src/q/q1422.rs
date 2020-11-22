@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn max_score(s: String) -> i32 {
         // 方法1

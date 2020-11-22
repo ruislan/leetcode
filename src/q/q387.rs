@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn first_uniq_char(s: String) -> i32 {
         let mut bucket = vec![0; 256];

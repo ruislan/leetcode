@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_anagram(s: String, t: String) -> bool {
         // 方法1

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn string_matching(words: Vec<String>) -> Vec<String> {
         // 要注意有连续在字符串中的情况，例如, au在lau中,lau在alau中

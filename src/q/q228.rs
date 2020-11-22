@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn summary_ranges(nums: Vec<i32>) -> Vec<String> {
         // 方法1

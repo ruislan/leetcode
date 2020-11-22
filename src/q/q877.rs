@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn stone_game(piles: Vec<i32>) -> bool {
         let (mut left, mut right) = (0, piles.len() - 1);

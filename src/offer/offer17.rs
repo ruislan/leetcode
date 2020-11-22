@@ -1,5 +1,6 @@
 use crate::offer::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn print_numbers(n: i32) -> Vec<i32> {
         // 方法1

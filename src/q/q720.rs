@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn longest_word(words: Vec<String>) -> String {
         // 方法1

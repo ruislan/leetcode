@@ -7,6 +7,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -17,6 +18,7 @@ impl ListNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn reverse_print(head: Option<Box<ListNode>>) -> Vec<i32> {
         // 方法1

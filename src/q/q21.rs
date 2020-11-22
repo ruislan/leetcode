@@ -1,3 +1,5 @@
+use crate::q::Solution;
+
 // Definition for singly-linked list.
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -5,6 +7,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -15,8 +18,7 @@ impl ListNode {
     }
 }
 
-use crate::q::Solution;
-
+#[allow(unused)]
 impl Solution {
     pub fn merge_two_lists(mut l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // 方法1

@@ -1,3 +1,8 @@
+use std::cell::RefCell;
+use std::rc::Rc;
+
+use crate::q::Solution;
+
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
@@ -6,6 +11,7 @@ pub struct TreeNode {
     pub next: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -18,10 +24,7 @@ impl TreeNode {
     }
 }
 
-use std::rc::Rc;
-use std::cell::RefCell;
-use crate::q::Solution;
-
+#[allow(unused)]
 impl Solution {
     // 此题没有Rust入口，用kotlin解决
     // connect 方法和116 重复，更名为connect_peer

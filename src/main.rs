@@ -17,6 +17,7 @@ fn main() {
 
 // 莱布尼茨公式计算pi
 // pi = 4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11..
+#[allow(unused)]
 pub fn calculate_pi(terms: i32) -> f64 {
     let mut pi = 0.0;
     let mut op = 1.0;
@@ -32,6 +33,7 @@ pub fn calculate_pi(terms: i32) -> f64 {
 
 // 标志位(1) - 指数位(7) - 尾数位(23)
 // 注意实际尾数最前面是1
+#[allow(unused)]
 pub fn float_to_bits_vec(f: f32) -> Vec<bool> {
     let mut bits = vec![false; 32];
     let mut f = f.to_bits();
@@ -42,9 +44,10 @@ pub fn float_to_bits_vec(f: f32) -> Vec<bool> {
     bits
 }
 
+#[allow(unused)]
 pub fn float_to_bits_string(mut f: f32) -> String {
     let mut bits = Vec::new();
-    float_to_bits_vec(0.75).into_iter()
+    float_to_bits_vec(f).into_iter()
         .enumerate()
         .for_each(|(i, bit)| {
             if i == 1 || i == 10 { bits.push('-'); }
@@ -53,16 +56,18 @@ pub fn float_to_bits_string(mut f: f32) -> String {
     bits.into_iter().collect()
 }
 
+#[allow(unused)]
 pub fn is_ascii_palindrome(s: &str) -> bool {
-    let (mut left, mut right) = (0, s.len() - 1);
-    while left <= right {
-        if s[left..=left] != s[right..=right] { return false; }
-        right -= 1;
-        left += 1;
+    let (mut lo, mut hi) = (0, s.len() - 1);
+    while lo <= hi {
+        if s[lo..=lo] != s[hi..=hi] { return false; }
+        hi -= 1;
+        lo += 1;
     }
     true
 }
 
+#[allow(unused)]
 pub fn slice_to_string_vec(s: &[&str]) -> Vec<String> {
     s.into_iter().map(|x| x.to_string()).collect()
 }

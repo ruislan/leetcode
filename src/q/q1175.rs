@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     /// 找出素数
     /// 计算素数个数和非素数个数

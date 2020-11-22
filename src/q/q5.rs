@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 首先以第一个数为中心，向左右扩展，如果都相等，则正确
     // 接着以这个数的右边空挡为中心，向

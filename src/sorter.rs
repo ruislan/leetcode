@@ -1,3 +1,4 @@
+#[allow(unused)]
 pub fn bubble(arr: &mut Vec<i32>) {
     for i in 0..arr.len() {
         for j in (i + 1)..arr.len() {
@@ -8,6 +9,7 @@ pub fn bubble(arr: &mut Vec<i32>) {
     }
 }
 
+#[allow(unused)]
 pub fn selection(arr: &mut Vec<i32>) {
     for i in 0..arr.len() {
         let mut min = i;
@@ -18,6 +20,7 @@ pub fn selection(arr: &mut Vec<i32>) {
     }
 }
 
+#[allow(unused)]
 pub fn insertion(arr: &mut Vec<i32>) {
     for i in 1..arr.len() {
         let mut j = i;
@@ -28,6 +31,7 @@ pub fn insertion(arr: &mut Vec<i32>) {
     }
 }
 
+#[allow(unused)]
 pub fn slow_insertion(arr: &mut Vec<i32>) {
     for i in 1..arr.len() {
         for j in 0..i {
@@ -40,6 +44,7 @@ pub fn slow_insertion(arr: &mut Vec<i32>) {
 
 
 //这个quicksort不是最优的，但是把快速排序的思想弄出来了
+#[allow(unused)]
 pub fn quicksort(arr: Vec<i32>) -> Vec<i32> {
     return if arr.len() < 2 {
         arr

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn generate(num_rows: i32) -> Vec<Vec<i32>> {
         let mut rows: Vec<Vec<i32>> = Vec::new();

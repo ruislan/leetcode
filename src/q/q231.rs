@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_power_of_two(n: i32) -> bool {
         // 方法1

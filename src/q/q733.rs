@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn flood_fill(image: Vec<Vec<i32>>, sr: i32, sc: i32, new_color: i32) -> Vec<Vec<i32>> {
         fn fill_point(image: &mut Vec<Vec<i32>>, sr: i32, sc: i32, color: i32, new_color: i32) {

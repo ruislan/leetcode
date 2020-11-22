@@ -1,6 +1,7 @@
 use crate::offer::Solution;
 
 // 同q54
+#[allow(unused)]
 impl Solution {
     pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
         // 方法1

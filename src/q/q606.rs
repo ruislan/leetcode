@@ -10,6 +10,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -21,6 +22,7 @@ impl TreeNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn tree2str(t: Option<Rc<RefCell<TreeNode>>>) -> String {
         // 方法1

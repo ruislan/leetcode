@@ -1,9 +1,15 @@
+use std::cell::RefCell;
+use std::rc::Rc;
+
+use crate::q::Solution;
+
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -21,6 +27,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -32,10 +39,7 @@ impl TreeNode {
     }
 }
 
-use std::rc::Rc;
-use std::cell::RefCell;
-use crate::q::Solution;
-
+#[allow(unused)]
 impl Solution {
     pub fn sorted_list_to_bst(head: Option<Box<ListNode>>) -> Option<Rc<RefCell<TreeNode>>> {
         // 这个题吧是前面108那个题的升级版本

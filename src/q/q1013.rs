@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn can_three_parts_equal_sum(a: Vec<i32>) -> bool {
         let sum: i32 = a.iter().sum();

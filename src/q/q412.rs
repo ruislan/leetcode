@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn fizz_buzz(n: i32) -> Vec<String> {
         let mut res: Vec<String> = Vec::new();

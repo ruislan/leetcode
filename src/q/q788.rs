@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn rotated_digits(n: i32) -> i32 {
         let mut sum = 0;

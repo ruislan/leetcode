@@ -1,6 +1,8 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
+use crate::q::Solution;
+
 // Definition for a binary tree node.
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
@@ -9,6 +11,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -20,8 +23,7 @@ impl TreeNode {
     }
 }
 
-use crate::q::Solution;
-
+#[allow(unused)]
 impl Solution {
     pub fn is_unival_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         let mut q = Vec::new();

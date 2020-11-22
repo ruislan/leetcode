@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn sort_colors(nums: &mut Vec<i32>) {
         // 要求原地排序，所以从nums中把数据搬移出来的操作是不被允许的

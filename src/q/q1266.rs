@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn min_time_to_visit_all_points(points: Vec<Vec<i32>>) -> i32 {
         // 方法一：分别计算每两个点之间的x1-x0和y1-y0，取最大的那个值，然后所有的值加起来即是所需花费的最小时间

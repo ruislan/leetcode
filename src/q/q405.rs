@@ -1,10 +1,11 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn to_hex(num: i32) -> String {
         // 方法1
         // format!("{:x}", num)
-        
+
         // 方法2
         let chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
         let mut res = String::new();

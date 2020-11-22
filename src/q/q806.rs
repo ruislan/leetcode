@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn number_of_lines(widths: Vec<i32>, s: String) -> Vec<i32> {
         let mut cur = 0;

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn prefixes_div_by5(a: Vec<i32>) -> Vec<bool> {
         let mut res = Vec::new();

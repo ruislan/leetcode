@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_long_pressed_name(name: String, typed: String) -> bool {
         // 方法1

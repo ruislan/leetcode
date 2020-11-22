@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn build_array(target: Vec<i32>, n: i32) -> Vec<String> {
         // 方法1

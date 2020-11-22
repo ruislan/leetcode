@@ -6,6 +6,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -16,6 +17,7 @@ impl ListNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     // 方法名字与q9相同，修改名字为is_palindrome_linked_list
     pub fn is_palindrome_linked_list(head: Option<Box<ListNode>>) -> bool {

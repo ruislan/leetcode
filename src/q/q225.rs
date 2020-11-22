@@ -9,6 +9,7 @@ struct MyStack {
  */
 // 方法1
 // 插入的时候，生成一个新的队列，然后让新的值放在最前面即可
+#[allow(unused)]
 impl MyStack {
     /** Initialize your data structure here. */
     fn new() -> Self {

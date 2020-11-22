@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn roman_to_int(s: String) -> i32 {
         // 方法1

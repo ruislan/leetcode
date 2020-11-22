@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn replace_elements(arr: Vec<i32>) -> Vec<i32> {
         // 方法1，用一个初始值为-1的变量max来存储右边最大的值，从后向前迭代arr，遇到max被替换之前，替换当前的值为max

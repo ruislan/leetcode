@@ -5,6 +5,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -15,6 +16,7 @@ impl ListNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn odd_even_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // 方法1

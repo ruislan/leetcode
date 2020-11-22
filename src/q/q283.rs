@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn move_zeroes(nums: &mut Vec<i32>) {
         // 方法1

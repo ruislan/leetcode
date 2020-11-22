@@ -10,6 +10,7 @@ use crate::q::Solution;
 
 pub struct CustomFunction;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_solution(customfunction: &CustomFunction, z: i32) -> Vec<Vec<i32>> {
         // 方法1

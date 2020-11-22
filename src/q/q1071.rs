@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn gcd_of_strings(str1: String, str2: String) -> String {
         let _str_min = if str1.len() > str2.len() { str2.clone() } else { str1.clone() };

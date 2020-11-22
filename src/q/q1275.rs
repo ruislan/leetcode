@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn tictactoe(moves: Vec<Vec<i32>>) -> String {
         // 方法1

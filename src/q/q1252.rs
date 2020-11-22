@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn odd_cells(n: i32, m: i32, indices: Vec<Vec<i32>>) -> i32 {
         // 方法一：构建一个n*m的矩阵，循环indices，得到每个点indice

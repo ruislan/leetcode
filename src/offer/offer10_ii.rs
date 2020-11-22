@@ -1,5 +1,6 @@
 use crate::offer::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn num_ways(n: i32) -> i32 {
         // 方法1

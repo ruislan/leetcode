@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn frequency_sort(s: String) -> String {
         let mut bucket = vec![(0, 0); 256];

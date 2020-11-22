@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn reorder_log_files(logs: Vec<String>) -> Vec<String> {
         let mut words = Vec::new();

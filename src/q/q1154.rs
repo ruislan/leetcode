@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     /// Q1154 Passed 0ms 2.0mb
     pub fn day_of_year(date: String) -> i32 {

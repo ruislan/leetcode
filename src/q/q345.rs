@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn reverse_vowels(s: String) -> String {
         // 方法1

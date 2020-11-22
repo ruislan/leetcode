@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_one_bit_character(bits: Vec<i32>) -> bool {
         let mut i = 0;

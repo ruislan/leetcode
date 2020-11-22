@@ -10,6 +10,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -22,6 +23,7 @@ impl TreeNode {
 }
 
 // 与offer55_ii相同
+#[allow(unused)]
 impl Solution {
     pub fn is_balanced(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         // 方法1

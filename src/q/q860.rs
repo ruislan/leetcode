@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn lemonade_change(bills: Vec<i32>) -> bool {
         let (mut d10, mut d5) = (0_i32, 0_i32);

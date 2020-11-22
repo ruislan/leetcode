@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn kids_with_candies(candies: Vec<i32>, extra_candies: i32) -> Vec<bool> {
         // 方法1

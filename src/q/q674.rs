@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_length_of_lcis(nums: Vec<i32>) -> i32 {
         if nums.len() < 1 { return 0; }

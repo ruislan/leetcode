@@ -7,6 +7,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -17,6 +18,7 @@ impl ListNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn delete_node(head: Option<Box<ListNode>>, val: i32) -> Option<Box<ListNode>> {
         // 方法1

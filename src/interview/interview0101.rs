@@ -1,5 +1,6 @@
 use crate::interview::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_unique(astr: String) -> bool {
         // 方法1

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn balanced_string_split(s: String) -> i32 {
         let mut stack = Vec::new();

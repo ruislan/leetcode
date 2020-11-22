@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_ugly(num: i32) -> bool {
         // 方法1

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn top_k_frequent(nums: Vec<i32>, k: i32) -> Vec<i32> {
         // 方法1
@@ -19,7 +20,7 @@ impl Solution {
         //     res.push(vs[i as usize].0);
         // }
         // res
-        
+
         // 方法2
         let mut map = std::collections::HashMap::new();
         for n in nums {

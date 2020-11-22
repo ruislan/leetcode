@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn convert_to_base7(num: i32) -> String {
         if 0 == num { return String::from("0"); };

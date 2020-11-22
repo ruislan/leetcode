@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn valid_mountain_array(a: Vec<i32>) -> bool {
         // 方法1

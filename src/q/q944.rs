@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn min_deletion_size(a: Vec<String>) -> i32 {
         let mutex: Vec<Vec<u8>> = a.iter().map(|x| x.bytes().collect::<Vec<u8>>()).collect();

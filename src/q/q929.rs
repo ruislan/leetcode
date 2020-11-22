@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn num_unique_emails(emails: Vec<String>) -> i32 {
         let mut set = std::collections::HashSet::new();

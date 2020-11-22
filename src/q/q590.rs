@@ -6,6 +6,7 @@ struct Node {
     children: Vec<Node>,
 }
 
+#[allow(unused)]
 impl Node {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -16,6 +17,7 @@ impl Node {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     // 本题没有Rust入口，所以用Kotlin解决
     fn postorder(root: Node) -> Vec<i32> {

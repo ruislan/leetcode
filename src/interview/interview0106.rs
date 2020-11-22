@@ -1,5 +1,6 @@
 use crate::interview::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn compress_string(s: String) -> String {
         // 方法1

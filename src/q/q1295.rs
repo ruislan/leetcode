@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_numbers(nums: Vec<i32>) -> i32 {
         // 方法一：迭代每位数字，数字每位除以10，在等于0的时候计算位数，位数是偶数的留下，再进行统计

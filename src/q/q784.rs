@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn letter_case_permutation(s: String) -> Vec<String> {
         let mut vec = vec![String::new(); 1];

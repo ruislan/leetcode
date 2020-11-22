@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // longest_palindrome与q5名字冲突，更名为longest_palindrome_string
     pub fn longest_palindrome_string(s: String) -> i32 {

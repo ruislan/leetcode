@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn max_number_of_balloons(text: String) -> i32 {
         // 方法二：记录word每个字符的数量，o,l两个字符除以2，然后找出5个字符中频次最小的那个

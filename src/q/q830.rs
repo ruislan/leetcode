@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     /**
      * 在一个由小写字母构成的字符串S中，包含由一些连续的相同字符所构成的分组。

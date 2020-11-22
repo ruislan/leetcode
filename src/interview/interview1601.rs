@@ -1,5 +1,6 @@
 use crate::interview::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn swap_numbers(numbers: Vec<i32>) -> Vec<i32> {
         // 方法一，xor操作三次

@@ -10,6 +10,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -21,6 +22,7 @@ impl TreeNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn is_cousins(root: Option<Rc<RefCell<TreeNode>>>, x: i32, y: i32) -> bool {
         // 方法1

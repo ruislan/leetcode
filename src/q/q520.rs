@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn detect_capital_use(word: String) -> bool {
         let len = word.len();

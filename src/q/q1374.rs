@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn generate_the_string(n: i32) -> String {
         // 方法1

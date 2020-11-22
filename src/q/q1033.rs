@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn num_moves_stones(a: i32, b: i32, c: i32) -> Vec<i32> {
         let mut v = vec![a, b, c];

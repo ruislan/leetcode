@@ -8,6 +8,7 @@ struct MinStack {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(unused)]
 impl MinStack {
     // 本题同q155一样
     // 方法1
@@ -88,5 +89,4 @@ fn test() {
     assert_eq!(min_stack.min(), -1);
     assert_eq!(min_stack.top(), -1);
     min_stack.pop();
-
 }

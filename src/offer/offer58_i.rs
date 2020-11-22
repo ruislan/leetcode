@@ -1,5 +1,6 @@
 use crate::offer::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn reverse_words(s: String) -> String {
         // 方法1

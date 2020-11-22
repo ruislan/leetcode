@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn rotate(nums: &mut Vec<i32>, k: i32) {
         // 方法1
@@ -11,7 +12,7 @@ impl Solution {
         //         to -= 1;
         //     }
         // }
-        
+
         // let len = nums.len();
         // let k = k as usize;
         // let k = if k > len { k - len } else { k };

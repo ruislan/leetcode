@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn number_of_steps(num: i32) -> i32 {
         // 方法1

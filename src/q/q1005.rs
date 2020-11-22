@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn largest_sum_after_k_negations(a: Vec<i32>, k: i32) -> i32 {
 

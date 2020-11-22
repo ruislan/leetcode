@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn minimum_abs_difference(arr: Vec<i32>) -> Vec<Vec<i32>> {
         // 方法一：先对数组进行升序排序，然后逐步找出两个相邻数之间的距离的绝对值，替换最小的那个

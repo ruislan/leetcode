@@ -1,6 +1,6 @@
 use crate::q::Solution;
-use crate::slice_to_string_vec;
 
+#[allow(unused)]
 impl Solution {
     pub fn ladder_length(begin_word: String, end_word: String, word_list: Vec<String>) -> i32 {
         // 方法1
@@ -78,6 +78,8 @@ impl Solution {
 
 #[test]
 fn test() {
+    use crate::slice_to_string_vec;
+
     assert_eq!(Solution::ladder_length(
         String::from("hit"), String::from("cog"),
         slice_to_string_vec(&["hot", "dot", "dog", "lot", "log", "cog"]),

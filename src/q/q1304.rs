@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn sum_zero(n: i32) -> Vec<i32> {
         // 方法1：数组内部相加等于0最好的方式就是这个数和它的负数，如(1,-1),(2,-2)

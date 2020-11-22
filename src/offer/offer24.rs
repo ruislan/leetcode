@@ -1,5 +1,6 @@
-use crate::offer::Solution;
 use std::option::Option::Some;
+
+use crate::offer::Solution;
 
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
@@ -7,6 +8,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -17,6 +19,7 @@ impl ListNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn reverse_list(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // 方法1

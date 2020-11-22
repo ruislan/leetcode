@@ -7,6 +7,7 @@ struct MyHashMap {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(unused)]
 impl MyHashMap {
     /** Initialize your data structure here. */
     fn new() -> Self {

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_max_consecutive_ones(nums: Vec<i32>) -> i32 {
         let mut max = 0;

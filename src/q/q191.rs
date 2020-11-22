@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn hamming_weight(n: u32) -> i32 {
         // 方法1

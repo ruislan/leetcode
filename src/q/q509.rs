@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     fn fib(n: usize) -> usize {
         if n == 0 {

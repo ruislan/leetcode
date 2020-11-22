@@ -1,5 +1,6 @@
 use crate::interview::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn check_permutation(s1: String, s2: String) -> bool {
         // 方法1

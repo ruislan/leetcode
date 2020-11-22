@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn remove_outer_parentheses(s: String) -> String {
         // 方法1

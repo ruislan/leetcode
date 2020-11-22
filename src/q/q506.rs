@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_relative_ranks(nums: Vec<i32>) -> Vec<String> {
         let mut ng = Vec::new();

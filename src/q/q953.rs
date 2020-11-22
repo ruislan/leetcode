@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_alien_sorted(words: Vec<String>, order: String) -> bool {
         let mut dic = std::collections::HashMap::new();

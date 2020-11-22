@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn duplicate_zeros(arr: &mut Vec<i32>) {
         let mut len = 0;

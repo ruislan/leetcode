@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn get_hint(secret: String, guess: String) -> String {
         // 方法1

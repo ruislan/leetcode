@@ -1,5 +1,6 @@
 use crate::lcp::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn game(guess: Vec<i32>, answer: Vec<i32>) -> i32 {
         // 方法1

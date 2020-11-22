@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn can_construct(ransom_note: String, magazine: String) -> bool {
         let mut c = vec![0; 256];

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn count_binary_substrings(s: String) -> i32 {
         let nums = s.chars().collect::<Vec<char>>();

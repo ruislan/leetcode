@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn running_sum(nums: Vec<i32>) -> Vec<i32> {
         // 方法1

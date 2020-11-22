@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 方法名search与q33重复了，更改为binary_search
     pub fn binary_search(nums: Vec<i32>, target: i32) -> i32 {

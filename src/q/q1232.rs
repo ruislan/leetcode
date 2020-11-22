@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn check_straight_line(coordinates: Vec<Vec<i32>>) -> bool {
         // 方法一，求效率是否相等,斜率公式 (y - y0) / (x - x0) = (y - y1) / (x - x1)

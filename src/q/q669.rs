@@ -10,6 +10,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -21,6 +22,7 @@ impl TreeNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn trim_bst(root: Option<Rc<RefCell<TreeNode>>>, low: i32, high: i32) -> Option<Rc<RefCell<TreeNode>>> {
         // 特点：BST，最小值，最大值

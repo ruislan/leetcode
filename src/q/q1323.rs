@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn maximum69_number(num: i32) -> i32 {
         // 方法1：

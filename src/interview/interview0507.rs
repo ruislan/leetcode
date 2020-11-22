@@ -1,5 +1,6 @@
 use crate::interview::Solution;
 
+#[allow(unused)]
 impl Solution {
     // num的范围在[0, 2^30 - 1]之间，不会发生整数溢出。
     pub fn exchange_bits(num: i32) -> i32 {

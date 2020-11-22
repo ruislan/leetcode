@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn video_stitching(clips: Vec<Vec<i32>>, t: i32) -> i32 {
         // 方法1

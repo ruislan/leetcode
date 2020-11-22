@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn subtract_product_and_sum(n: i32) -> i32 {
         // 方法一，数字除以10得到每位数字，算出每位数字的乘积和和，然后再相减

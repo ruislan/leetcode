@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 方法名is_palindrome与q9相同，重命名此方法is_palindrome_string
     pub fn is_palindrome_string(s: String) -> bool {

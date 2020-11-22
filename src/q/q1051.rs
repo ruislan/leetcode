@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn height_checker(heights: Vec<i32>) -> i32 {
         let mut sorted_heights = heights.clone();

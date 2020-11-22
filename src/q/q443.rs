@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn compress(chars: &mut Vec<char>) -> i32 {
         let mut ptr = 0;

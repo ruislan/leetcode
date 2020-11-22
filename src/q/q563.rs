@@ -1,3 +1,8 @@
+use std::cell::RefCell;
+use std::rc::Rc;
+
+use crate::q::Solution;
+
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
@@ -5,6 +10,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -16,10 +22,7 @@ impl TreeNode {
     }
 }
 
-use std::rc::Rc;
-use std::cell::RefCell;
-use crate::q::Solution;
-
+#[allow(unused)]
 impl Solution {
     pub fn find_tilt(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         // 特点：坡度 = (左子树的所有节点的值得和 - 右子树的所有节点的值得和) 的绝对值，树的坡度就是所有节点的坡度和

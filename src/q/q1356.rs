@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn sort_by_bits(arr: Vec<i32>) -> Vec<i32> {
         // 方法1

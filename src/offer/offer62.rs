@@ -1,5 +1,6 @@
 use crate::offer::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn last_remaining(n: i32, m: i32) -> i32 {
         // 方法1

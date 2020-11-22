@@ -4,6 +4,7 @@ struct RecentCounter {
     pings: VecDeque<i32>
 }
 
+#[allow(unused)]
 impl RecentCounter {
     fn new() -> Self {
         RecentCounter {

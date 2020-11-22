@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn cal_points(ops: Vec<String>) -> i32 {
         let mut scores = Vec::new();

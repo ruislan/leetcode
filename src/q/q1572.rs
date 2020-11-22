@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn diagonal_sum(mat: Vec<Vec<i32>>) -> i32 {
         // 方法1

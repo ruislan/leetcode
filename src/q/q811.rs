@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn subdomain_visits(cpdomains: Vec<String>) -> Vec<String> {
         let mut map = std::collections::HashMap::new();

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn min_moves(nums: Vec<i32>) -> i32 {
         // 方法1
@@ -10,7 +11,7 @@ impl Solution {
         //     count += (nums[i] - nums[0]).abs();
         // }
         // count
-        
+
         // 方法2
         let mut min = nums[0];
         let mut count = 0i64;

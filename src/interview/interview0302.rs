@@ -6,6 +6,7 @@ struct MinStack {
 // 让stack存储两个元素组成的元组item
 // item.0代表当前值，item.1代表当前值的情况下的最小值
 // 这样top就是取item.0，get_min就是item.1
+#[allow(unused)]
 impl MinStack {
     fn new() -> Self {
         MinStack {

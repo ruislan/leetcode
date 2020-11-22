@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn repeated_substring_pattern(s: String) -> bool {
         // 方法1

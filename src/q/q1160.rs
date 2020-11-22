@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn count_characters(words: Vec<String>, chars: String) -> i32 {
         // 方法1

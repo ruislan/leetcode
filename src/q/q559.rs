@@ -9,6 +9,7 @@ struct TreeNode {
     children: Vec<Option<Rc<RefCell<TreeNode>>>>,
 }
 
+#[allow(unused)]
 impl Solution {
     // 此题没有Rust的提交窗口，用kotlin解决
     // 方法max_depth与之前q109的方法冲突，更名为max_depth_n

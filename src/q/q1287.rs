@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_special_integer(arr: Vec<i32>) -> i32 {
         // 方法1：创建hashmap，将arr[i]作为key，出现次数作为值存储到hashmap中，统计个数超过arr.len() * 0.25的

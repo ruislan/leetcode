@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn binary_gap(n: i32) -> i32 {
         let mut ones = Vec::new();

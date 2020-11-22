@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn freq_alphabets(s: String) -> String {
         // 方法1：倒序迭代s，遇到'#'，则取#前两个，得到字母，没有则直接得到映射字母

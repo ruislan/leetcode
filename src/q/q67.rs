@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn add_binary(mut a: String, mut b: String) -> String {
         let mut carry = 0;

@@ -1,5 +1,6 @@
 use crate::interview::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn can_permute_palindrome(s: String) -> bool {
         // 考虑到是字母的排列，所以我们可以认为都是ASCII字符

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 方法名distribute_candies与q575相同，更名为distribute_candies_ii
     pub fn distribute_candies_ii(mut candies: i32, num_people: i32) -> Vec<i32> {

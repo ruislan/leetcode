@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn image_smoother(m: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
         // 方法1

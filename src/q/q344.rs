@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn reverse_string(s: &mut Vec<char>) {
         // 方法1

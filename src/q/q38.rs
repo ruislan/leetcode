@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn count_and_say(n: i32) -> String {
         if n == 1 { return String::from("1"); }

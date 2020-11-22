@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn rob(nums: Vec<i32>) -> i32 {
         let mut prev_max = 0;

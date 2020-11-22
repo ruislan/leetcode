@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn check_record(s: String) -> bool {
         let mut count_a = 0;

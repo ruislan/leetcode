@@ -6,6 +6,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -16,6 +17,7 @@ impl ListNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     // 本题没有Rust解入口，用Kotlin解决
     fn has_cycle(head: Option<Box<ListNode>>) -> bool {

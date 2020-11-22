@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn distribute_candies(candies: Vec<i32>) -> i32 {
         let mut backet = vec![0; 200001];

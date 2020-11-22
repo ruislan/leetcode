@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn repeated_n_times(a: Vec<i32>) -> i32 {
         let mut bag = vec![0; 10000];

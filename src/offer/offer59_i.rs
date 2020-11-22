@@ -3,6 +3,7 @@ use crate::offer::Solution;
 // q239的简单版本
 // q239是一个“困难”题，线性时间内解决的方法在q239里面去思考了
 // 这里是“简单”题，就用简单的方式处理
+#[allow(unused)]
 impl Solution {
     pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
         // 方法1

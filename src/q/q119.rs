@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn get_row(row_index: i32) -> Vec<i32> {
         // 方法1

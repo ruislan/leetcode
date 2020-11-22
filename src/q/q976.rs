@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn largest_perimeter(a: Vec<i32>) -> i32 {
         let mut a = a;

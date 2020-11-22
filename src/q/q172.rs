@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn trailing_zeroes(mut n: i32) -> i32 {
         let mut res = 0;

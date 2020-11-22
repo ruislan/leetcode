@@ -1,6 +1,7 @@
 use crate::q::Solution;
 
 /// 无rust提交，用kotlin或者Java代替
+#[allow(unused)]
 impl Solution {
     pub fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {
         // 方法1

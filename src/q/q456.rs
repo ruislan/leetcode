@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find132pattern(nums: Vec<i32>) -> bool {
         // 方法1

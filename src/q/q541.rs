@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn reverse_str(s: String, k: i32) -> String {
         let k = k as usize;

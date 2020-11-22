@@ -1,9 +1,12 @@
+use crate::q::Solution;
+
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -14,8 +17,7 @@ impl ListNode {
     }
 }
 
-use crate::q::Solution;
-
+#[allow(unused)]
 impl Solution {
     pub fn swap_pairs(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // 要求需要实际的进行节点交换

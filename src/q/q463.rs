@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn island_perimeter(grid: Vec<Vec<i32>>) -> i32 {
         let mut res = 0i32;

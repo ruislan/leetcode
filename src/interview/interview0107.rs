@@ -1,5 +1,6 @@
 use crate::interview::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn rotate(matrix: &mut Vec<Vec<i32>>) {
         // 方法1

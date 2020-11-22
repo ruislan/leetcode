@@ -1,5 +1,6 @@
 use crate::offer::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 本题同q154
     pub fn min_array(numbers: Vec<i32>) -> i32 {

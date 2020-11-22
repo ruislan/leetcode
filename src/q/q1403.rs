@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn min_subsequence(nums: Vec<i32>) -> Vec<i32> {
         // 方法1

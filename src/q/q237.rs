@@ -6,6 +6,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -16,7 +17,7 @@ impl ListNode {
     }
 }
 
-
+#[allow(unused)]
 impl Solution {
     // 本题没有Rust提交窗口，用Kotlin完成
     pub fn delete_node(node: Option<&mut Box<ListNode>>) {

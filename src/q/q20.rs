@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_valid(s: String) -> bool {
         let mut stack: Vec<char> = Vec::new();

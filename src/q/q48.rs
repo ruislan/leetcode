@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // q189的方法名是'rotate'，这里重复了，所以这里重命名为rotate_matrix
     pub fn rotate_matrix(matrix: &mut Vec<Vec<i32>>) {

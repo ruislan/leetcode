@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn unique_occurrences(arr: Vec<i32>) -> bool {
         // 方法一：创建长度为2001的数组，分别存储[-1000, 1000]，统计每个数字出现的频次

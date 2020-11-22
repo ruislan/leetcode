@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn dest_city(paths: Vec<Vec<String>>) -> String {
         // 方法1

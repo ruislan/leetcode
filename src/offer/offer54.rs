@@ -1,3 +1,8 @@
+use std::cell::RefCell;
+use std::rc::Rc;
+
+use crate::offer::Solution;
+
 #[derive(Debug, PartialEq, Eq)]
 pub struct TreeNode {
     pub val: i32,
@@ -5,6 +10,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -16,10 +22,7 @@ impl TreeNode {
     }
 }
 
-use std::rc::Rc;
-use std::cell::RefCell;
-use crate::offer::Solution;
-
+#[allow(unused)]
 impl Solution {
     pub fn kth_largest(root: Option<Rc<RefCell<TreeNode>>>, k: i32) -> i32 {
         // 方法1

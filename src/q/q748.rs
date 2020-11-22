@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn shortest_completing_word(license_plate: String, words: Vec<String>) -> String {
         let mut bucket = vec![0; 26];

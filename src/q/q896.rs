@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_monotonic(a: Vec<i32>) -> bool {
         let mut up = None;

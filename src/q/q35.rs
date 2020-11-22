@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn search_insert(nums: Vec<i32>, target: i32) -> i32 {
         // 方法1

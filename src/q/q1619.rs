@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn trim_mean(arr: Vec<i32>) -> f64 {
         // 方法1

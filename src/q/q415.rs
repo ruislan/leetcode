@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn add_strings(mut num1: String, mut num2: String) -> String {
         // 方法1
@@ -29,7 +30,7 @@ impl Solution {
         //     res.insert_str(0, &carry.to_string());
         // }
         // res
-        
+
         // 方法2
         let mut res = String::new();
         let mut carry = 0u32;

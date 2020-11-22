@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn reverse_bits(n: u32) -> u32 {
         // 方法1

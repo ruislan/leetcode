@@ -6,6 +6,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -16,6 +17,7 @@ impl ListNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn kth_to_last(head: Option<Box<ListNode>>, k: i32) -> i32 {
         // 方法1

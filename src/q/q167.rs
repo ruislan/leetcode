@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 方法名two_sum与q1相同，更名为two_sum_ii
     pub fn two_sum_ii(numbers: Vec<i32>, target: i32) -> Vec<i32> {

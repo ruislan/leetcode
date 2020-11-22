@@ -1,5 +1,6 @@
 use crate::lcp::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn calculate(s: String) -> i32 {
         // 方法1

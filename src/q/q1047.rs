@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 方法名remove_duplicates与q26相同，更名为remove_duplicates_string
     pub fn remove_duplicates_string(s: String) -> String {

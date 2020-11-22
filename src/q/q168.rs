@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn convert_to_title(n: i32) -> String {
         let mut res = String::new();

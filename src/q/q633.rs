@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn judge_square_sum(c: i32) -> bool {
         let mut a = 0i64;

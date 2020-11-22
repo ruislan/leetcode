@@ -1,5 +1,6 @@
 use crate::lcp::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 此题没有Rust和Kotlin的作答窗口，我们用Java来处理
     fn fraction(cont: Vec<i32>) -> Vec<i32> {

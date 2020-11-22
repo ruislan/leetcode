@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn check_perfect_number(num: i32) -> bool {
         // 方法1
@@ -16,7 +17,7 @@ impl Solution {
         //     left += 1;
         // }
         // sum == num
-        
+
         // 方法2
         if num % 10 != 6 && num % 10 != 8 { return false; }
         let mut sum = 1;

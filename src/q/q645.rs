@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_error_nums(nums: Vec<i32>) -> Vec<i32> {
         let mut bucket = vec![0; nums.len()];

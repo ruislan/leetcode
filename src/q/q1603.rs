@@ -2,6 +2,7 @@ struct ParkingSystem {
     capacity: Vec<i32>
 }
 
+#[allow(unused)]
 impl ParkingSystem {
     fn new(big: i32, medium: i32, small: i32) -> Self {
         ParkingSystem {

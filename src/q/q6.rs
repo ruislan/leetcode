@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn convert(s: String, num_rows: i32) -> String {
         // 方法1

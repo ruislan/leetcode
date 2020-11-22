@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn my_atoi(str: String) -> i32 {
         let mut negative = false;

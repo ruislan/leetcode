@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn common_chars(a: Vec<String>) -> Vec<String> {
         // 方法1

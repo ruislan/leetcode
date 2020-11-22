@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_the_difference(s: String, t: String) -> char {
         // 方法1

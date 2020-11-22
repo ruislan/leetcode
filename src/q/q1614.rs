@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 方法与q104重复，更名为max_brackets_depth
     pub fn max_brackets_depth(s: String) -> i32 {

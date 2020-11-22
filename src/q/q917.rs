@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn reverse_only_letters(s: String) -> String {
         if s.len() <= 1 { return s; }

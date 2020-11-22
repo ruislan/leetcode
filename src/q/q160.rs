@@ -1,9 +1,12 @@
+use crate::q::Solution;
+
 #[derive(PartialEq, Eq, Clone, Debug)]
 pub struct ListNode {
     pub val: i32,
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -14,8 +17,7 @@ impl ListNode {
     }
 }
 
-use crate::q::Solution;
-
+#[allow(unused)]
 impl Solution {
     // 此题没有Rust的入口，所以用kotlin回答
     // Kotlin Passed 172ms 36mb

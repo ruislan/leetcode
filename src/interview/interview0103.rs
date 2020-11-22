@@ -1,5 +1,6 @@
 use crate::interview::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn replace_spaces(s: String, length: i32) -> String {
         // 方法1

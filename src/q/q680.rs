@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn valid_palindrome(s: String) -> bool {
         fn is_valid(chars: &Vec<char>, mut left: usize, mut right: usize) -> bool {

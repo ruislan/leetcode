@@ -7,6 +7,7 @@ pub struct ListNode {
     pub next: Option<Box<ListNode>>,
 }
 
+#[allow(unused)]
 impl ListNode {
     #[inline]
     fn new(val: i32) -> Self {
@@ -17,6 +18,7 @@ impl ListNode {
     }
 }
 
+#[allow(unused)]
 impl Solution {
     pub fn get_decimal_value(head: Option<Box<ListNode>>) -> i32 {
         // 方法一：用vec重新存储所有的数字，然后用堆栈先进后出来进行10进制计算

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn can_make_arithmetic_progression(arr: Vec<i32>) -> bool {
         // 方法1

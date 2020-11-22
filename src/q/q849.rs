@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn max_dist_to_closest(seats: Vec<i32>) -> i32 {
         let (mut dist_s, mut dist_m) = (0_i32, 0_i32);

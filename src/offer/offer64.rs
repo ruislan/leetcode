@@ -1,5 +1,6 @@
 use crate::offer::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 不能使用乘除法、for、while、if、else、switch、case等关键字及条件判断语句（A?B:C）
     // Rust应该是match之类的也不能用

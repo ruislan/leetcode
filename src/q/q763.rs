@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn partition_labels(s: String) -> Vec<i32> {
         // 方法1

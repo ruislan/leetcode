@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn rotate_string(a: String, b: String) -> bool {
         if a.is_empty() && b.is_empty() { return true; }

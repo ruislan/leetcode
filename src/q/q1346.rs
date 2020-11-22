@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn check_if_exist(arr: Vec<i32>) -> bool {
         // 方法1

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn climb_stairs(n: i32) -> i32 {
         if n == 1 { return 1; }

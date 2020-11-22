@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn bitwise_complement(n: i32) -> i32 {
         // 方法1
@@ -15,7 +16,7 @@ impl Solution {
         //     res += 2_i32.pow(i as u32) * bits[i];
         // }
         // res
-        
+
         // 方法2
         if n == 0 { return 1; }
         let mut num = 1;

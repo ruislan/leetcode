@@ -8,6 +8,7 @@ struct CQueue {
  * `&self` means the method takes an immutable reference.
  * If you need a mutable reference, change it to `&mut self` instead.
  */
+#[allow(unused)]
 impl CQueue {
     // 要求用两个栈实现队列
     // 栈的特点是先进后出，队列的特点是先进先出

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn check_possibility(nums: Vec<i32>) -> bool {
         let mut nums = nums;

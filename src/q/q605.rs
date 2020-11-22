@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn can_place_flowers(flowerbed: Vec<i32>, n: i32) -> bool {
         let mut flowerbed = flowerbed;

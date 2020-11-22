@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn repeated_string_match(a: String, b: String) -> i32 {
         // 方法1

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn title_to_number(mut s: String) -> i32 {
         let mut res = 0;

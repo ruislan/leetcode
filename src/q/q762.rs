@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn count_prime_set_bits(l: i32, r: i32) -> i32 {
         let l = l as usize;

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn int_to_roman(mut num: i32) -> String {
         let mut result = String::new();

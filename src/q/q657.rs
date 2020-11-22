@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn judge_circle(moves: String) -> bool {
         let mut lr = 0;

@@ -1,5 +1,6 @@
 use crate::offer::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn is_straight(nums: Vec<i32>) -> bool {
         // 方法1

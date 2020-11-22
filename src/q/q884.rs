@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn uncommon_from_sentences(a: String, b: String) -> Vec<String> {
         let mut map = std::collections::HashMap::new();

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn can_partition(nums: Vec<i32>) -> bool {
         // 特点：正整数，非零数组，能划分成两个数组，

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn intersect(nums1: Vec<i32>, mut nums2: Vec<i32>) -> Vec<i32> {
         // 方法1
@@ -16,7 +17,7 @@ impl Solution {
         //     }
         // }
         // res
-        
+
         // 方法2
         let mut res: Vec<i32> = Vec::new();
         for i in 0..nums1.len() {

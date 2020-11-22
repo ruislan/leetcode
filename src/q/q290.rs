@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn word_pattern(pattern: String, str: String) -> bool {
         let mut ch_map = std::collections::HashMap::<char, &str>::new();

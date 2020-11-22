@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn three_consecutive_odds(arr: Vec<i32>) -> bool {
         // 方法1

@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     /**
     * 如果单词以元音开头（a, e, i, o, u），在单词后添加"ma"。

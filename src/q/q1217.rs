@@ -1,5 +1,6 @@
 struct Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn min_cost_to_move_chips(chips: Vec<i32>) -> i32 {
         // 方法1

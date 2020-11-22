@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn remove_palindrome_sub(s: String) -> i32 {
         // 方法1

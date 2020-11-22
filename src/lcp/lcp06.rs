@@ -1,5 +1,6 @@
 use crate::lcp::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn min_count(coins: Vec<i32>) -> i32 {
         // 方法1

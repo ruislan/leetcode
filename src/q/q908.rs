@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn smallest_range_i(a: Vec<i32>, k: i32) -> i32 {
         // 方法1

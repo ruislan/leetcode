@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn largest_time_from_digits(a: Vec<i32>) -> String {
         // solution 2
