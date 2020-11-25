@@ -10,6 +10,7 @@ impl Solution {
         // 如果找到了相等的字符，那么自然就是最大值
         // 找到每个相等字符的最大值，选最大的那个返回
         // 时间O(n^2) 空间O(1)
+        // Passed 0ms 1.9mb
         // let mut max = -1;
         // let mut chars = s.into_bytes();
         // for i in 0..chars.len() - 1 {
@@ -27,6 +28,7 @@ impl Solution {
         // freq[i] = 位置(min， max)
         // 一次迭代就能把所有的位置记录下来
         // 迭代freq，求出freq[i] = max - min - 1，找出max最大的那个
+        // Passed 0ms 2mb
         let mut max = -1;
         let mut freq = vec![(s.len(), 0); 26];
         for (i, ch) in s.into_bytes().into_iter().enumerate() {
