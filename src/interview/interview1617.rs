@@ -16,6 +16,7 @@ impl Solution {
         //    如果max较大：那就不变
         //    如果sum较大，那就max = sum
         // 这样保证了最后的max就是最大的连续子数组的和
+        // Passed 0ms 2.1mb
         let mut max = i32::MIN;
         let mut sum = 0;
         for n in nums {
