@@ -13,6 +13,7 @@ impl Solution {
         // 如果k > 0， 那么我们从0..n，每次计算i+1..=i+k的距离，将和存入answer[i]
         // 如果k < 0， 那么我们从n..2n,每次计算i + k..i的距离（注意Rust的索引是usize），将和存入answer[i - n]
         // 返回answer
+        // Passed 0ms 1.9mb
         let n = code.len();
         let mut code = code;
         let mut answer = vec![0; n];
@@ -39,8 +40,5 @@ impl Solution {
             }
         }
         answer
-
-        // 方法2
-        // 用求余数进行计算，这样可以减少一半的空间
     }
 }
