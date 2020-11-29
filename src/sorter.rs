@@ -56,24 +56,26 @@ pub fn merge_sort(arr: &mut Vec<i32>) {
             let mut i = lo; // 左边起点
             let mut j = mid + 1; // 右边起点
 
-            // 先复制数据到辅助数组
-            for k in lo..=hi {
-                aux[k] = arr[k];
-            }
-            // 再归并左右已排序的数组
-            for k in lo..=hi {
-                if i > mid { // 左边已经取尽，取右边
-                    arr[k] = aux[j];
-                    j += 1;
-                } else if j > hi { // 右边已经取尽，取左边
-                    arr[k] = aux[i];
-                    i += 1;
-                } else if aux[i] > aux[j] { // 左边比右边的大，取右边
-                    arr[k] = aux[j];
-                    j += 1;
-                } else { // 右边比左边大，取左边
-                    arr[k] = aux[i];
-                    i += 1;
+            if arr[mid] > arr[j] { // 如果左边的最大比右边的最小还要小，那么就已经归并了
+                // 先复制数据到辅助数组
+                for k in lo..=hi {
+                    aux[k] = arr[k];
+                }
+                // 再归并左右已排序的数组
+                for k in lo..=hi {
+                    if i > mid { // 左边已经取尽，取右边
+                        arr[k] = aux[j];
+                        j += 1;
+                    } else if j > hi { // 右边已经取尽，取左边
+                        arr[k] = aux[i];
+                        i += 1;
+                    } else if aux[i] > aux[j] { // 左边比右边的大，取右边
+                        arr[k] = aux[j];
+                        j += 1;
+                    } else { // 右边比左边大，取左边
+                        arr[k] = aux[i];
+                        i += 1;
+                    }
                 }
             }
         }
@@ -111,7 +113,8 @@ fn test() {
         (vec![4, 3, 2, 1], vec![1, 2, 3, 4]),
         (vec![1, 1, 1, 1, 1, 0], vec![0, 1, 1, 1, 1, 1]),
         (vec![3, 5, 7, -1, 2], vec![-1, 2, 3, 5, 7]),
-        (vec![3, 5, 7, -1, 2, 2], vec![-1, 2, 2, 3, 5, 7]),
+        (vec![3, 5, 7, 6, 4], vec![3, 4, 5, 6, 7]),
+        (vec![7, 5, 3, -1, 2, 2], vec![-1, 2, 2, 3, 5, 7]),
     ];
     for mut x in arrays.clone().into_iter() {
         bubble(&mut x.0);

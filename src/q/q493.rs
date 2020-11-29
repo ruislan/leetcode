@@ -38,7 +38,7 @@ impl Solution {
         // 递归出口就是全部有序
         // 递归过程就是刚刚所说的过程，和归并的过程
         // 注意归并需要一个辅助数组
-        // Passed 64ms 2.5mb
+        // Passed 56ms 2.5mb
         fn merge(nums: &mut Vec<i32>, aux: &mut Vec<i32>, lo: usize, hi: usize, cnt: &mut i32) {
             if lo < hi { // 出口条件
                 // 递归归并
@@ -59,24 +59,26 @@ impl Solution {
                 }
 
                 // 归并两个有序数组
-                for k in lo..=hi {
-                    aux[k] = nums[k]; // 复制左右数组到辅助数组
-                }
-
                 let (mut i, mut j) = (lo, mid + 1);
-                for k in lo..=hi {
-                    if i > mid { // 左边已经取尽
-                        nums[k] = aux[j];
-                        j += 1;
-                    } else if j > hi { // 右边已经取尽
-                        nums[k] = aux[i];
-                        i += 1;
-                    } else if aux[i] > aux[j] { // 左边大于右边，取右边
-                        nums[k] = aux[j];
-                        j += 1;
-                    } else { // 右边大于左边，取左边
-                        nums[k] = aux[i];
-                        i += 1;
+                if nums[mid] > nums[j] { // 左右已经有序不用归并
+                    for k in lo..=hi {
+                        aux[k] = nums[k]; // 复制左右数组到辅助数组
+                    }
+
+                    for k in lo..=hi {
+                        if i > mid { // 左边已经取尽
+                            nums[k] = aux[j];
+                            j += 1;
+                        } else if j > hi { // 右边已经取尽
+                            nums[k] = aux[i];
+                            i += 1;
+                        } else if aux[i] > aux[j] { // 左边大于右边，取右边
+                            nums[k] = aux[j];
+                            j += 1;
+                        } else { // 右边大于左边，取左边
+                            nums[k] = aux[i];
+                            i += 1;
+                        }
                     }
                 }
             }
@@ -85,9 +87,8 @@ impl Solution {
         let n = nums.len();
         if n < 2 { return 0; }
         let mut nums = nums;
-        let mut aux = vec![0; n];
         let mut answer = 0;
-        merge(&mut nums, &mut aux, 0, n - 1, &mut answer);
+        merge(&mut nums, &mut vec![0; n], 0, n - 1, &mut answer);
         answer
     }
 }
