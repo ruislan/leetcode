@@ -23,6 +23,19 @@ impl Solution {
         //    nums[2] = pre[2] * suf[3] = 2 * 4 = 8 = 24/3
         //    nums[3] = pre[3] * suf[4] = 6 * 1 = 6 = 24/4
         // 与期望一致，且只使用了乘法，和O(n)的时间，O(n)的空间
-        Vec::new()
+        // Passed 8ms 3.3mb
+        if nums.is_empty() { return Vec::new(); }
+
+        let n = nums.len();
+        let mut forward = vec![1; n + 1];
+        let mut backward = vec![1; n + 1];
+        (0..n).for_each(|i| forward[i + 1] = forward[i] * nums[i]);
+        (0..n).rev().for_each(|i| backward[i] = backward[i + 1] * nums[i]);
+        (0..n).map(|i| forward[i] * backward[i + 1]).collect()
     }
+}
+
+#[test]
+fn test() {
+    assert_eq!(Solution::product_except_self(vec![1, 2, 3, 4]), vec![24, 12, 8, 6]);
 }

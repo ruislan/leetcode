@@ -1,7 +1,8 @@
 use crate::q::Solution;
 
 impl Solution {
-    pub fn frequency_sort(nums: Vec<i32>) -> Vec<i32> {
+    // 方法与q451重复，更名为frequency_sort_1636
+    pub fn frequency_sort_1636(nums: Vec<i32>) -> Vec<i32> {
         // 方法1
         // 统计数字的频率
         // 根据频率的大小排序，如果频率相等，则根据数字的大小排序
