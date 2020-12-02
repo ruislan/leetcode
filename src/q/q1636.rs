@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     // 方法与q451重复，更名为frequency_sort_1636
     pub fn frequency_sort_1636(nums: Vec<i32>) -> Vec<i32> {
