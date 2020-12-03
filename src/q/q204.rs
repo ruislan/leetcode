@@ -4,43 +4,42 @@ use crate::q::Solution;
 impl Solution {
     pub fn count_primes(n: i32) -> i32 {
         // 方法1
-        // let mut count = 0;
-        // for i in 2..n {
-        //     let mut is_prime = true;
-        //     let mut j = 2;
-        //     while j * j <= i {
-        //         if i % j == 0 {
-        //             is_prime = false;
-        //             break;
+        // 埃筛
+        // Passed 20ms 3.3mb
+        // let n = n as usize;
+        // let mut primes = vec![true; n];
+        // let mut answer = 0;
+        // for x in 2..n {
+        //     if primes[x] {
+        //         answer += 1;
+        //         for y in ((x + x)..n).step_by(x) {
+        //             primes[y] = false;
         //         }
-        //         j += 1;
-        //     }
-        //     if is_prime {
-        //         count += 1;
         //     }
         // }
-        // count
-        
+        // answer
+
         // 方法2
+        // 改进方法1
+        // Passed 8ms 3.3mb
         let n = n as usize;
-        let mut nums = vec![true; n];
+        let mut primes = vec![true; n];
         let mut i = 2;
         while i * i <= n {
-            if nums[i] {
+            if primes[i] {
                 let mut j = i * i;
                 while j < n {
-                    nums[j] = false;
+                    primes[j] = false;
                     j += i;
                 }
             }
             i += 1;
         }
 
-        let mut count = 0;
+        let mut answer = 0;
         for i in 2..n {
-            if nums[i] { count += 1; }
+            if primes[i] { answer += 1; }
         }
-
-        count
+        answer
     }
 }
