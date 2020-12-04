@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn min_path_sum(grid: Vec<Vec<i32>>) -> i32 {
         // 方法1
