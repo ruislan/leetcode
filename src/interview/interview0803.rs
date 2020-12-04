@@ -5,25 +5,35 @@ impl Solution {
     pub fn find_magic_index(nums: Vec<i32>) -> i32 {
         // 方法1
         // 暴力解决
-        // 不知道超时不，多半会超时，因为数据量达到了100万
         // 时间：O(n)，空间：O(1)
+        // Passed 0ms 2.2mb
         // for i in 0..nums.len() {
         //     if nums[i] == i as i32 { return nums[i]; }
         // }
         // -1
 
         // 方法2
-        // 利用其有序的特性，
-        // 那么如果nums[i] > i，
-        // 说明nums[i].. nums[i] - i这间都不会相等，我们可以跳过
-        // 这样可以让我们快速到达结果，但是如果每个数字都比前面大1，这就是最坏的情况
-        // 时间：O(n)，空间：O(1)
-        let mut i = 0;
-        while i < nums.len() {
-            let x = nums[i] as usize;
-            if x == i { return x as i32; }
-            i += x - i;
+        // 利用其有序的特性，那么就可以用二分查找
+        // 先二分向左找，如果没找到，向右
+        // 时间：O(logn)，空间：O(logn)
+        // Passed 0ms 2.1mb
+        fn find(nums: &Vec<i32>, lo: i32, hi: i32) -> i32 {
+            if lo > hi { return -1; }
+            let mid = lo + (hi - lo) / 2;
+            let answer = find(nums, lo, mid - 1);
+            if answer != -1 {
+                answer
+            } else if nums[mid as usize] == mid {
+                mid
+            } else {
+                find(nums, mid + 1, hi)
+            }
         }
-        -1
+        find(&nums, 0, (nums.len() - 1) as i32)
     }
+}
+
+#[test]
+fn test() {
+    assert_eq!(Solution::find_magic_index(vec![3, 4, 5, 5, 5, 5]), 5);
 }
