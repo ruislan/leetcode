@@ -6,6 +6,7 @@ impl Solution {
         // 方法1
         // 如果pieces中的每个piece都是arr的子数组，那么就可以拼接
         // 嗯，没有找到检查是不是该数组子数组的库函数，要不自己弄一个？
+        // Passed 0ms 2mb
         for piece in pieces {
             match arr.iter().position(|&x| x == piece[0]) {
                 None => return false,
