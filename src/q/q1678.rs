@@ -11,6 +11,7 @@ impl Solution {
         //      否则（也就是"(al)"），拼接al，同时让再跳过两个字符(也就是跳过"l)")
         // 因为输入范围只有G、()、(al)这三个，所以不必考虑其他情况
         // 直到最后一个字符，返回拼接结果
+        // 0ms 1.9mb
         let mut iter = command.chars();
         let mut answer = String::new();
         while let Some(ch) = iter.next() {

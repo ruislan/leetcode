@@ -2,14 +2,11 @@
 
 ## 准备
 
-位运算是要牢记的，数据结构和常用算法是必须熟悉熟记的。
-你所使用的语言的标准库函数也是必须熟记的。
-当然，刷题本身也是对这些的熟悉过程。
+位运算是要牢记的，数据结构和常用算法是必须熟悉熟记的。 你所使用的语言的标准库函数也是必须熟记的。 当然，刷题本身也是对这些的熟悉过程。
 
 ## 读题
 
-时刻要注意读题，因为有些坑就在题干中，仔细读题之后能得到答案。
-要注意题目中所有出现的内容的特性，
+时刻要注意读题，因为有些坑就在题干中，仔细读题之后能得到答案。 要注意题目中所有出现的内容的特性，
 
 例子1，某个数字出现了两次，那么意味着这个数字相加能够被2整除，这个数字能够被异或消除等等 ，列出所有的特性，然后根据题目的要求看哪些特性是所需要的再进行选择。
 
@@ -44,6 +41,7 @@
 * q514， 动态规划的更多应用
 
 ### 贪心算法
+
 * q621， 贪心算法的应用
 * q659， 贪心算法的应用
 
@@ -53,7 +51,7 @@
 * offer57_ii，这是一道经典的滑动窗口。
 * offer62，这是一道约瑟夫环的算法解决问题。有兴趣可以模拟每次计算进行公式推导。
 * q283， 数组的原地移动
-
+* q842， 经典回溯
 
 ## 技巧总结
 
@@ -68,16 +66,15 @@
 
 ### 数组中找唯一类
 
-这类型的题，要注意位操作，记住异或是可以清除掉两个相同数字的，同时要注意如果在某一个粒度
-上解决不了问题，可以到更细或者更粗的粒度上去解决，这取决于题目本身，这个思想我叫它放大思想，
-如果在这个粒度上解决不了问题，就把这个粒度放大到更细的粒度去思考，相反，也有缩小粒度到更粗
-的粒度去思考。
+这类型的题，要注意位操作，记住异或是可以清除掉两个相同数字的，同时要注意如果在某一个粒度 上解决不了问题，可以到更细或者更粗的粒度上去解决，这取决于题目本身，这个思想我叫它放大思想，
+如果在这个粒度上解决不了问题，就把这个粒度放大到更细的粒度去思考，相反，也有缩小粒度到更粗 的粒度去思考。
 
 例如，数字就可以看做二进制组成的，可以把二进制作为存储bool值的数组。
 
 ### 异或类
 
 XOR 有很多有用的特性：
+
 ````
     x xor x=0
     0 xor x=x
@@ -86,47 +83,48 @@ XOR 有很多有用的特性：
 
 ### 日期类
 
-遇到日期类的题目，首先想到的就是闰年，即是能被4整除但不能被100整除，或者是能被400整除的。
-闰年是366天，在2月份要多1天。
-
+遇到日期类的题目，首先想到的就是闰年，即是能被4整除但不能被100整除，或者是能被400整除的。 闰年是366天，在2月份要多1天。
 
 ## 树
 
 拿到树的题自然先想到的有几个，
+
 * 树是特殊的图，那么广度优先和深度优先就能使用，广度优先用queue，深度优先用stack
 * 树的前中后序遍历，用递归很简单，非递归都用stack，后序的非递归遍历稍微难一点，但是
     * 前序： 中 左 右
     * 中序： 左 中 右
     * 后序： 左 右 中
+
 ```rust
   fn pre_order(node: Node) {
-      process(node);
-      pre_order(node.left);
-      pre_order(node.right);
-  }
+    process(node);
+    pre_order(node.left);
+    pre_order(node.right);
+}
 
-  fn pre_order_iter(node: Node) {
-      let mut stack = vec![node];
-      while !stack.is_empty() {
+fn pre_order_iter(node: Node) {
+    let mut stack = vec![node];
+    while !stack.is_empty() {
         node = stack.pop();
         if node != None {
             process(node);
             stack.push(node.right);
             stack.push(node.left);
         }
-      }   
-  }
+    }
+}
 ```
+
 ```rust
   fn in_order(node: Node) {
-      in_order(node.left);
-      process(node);
-      in_order(node.right);
-  }
+    in_order(node.left);
+    process(node);
+    in_order(node.right);
+}
 
-  fn in_order_iter(node: Node) {
-      let mut stack = vec![node];
-      while !stack.is_empty() {
+fn in_order_iter(node: Node) {
+    let mut stack = vec![node];
+    while !stack.is_empty() {
         node = stack.pop();
         if node != None {
             if node.left != None {
@@ -135,23 +133,22 @@ XOR 有很多有用的特性：
             } else {
                 process(node);
                 stack.push(node.right);
-            }   
+            }
         }
-      }
-  }
-```
-```rust
-  fn post_order(node: Node) {
-      post_order(node.left);
-      post_order(node.right);
-      process(node);
-  }
+    }
+}
 ```
 
-注意：很多Rust的初学者可能都知道clone是一个昂贵的操作，它会拷贝所有的内容，但是Rc不一样，
-它只会新增一个指针和引用计数，并不昂贵，所以我刚开始做树的题的时候也觉得clone是不是拷贝了
-一棵树，但是想不出更好的办法，想着先通过题吧，但是发现速度正常，内存正常啊，按道理clone会有很昂贵的
-开销，然后看了一下Rc的源码，发现clone的注释就是新增一个pointer，然后引用计数增加1，哦，知识又增加了，
+```rust
+  fn post_order(node: Node) {
+    post_order(node.left);
+    post_order(node.right);
+    process(node);
+}
+```
+
+注意：很多Rust的初学者可能都知道clone是一个昂贵的操作，它会拷贝所有的内容，但是Rc不一样， 它只会新增一个指针和引用计数，并不昂贵，所以我刚开始做树的题的时候也觉得clone是不是拷贝了
+一棵树，但是想不出更好的办法，想着先通过题吧，但是发现速度正常，内存正常啊，按道理clone会有很昂贵的 开销，然后看了一下Rc的源码，发现clone的注释就是新增一个pointer，然后引用计数增加1，哦，知识又增加了，
 然后又搜了一下GitHub，发现有人在吐槽Rc的clone方法不应该叫clone方法，要不叫ref或者叫new_ref也行，嗯，我懂他。
 
 
