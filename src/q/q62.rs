@@ -1,5 +1,6 @@
 use crate::q::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn unique_paths(m: i32, n: i32) -> i32 {
         let (rows, cols) = (m as usize, n as usize);
