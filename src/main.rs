@@ -4,7 +4,6 @@ mod offer;
 mod interview;
 mod sorter;
 
-
 fn main() {
     println!("{:?} is palindrome", is_ascii_palindrome("abb"));
     println!("{:?} is palindrome", is_ascii_palindrome("abbba"));
@@ -13,7 +12,19 @@ fn main() {
     println!("{:?}", float_to_bits_string(0.125));
     println!("{:?}", float_to_bits_vec(0.75).into_iter().map(|x| if x { '1' } else { '0' }).collect::<String>());
     println!("{}", calculate_pi(100000000));
+    println!("{:?}", group_by(&vec!["a", "b", "a", "b", "a", "a"])); // a:4, b:2
 }
+
+// 将数组中相同的内容做一个频率统计
+#[allow(unused)]
+pub fn group_by<T: Clone + Eq + std::hash::Hash>(arr: &Vec<T>) -> std::collections::HashMap<T, i32> {
+    let mut groups = std::collections::HashMap::new();
+    for x in arr.iter() {
+        *groups.entry(x.clone()).or_insert(0) += 1;
+    }
+    groups
+}
+
 
 // 莱布尼茨公式计算pi
 // pi = 4/1 - 4/3 + 4/5 - 4/7 + 4/9 - 4/11..
