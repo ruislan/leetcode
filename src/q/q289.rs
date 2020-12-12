@@ -42,6 +42,7 @@ impl Solution {
         // 10(2)：当前死，之后活
         // 11(3)：当前活，之后活
         // 全部处理完成之后，我们再将所有的数字向右移动一位即可
+        // Passed 0ms 2mb
         if board.is_empty() { return; }
 
         let rows = board.len();
