@@ -4,6 +4,9 @@ use crate::q::Solution;
 impl Solution {
     pub fn contains_duplicate(mut nums: Vec<i32>) -> bool {
         // 方法1
+        // 暴力法，每个数字向后面比对一次
+        // 时间O(n^2)，空间O(1)
+        // Passed 672ms 2.6mb
         // for i in 0..nums.len() {
         //     let n1 = nums[i];
         //     for j in (i + 1)..nums.len() {
@@ -14,32 +17,26 @@ impl Solution {
         // false
 
         // 方法2
-        // let len = nums.len();
+        // 排序后相同的数字自然在一起，检查相邻数字是否相同即可
+        // 时间O(nlogn + n)，空间O(1)
+        // Passed 0ms 2.6mb
         // nums.sort();
-        // nums.dedup();
-        // len != nums.len()
+        // for i in 1..nums.len() {
+        //     if nums[i] == nums[i - 1] { return true; }
+        // }
+        // false
 
         // 方法3
-        // let mut map = std::collections::HashMap::new();
-        // for num in nums {
-        //     let count = map.entry(num).or_insert(0);
-        //     *count += 1;
-        //     if *count >= 2 { return true; }
-        // }
-        // false
-
-        // 方法4
-        // let mut sets = std::collections::HashSet::new();
-        // for num in nums {
-        //     if sets.contains(&num) { return true; }
-        //     sets.insert(num);
-        // }
-        // false
-
-        // 方法5
-        nums.sort();
-        for i in 1..nums.len() {
-            if nums[i] == nums[i - 1] { return true; }
+        // 用hashset存储，不能存储的说明已经有相同的了
+        // 时间O(n)，空间O(n)，
+        // 即便如此时间上也不如方法2，
+        // 因为Rust的排序很快，hash的时间反而比较重
+        // Passed 4ms 2.6mb
+        let mut sets = std::collections::HashSet::new();
+        for num in nums {
+            if !sets.insert(num) {
+                return true;
+            }
         }
         false
     }
