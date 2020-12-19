@@ -23,7 +23,7 @@ impl Solution {
         let mut answer = 0;
 
         let mut up = r_row.overflowing_sub(1).0;
-        while up >= 0 && up < rows {
+        while up < rows {
             if board[up][r_col] == 'B' {
                 break;
             } else if board[up][r_col] == 'p' {
@@ -45,7 +45,7 @@ impl Solution {
         }
 
         let mut left = r_col.overflowing_sub(1).0;
-        while left >= 0 && left < cols {
+        while left < cols {
             if board[r_row][left] == 'B' {
                 break;
             } else if board[r_row][left] == 'p' {
