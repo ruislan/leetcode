@@ -23,6 +23,7 @@ impl Solution {
         // 我们可以利用迭代的时候i生成一个对面的j，就像j从右向左在遍历一样
         // 那么当i == j的时候，就是两个在中间相遇的时候，那个字符就可以忽略，
         // 如果是偶数的回文，i就无法与j相等，他们会在中间完美错过。
+        // Passed 0ms 2mb
         if palindrome.len() < 2 { return String::new(); }
         let mut s: Vec<char> = palindrome.chars().collect();
         let n = s.len();
@@ -34,7 +35,7 @@ impl Solution {
                 }
             }
         }
-        s[n - 1] = 'b'; // case "aaa"
+        s[n - 1] = 'b'; // if "aaa"
         s.into_iter().collect()
     }
 }
