@@ -6,6 +6,7 @@ impl Solution {
         // 方法1
         // 按照规则生成数组
         // 找出数组中的最大值就行了
+        // Passed 0ms 1.9mb
         if n < 2 { return n; }
 
         let n = n as usize;
