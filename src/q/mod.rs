@@ -411,6 +411,8 @@ mod q1672;
 mod q1678;
 mod q1684;
 mod q1688;
-mod q5629;
+mod q1694;
+mod q5621;
+mod q5637;
 
 pub struct Solution;
