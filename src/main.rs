@@ -11,8 +11,50 @@ fn main() {
     println!("{:?}", float_to_bits_string(0.75));
     println!("{:?}", float_to_bits_string(0.125));
     println!("{:?}", float_to_bits_vec(0.75).into_iter().map(|x| if x { '1' } else { '0' }).collect::<String>());
-    println!("{}", calculate_pi(100000000));
+    println!("{}", calculate_pi(10000000));
     println!("{:?}", group_by(&vec!["a", "b", "a", "b", "a", "a"])); // a:4, b:2
+    let a = FenwickTree::new(vec![2, 5, -1, 3, 6]);
+    println!("{:?}", a.arr); // [0,2,7,-1,9,6]
+    println!("{:?}", a.sum(0, 4)); // 15
+    println!("{:?}", a.sum(3, 4)); // 9
+}
+
+#[derive(PartialEq, Eq, Clone, Debug)]
+struct FenwickTree {
+    arr: Vec<i32>
+}
+
+#[allow(unused)]
+impl FenwickTree {
+    fn new(arr: Vec<i32>) -> Self {
+        let mut tree = FenwickTree { arr: vec![0; arr.len() + 1] };
+        arr.into_iter().enumerate().for_each(|(i, x)| tree.update(i + 1, x));
+        tree
+    }
+
+    fn lower_bit(x: usize) -> usize {
+        x & ((x - 1) ^ x)
+    }
+
+    fn update(&mut self, mut i: usize, x: i32) {
+        while i < self.arr.len() {
+            self.arr[i] += x;
+            i += FenwickTree::lower_bit(i);
+        }
+    }
+
+    fn query(&self, mut i: usize) -> i32 {
+        let mut answer = 0;
+        while i > 0 {
+            answer += self.arr[i];
+            i -= FenwickTree::lower_bit(i);
+        }
+        answer
+    }
+
+    fn sum(&self, start: usize, end: usize) -> i32 {
+        self.query(end + 1) - self.query(start)
+    }
 }
 
 // 将数组中相同的内容做一个频率统计
