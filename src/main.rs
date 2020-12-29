@@ -13,47 +13,58 @@ fn main() {
     println!("{:?}", float_to_bits_vec(0.75).into_iter().map(|x| if x { '1' } else { '0' }).collect::<String>());
     println!("{}", calculate_pi(10000000));
     println!("{:?}", group_by(&vec!["a", "b", "a", "b", "a", "a"])); // a:4, b:2
-    let a = FenwickTree::new(vec![2, 5, -1, 3, 6]);
-    println!("{:?}", a.arr); // [0,2,7,-1,9,6]
-    println!("{:?}", a.sum(0, 4)); // 15
-    println!("{:?}", a.sum(3, 4)); // 9
+    let mut a = FenwickTree::new(vec![1, 2, 3, 4, 5]);
+    println!("{:?}", a.arr); // [1, 2, 3, 4, 5]
+    println!("{:?}", a.data); // [0,1 3 3 10 5]
+    println!("{:?}", a.sum_range(1, 4)); // 14
+    a.update(1, 3); // [1, 3, 3, 4, 5]
+    println!("{:?}", a.arr); // [1, 3, 3, 4, 5]
+    println!("{:?}", a.data); // [0,1,4,3,11,5]
+    println!("{:?}", a.sum_range(4, 4)); // 5
 }
 
 #[derive(PartialEq, Eq, Clone, Debug)]
 struct FenwickTree {
-    arr: Vec<i32>
+    arr: Vec<i32>,
+    data: Vec<i32>,
 }
 
 #[allow(unused)]
 impl FenwickTree {
     fn new(arr: Vec<i32>) -> Self {
-        let mut tree = FenwickTree { arr: vec![0; arr.len() + 1] };
-        arr.into_iter().enumerate().for_each(|(i, x)| tree.update(i + 1, x));
-        tree
+        let data = vec![0; arr.len() + 1];
+        let mut ft = FenwickTree { arr, data };
+        (0..ft.arr.len()).for_each(|i| ft.tree_update(i + 1, ft.arr[i]));
+        ft
     }
 
-    fn lower_bit(x: usize) -> usize {
+    const fn lower_bit(x: usize) -> usize {
         x & ((x - 1) ^ x)
     }
 
-    fn update(&mut self, mut i: usize, x: i32) {
-        while i < self.arr.len() {
-            self.arr[i] += x;
+    fn tree_update(&mut self, mut i: usize, val: i32) {
+        while i < self.data.len() {
+            self.data[i] += val;
             i += FenwickTree::lower_bit(i);
         }
     }
 
-    fn query(&self, mut i: usize) -> i32 {
+    fn tree_query(&self, mut i: usize) -> i32 {
         let mut answer = 0;
         while i > 0 {
-            answer += self.arr[i];
+            answer += self.data[i];
             i -= FenwickTree::lower_bit(i);
         }
         answer
     }
 
-    fn sum(&self, start: usize, end: usize) -> i32 {
-        self.query(end + 1) - self.query(start)
+    pub fn update(&mut self, i: usize, val: i32) {
+        self.tree_update(i + 1, val - self.arr[i]);
+        self.arr[i] = val;
+    }
+
+    pub fn sum_range(&self, start: usize, end: usize) -> i32 {
+        self.tree_query(end + 1) - self.tree_query(start)
     }
 }
 
