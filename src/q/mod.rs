@@ -413,7 +413,7 @@ mod q1678;
 mod q1684;
 mod q1688;
 mod q1694;
-mod q5621;
-mod q5637;
+mod q1700;
+mod q1704;
 
 pub struct Solution;
