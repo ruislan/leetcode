@@ -117,6 +117,7 @@ mod q316;
 mod q326;
 mod q327;
 mod q328;
+mod q330;
 mod q342;
 mod q344;
 mod q345;
