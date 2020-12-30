@@ -123,7 +123,8 @@ pub fn heap_sort(arr: &mut Vec<i32>) {
     }
 
     // 调整堆
-    fn adjust_heap(arr: &mut Vec<i32>, father: usize, n: usize) {
+    fn adjust_heap(arr: &mut Vec<i32>, i: usize, n: usize) {
+        let mut father = i;
         let mut child = father * 2 + 1; // 第i个节点的左子是2i+1,右是2i+2
         while child < n { // 当前节点一直向下调整到叶子节点
             if child + 1 < n && arr[child] < arr[child + 1] {  // 找出左右节点中最大的那个
@@ -135,7 +136,8 @@ pub fn heap_sort(arr: &mut Vec<i32>) {
             }
 
             arr.swap(child, father); // 否则，交换父子节点
-            child = child * 2 + 1; // 将子节点作为父节点继续
+            father = child; // 将子节点作为父节点继续
+            child = father * 2 + 1;
         }
     }
 
@@ -144,7 +146,7 @@ pub fn heap_sort(arr: &mut Vec<i32>) {
     // 这里最后一个节点，是指的需要排序的那个范围的最后一个节点
     // 因为需要排序的数组会不断减少（后面都是有序的）
     fn sort(arr: &mut Vec<i32>) {
-        for i in (0..arr.len()).rev() {
+        for i in (1..arr.len()).rev() {
             arr.swap(0, i); // 将堆顶的数据和最后一个换
             adjust_heap(arr, 0, i); // 这里father始终为0是因为除了0，其他的都符合堆的规则，所以只用调整0
         }
@@ -166,7 +168,9 @@ fn test() {
         (vec![3, 5, 7, -1, 2], vec![-1, 2, 3, 5, 7]),
         (vec![3, 5, 7, 6, 4], vec![3, 4, 5, 6, 7]),
         (vec![7, 5, 3, -1, 2, 2], vec![-1, 2, 2, 3, 5, 7]),
+        (vec![5, 5, 5, 5, 3, 1, 5, 2, 2, 4, 1, 3, 4], vec![1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 5, 5, 5]),
     ];
+
     for mut x in arrays.clone().into_iter() {
         bubble(&mut x.0);
         assert_eq!(x.0, x.1);
