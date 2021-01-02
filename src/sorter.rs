@@ -34,6 +34,20 @@ pub fn insertion(arr: &mut Vec<i32>) {
     }
 }
 
+// 插入排序 O(n^2)
+#[allow(unused)]
+pub fn insertion2(arr: &mut Vec<i32>) {
+    for i in 1..arr.len() {
+        let x = arr[i];
+        let mut j = i;
+        while j > 0 && x < arr[j - 1] {
+            arr[j] = arr[j - 1];
+            j -= 1;
+        }
+        arr[j] = x;
+    }
+}
+
 // 慢的插入排序 O(n^2)
 #[allow(unused)]
 pub fn slow_insertion(arr: &mut Vec<i32>) {
@@ -183,6 +197,11 @@ fn test() {
 
     for mut x in arrays.clone().into_iter() {
         insertion(&mut x.0);
+        assert_eq!(x.0, x.1);
+    }
+
+    for mut x in arrays.clone().into_iter() {
+        insertion2(&mut x.0);
         assert_eq!(x.0, x.1);
     }
 
