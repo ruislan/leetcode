@@ -29,11 +29,20 @@ fn main() {
 
     let mut st = SegmentTree::new(vec![1, 3, 5, 7, 9, 11]);
     println!("{:?}", st.arr); // [1,3,5,7,9,11]
-    println!("{:?}", st.nodes); // [36,9,27,4,5,16,11,1,3,0,0,7,9]
+    println!("{:?}", st.nodes); // [36,9,27,4,5,16,11,1,3,0,0,7,9,0,0]
     println!("sum of range(2,5) is [{:?}]", st.sum_of_range(2, 5)); // 32
     st.update(4, 6); //
     println!("{:?}", st.arr); // [1,3,5,7,6,11]
-    println!("{:?}", st.nodes); // [33,9,24,4,5,13,11,1,3,0,0,7,6]
+    println!("{:?}", st.nodes); // [33,9,24,4,5,13,11,1,3,0,0,7,6,0,0]
+    println!();
+
+    let mut st = SegmentTree::new(vec![1, 2, 3, 4, 5, 6]);
+    println!("{:?}", st.arr); // [1,2,3,4,5,6]
+    println!("{:?}", st.nodes); // [21,6,15,3,3,9,6,1,2,0,0,4,5,0,0]
+    println!("sum of range(0,3) is [{:?}]", st.sum_of_range(0, 3)); // 10
+    st.update(4, 9); //
+    println!("{:?}", st.arr); // [1,2,3,4,9,6]
+    println!("{:?}", st.nodes); // [25,6,19,3,3,13,6,1,2,0,0,4,9,0,0]
     println!();
 }
 
@@ -47,7 +56,7 @@ struct SegmentTree {
 impl SegmentTree {
     fn new(arr: Vec<i32>) -> Self {
         let n = arr.len();
-        let mut st = SegmentTree { arr, nodes: vec![0; (n << 1) + 1] };
+        let mut st = SegmentTree { arr, nodes: vec![0; n << 2] };
         st.build_tree(0, 0, n - 1);
         st
     }
@@ -56,50 +65,53 @@ impl SegmentTree {
         self.query_tree(0, 0, self.arr.len() - 1, l, r)
     }
 
-    fn update(&mut self, idx: usize, val: i32) {
-        self.arr[idx] = val;
-        self.update_tree(0, 0, self.arr.len() - 1, idx, val);
+    fn update(&mut self, i: usize, val: i32) {
+        self.arr[i] = val;
+        self.update_tree(0, 0, self.arr.len() - 1, i);
     }
 
-    fn query_tree(&self, node: usize, begin: usize, end: usize, l: usize, r: usize) -> i32 {
-        if (begin == end) || (begin >= l && end <= r) {
-            self.nodes[node]
-        } else if r < begin || end < l {
+    fn query_tree(&self, node: usize, lo: usize, hi: usize, l: usize, r: usize) -> i32 {
+        if r < lo || hi < l {
             0
+        } else if lo >= l && hi <= r {
+            self.nodes[node]
+        } else if lo == hi {
+            self.nodes[node]
         } else {
-            let mid = begin + ((end - begin) >> 1);
+            let mid = lo + ((hi - lo) >> 1);
             let left_child = (node << 1) + 1;
             let right_child = (node << 1) + 2;
-            let left_val = self.query_tree(left_child, begin, mid, l, r);
-            let right_val = self.query_tree(right_child, mid + 1, end, l, r);
+            let left_val = self.query_tree(left_child, lo, mid, l, r);
+            let right_val = self.query_tree(right_child, mid + 1, hi, l, r);
             left_val + right_val
         }
     }
 
-    fn update_tree(&mut self, node: usize, begin: usize, end: usize, idx: usize, val: i32) {
-        if begin == end && idx == begin {
-            self.nodes[node] = val;
+    fn update_tree(&mut self, node: usize, lo: usize, hi: usize, i: usize) {
+        if lo == hi {
+            self.nodes[node] = self.arr[i];
         } else {
-            let mid = begin + ((end - begin) >> 1);
-            if idx >= begin && idx <= end {
-                let left_child = (node << 1) + 1;
-                let right_child = (node << 1) + 2;
-                self.update_tree(left_child, begin, mid, idx, val);
-                self.update_tree(right_child, mid + 1, end, idx, val);
-                self.nodes[node] = self.nodes[left_child] + self.nodes[right_child];
+            let mid = lo + ((hi - lo) >> 1);
+            let left_child = (node << 1) + 1;
+            let right_child = (node << 1) + 2;
+            if i <= mid {
+                self.update_tree(left_child, lo, mid, i);
+            } else {
+                self.update_tree(right_child, mid + 1, hi, i);
             }
+            self.nodes[node] = self.nodes[left_child] + self.nodes[right_child];
         }
     }
 
-    fn build_tree(&mut self, node: usize, begin: usize, end: usize) {
-        if begin == end {
-            self.nodes[node] = self.arr[begin];
+    fn build_tree(&mut self, node: usize, lo: usize, hi: usize) {
+        if lo == hi {
+            self.nodes[node] = self.arr[lo];
         } else {
-            let mid = begin + ((end - begin) >> 1);
+            let mid = lo + ((hi - lo) >> 1);
             let left_child = (node << 1) + 1;
             let right_child = (node << 1) + 2;
-            self.build_tree(left_child, begin, mid);
-            self.build_tree(right_child, mid + 1, end);
+            self.build_tree(left_child, lo, mid);
+            self.build_tree(right_child, mid + 1, hi);
             self.nodes[node] = self.nodes[left_child] + self.nodes[right_child];
         }
     }
