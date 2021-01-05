@@ -124,6 +124,41 @@ pub fn quick_sort(arr: Vec<i32>) -> Vec<i32> {
     }
 }
 
+// 快速排序之不额外创建数组O(nlogn)
+#[allow(unused)]
+pub fn quick_sort2(arr: &mut Vec<i32>) {
+    // 排序
+    fn sort(arr: &mut Vec<i32>, lo: usize, hi: usize) {
+        if lo < hi {
+            let pivot = partition(arr, lo, hi);
+            sort(arr, lo, pivot); // 分治排序比Pivot小的
+            sort(arr, pivot + 1, hi); // 分治排序比Pivot大的
+        }
+    }
+
+    // 分组，并返回中间值的索引
+    // 取lo和hi范围的中间值进行分割
+    fn partition(arr: &mut Vec<i32>, lo: usize, hi: usize) -> usize {
+        let mut lo = lo; // 中间值的左边指针
+        let mut hi = hi; // 中间值的右边指针
+        let pivot = arr[lo + ((hi - lo) >> 1)]; // 取出中间值
+        loop {
+            while arr[lo] < pivot { lo += 1; }  // 左边找到一个比pivot大的，直到pivot自己
+            while arr[hi] > pivot { hi -= 1; }  // 右边找到一个比pivot小的，直到pivot自己
+            if lo >= hi { return hi; } // 如果没找到，直接返回hi
+            arr.swap(lo, hi); // 交换左边大的和右边小的
+
+            // 缩小左右范围继续
+            lo += 1;
+            hi -= 1;
+        }
+    }
+
+    if arr.len() > 1 {
+        sort(arr, 0, arr.len() - 1);
+    }
+}
+
 // 堆排序 O(nlogn)
 #[allow(unused)]
 pub fn heap_sort(arr: &mut Vec<i32>) {
@@ -217,6 +252,11 @@ fn test() {
 
     for x in arrays.clone().into_iter() {
         assert_eq!(quick_sort(x.0), x.1);
+    }
+
+    for mut x in arrays.clone().into_iter() {
+        quick_sort2(&mut x.0);
+        assert_eq!(x.0, x.1);
     }
 
     for mut x in arrays.clone().into_iter() {
