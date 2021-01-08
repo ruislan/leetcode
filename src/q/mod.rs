@@ -40,6 +40,7 @@ mod q82;
 mod q85;
 mod q86;
 mod q88;
+mod q92;
 mod q94;
 mod q101;
 mod q102;
