@@ -267,6 +267,7 @@ mod q876;
 mod q877;
 mod q884;
 mod q888;
+mod q892;
 mod q893;
 mod q896;
 mod q897;
@@ -422,5 +423,6 @@ mod q1688;
 mod q1694;
 mod q1700;
 mod q1704;
+mod q1710;
 
 pub struct Solution;
