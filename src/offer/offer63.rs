@@ -16,6 +16,7 @@ impl Solution {
         // dp[row][col] = dp[row][col - 1].max(prices[col] - min)
         // 而我们还可以简化，不用记录所有的cols的最大的利润
         // 因为，我们只需要那个最大的利润，所以我们只留下最大的那个利润就行了
+        // Passed 0ms 2.2mb
         let mut max_profit = 0;
         let mut min = prices[0];
         for col in 1..prices.len() {
