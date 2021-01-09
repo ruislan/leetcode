@@ -6,6 +6,7 @@ impl Solution {
         // 方法1
         // 直接检查grid上下左右
         // 如果该方向上的高度比它小，直接那么减去上面的高度就是表面积
+        // Passed 0ms 2mb
         let mut answer = 0;
         let rows = grid.len();
         let cols = grid[0].len();
@@ -14,10 +15,10 @@ impl Solution {
                 let v = grid[row][col];
                 if v > 0 {
                     answer += 2;
-                    answer += v - if row == 0 { 0 } else if grid[row - 1][col] < v { grid[row - 1][col] } else { v };
-                    answer += v - if col == 0 { 0 } else if grid[row][col - 1] < v { grid[row][col - 1] } else { v };
-                    answer += v - if row == rows - 1 { 0 } else if grid[row + 1][col] < v { grid[row + 1][col] } else { v };
-                    answer += v - if col == cols - 1 { 0 } else if grid[row][col + 1] < v { grid[row][col + 1] } else { v };
+                    answer += v - if row == 0 { 0 } else { grid[row - 1][col].min(v) };
+                    answer += v - if col == 0 { 0 } else { grid[row][col - 1].min(v) };
+                    answer += v - if row == rows - 1 { 0 } else { grid[row + 1][col].min(v) };
+                    answer += v - if col == cols - 1 { 0 } else { grid[row][col + 1].min(v) };
                 }
             }
         }
