@@ -8,6 +8,7 @@ impl Solution {
         // 需要注意2点，
         // 1：就是不需要取到2^31，因为限制是在2^20,所以只需要到2^20 + 2^20 = 2^21即可，到31还因为i32是负数而出错
         // 2：就是不要去找比deliciousness[i]小的pows，因为deliciousness取值是>=0的，不会有负数存在
+        // Passed 136 ms 3.5 MB
         let m = 10_i32.pow(9) + 7;
         let mut hashmap = std::collections::HashMap::new();
         let pows: Vec<i32> = (0..22).map(|i| 2_i32.pow(i)).collect();
