@@ -78,7 +78,7 @@ impl Solution {
 
 #[test]
 fn test() {
-    use crate::slice_to_string_vec;
+    use crate::utils::slice_to_string_vec;
 
     assert_eq!(Solution::ladder_length(
         String::from("hit"), String::from("cog"),

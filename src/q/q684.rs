@@ -22,13 +22,12 @@ impl Solution {
         // let n = edges.len();
         // let mut parents = vec![0; n + 1];
         // (1..=n).for_each(|i| parents[i] = i);
-        // let mut answer = 0;
         // for i in 0..n {
         //     if !union_set(edges[i][0] as usize, edges[i][1] as usize, &mut parents) {
-        //         answer = i;
+        //         return edges[i].clone();
         //     }
         // }
-        // edges[answer].clone()
+        // Vec::new()
 
         // 方法2
         // 并查集用得熟悉后的写法
