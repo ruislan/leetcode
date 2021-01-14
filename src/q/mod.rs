@@ -287,6 +287,7 @@ mod q938;
 mod q941;
 mod q942;
 mod q944;
+mod q947;
 mod q949;
 mod q953;
 mod q961;
