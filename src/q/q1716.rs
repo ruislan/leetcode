@@ -11,6 +11,7 @@ impl Solution {
         // 第二周就是2,3,4,5,6,7,8……
         // 所以第n周的顺序就是(n - 1) + 1, (n - 1) + 2...
         // 当然应该还有更简单的公式，这里直接用程序去计算就行了
+        // Passed 0ms 2.1mb
         let weeks = n / 7;
         let days = n % 7;
         let mut answer = 0;
