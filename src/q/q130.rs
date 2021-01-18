@@ -6,6 +6,8 @@ impl Solution {
         // 方法1
         // 利用dfs搜索row=0,row=rows - 1,和col=0,col=cols-1的联通的点
         // 也即是与四周联通的点，然后这些点都是不能改成"x"的，其他的都改成“x”
+        if board.is_empty() || board[0].is_empty() { return; }
+        
         let mut visited = std::collections::HashSet::new();
         let rows = board.len();
         let cols = board[0].len();
