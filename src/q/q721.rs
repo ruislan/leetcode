@@ -10,6 +10,7 @@ impl Solution {
         // 然后合并集合
         // 1.由于Rust的hash算法是安全hash，性能并不高，所以这里的时间并不是最佳的
         // 2.并查集也没有做路径压缩
+        // 3.还有一个优化就是给mail编号来指代字符串
         // Passed 104ms 3.9mb
         let mut parents = std::collections::HashMap::new();
         let mut mail2account = std::collections::HashMap::new();
@@ -47,5 +48,48 @@ impl Solution {
             answer.push(row);
         });
         answer
+
+        // 方法2
+        // 先建立连通图graph，然后深度优先搜索即可
+        // Passed 44ms 4.8mb
+        // let mut graph = std::collections::HashMap::new();
+        // let mut mail2account = std::collections::HashMap::new();
+        // for i in 0..accounts.len() {
+        //     let name = &accounts[i][0];
+        //     for j in 1..accounts[i].len() {
+        //         mail2account.entry(&accounts[i][j]).or_insert(name);
+        //     }
+        //
+        //     for j in 2..accounts[i].len() {
+        //         graph.entry(&accounts[i][j - 1]).or_insert(Vec::new()).push(&accounts[i][j]);
+        //         graph.entry(&accounts[i][j]).or_insert(Vec::new()).push(&accounts[i][j - 1]);
+        //     }
+        // }
+        //
+        // let mut visited = std::collections::HashSet::new();
+        // let mut answer = Vec::new();
+        // for i in 0..accounts.len() {
+        //     if accounts[i].len() > 0 && !visited.contains(&accounts[i][1]) {
+        //         let mut stack = vec![&accounts[i][1]];
+        //         let mut emails = Vec::new();
+        //         while !stack.is_empty() {
+        //             let email = stack.pop().unwrap();
+        //             if visited.insert(email) {
+        //                 emails.push(email.to_string());
+        //                 if let Some(nexts) = graph.get(email) {
+        //                     for next in nexts.iter() {
+        //                         stack.push(next);
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //         emails.sort_unstable();
+        //         let mut row = vec![mail2account.get(&accounts[i][1]).unwrap().to_string()];
+        //         row.append(&mut emails);
+        //         answer.push(row);
+        //     }
+        // }
+        //
+        // answer
     }
 }
