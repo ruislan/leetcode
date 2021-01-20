@@ -5,6 +5,7 @@ mod q;
 mod lcp;
 mod offer;
 mod interview;
+mod xh; // 《高频算法实战》
 mod sorter;
 mod utils;
 
