@@ -13,6 +13,7 @@ impl Solution {
         //    如果dup_cables大或等，也就是够连接，那么就返回待连接电脑数即可，
         //    如果dup_cables小，也就是不够连入所有的电脑，返回-1
         // 注意电脑编号是0开始的，所以computers最后还要+1
+        // Passed 8ms 5.1mb
         fn find(mut x: usize, parents: &mut Vec<usize>) -> usize {
             if x != parents[x] {
                 parents[x] = find(parents[x], parents);
@@ -34,9 +35,10 @@ impl Solution {
         let mut dup_cables = 0;
         let mut computers = 0;
         for i in 0..connections.len() {
-            computers = computers.max(connections[i][0].max(connections[i][1]));
             if !union(connections[i][0] as usize, connections[i][1] as usize, &mut parents) {
                 dup_cables += 1;
+            } else {
+                computers += 1;
             }
         }
         let remain = n - computers - 1;
