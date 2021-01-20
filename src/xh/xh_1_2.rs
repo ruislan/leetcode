@@ -1,5 +1,6 @@
 use crate::xh::Solution;
 
+#[allow(unused)]
 impl Solution {
     pub fn find_left_repeat_num_ii(nums: Vec<i32>) -> Vec<i32> {
         // 方法1
