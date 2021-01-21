@@ -41,7 +41,7 @@ impl UnionFind {
         true
     }
 
-    pub fn is_connected(&mut self, x: usize, y: usize) -> bool {
+    pub fn check_connected(&mut self, x: usize, y: usize) -> bool {
         self.find(x) == self.find(y)
     }
 }
