@@ -1,4 +1,4 @@
-pub mod union_find_set;
+pub mod union_find;
 pub mod segment_tree;
 pub mod fenwick_tree;
 

@@ -205,7 +205,7 @@ impl Solution {
             if row > 0 && grid[row - 1][col] == 1 { union(&mut parents, &mut sz, node, index_of(row - 1, col, cols)); }
 
             let current = get_size(&mut parents, &mut sz, size);
-            answer[i] = std::cmp::max(0, current as i32 - before as i32 - 1);
+            answer[i] = 0.max(current as i32 - before as i32 - 1);
 
             grid[row][col] = 1;
         }
