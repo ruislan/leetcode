@@ -40,6 +40,7 @@ pub struct UnionFind {
     pub set_count: usize,
 }
 
+#[allow(unused)]
 impl UnionFind {
     pub fn new(n: usize) -> Self {
         let mut parent = vec![0; n];
