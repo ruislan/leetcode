@@ -9,9 +9,7 @@ pub struct UnionFind {
 #[allow(unused)]
 impl UnionFind {
     pub fn new(n: usize) -> Self {
-        let mut parent = vec![0; n];
-        for i in 0..n { parent[i] = i; }
-        UnionFind { parent, rank: vec![0; n], sz: vec![1; n], set_count: n }
+        UnionFind { parent: (0..n).collect(), rank: vec![0; n], sz: vec![1; n], set_count: n }
     }
 
     pub fn find(&mut self, x: usize) -> usize {
