@@ -14,62 +14,25 @@ impl Solution {
         // 中间过程只需要我们之前的组合prev，
         // 然后把之前的组合prev和当前这个数字的字母集一一递归配对即可
         // 题目提到“给定一个仅包含2-9的字符串”，所以这里我就不去判断2-9以外的数字了
-        fn combine(i: usize, n: usize, prev: String, digits: &Vec<u8>, arr: &mut Vec<String>) {
+        // AC 0ms 2mb
+        fn combine(i: usize, n: usize, prev: &str, keyboard: &Vec<Vec<&str>>, digits: &Vec<u8>, arr: &mut Vec<String>) {
             if i >= n {
-                arr.push(prev);
+                arr.push(prev.to_string());
             } else {
-                let digit = digits[i];
-                match digit {
-                    b'2' => {
-                        combine(i + 1, n, prev.clone() + "a", digits, arr);
-                        combine(i + 1, n, prev.clone() + "b", digits, arr);
-                        combine(i + 1, n, prev.clone() + "c", digits, arr);
-                    }
-                    b'3' => {
-                        combine(i + 1, n, prev.clone() + "d", digits, arr);
-                        combine(i + 1, n, prev.clone() + "e", digits, arr);
-                        combine(i + 1, n, prev.clone() + "f", digits, arr);
-                    }
-                    b'4' => {
-                        combine(i + 1, n, prev.clone() + "g", digits, arr);
-                        combine(i + 1, n, prev.clone() + "h", digits, arr);
-                        combine(i + 1, n, prev.clone() + "i", digits, arr);
-                    }
-                    b'5' => {
-                        combine(i + 1, n, prev.clone() + "j", digits, arr);
-                        combine(i + 1, n, prev.clone() + "k", digits, arr);
-                        combine(i + 1, n, prev.clone() + "l", digits, arr);
-                    }
-                    b'6' => {
-                        combine(i + 1, n, prev.clone() + "m", digits, arr);
-                        combine(i + 1, n, prev.clone() + "n", digits, arr);
-                        combine(i + 1, n, prev.clone() + "o", digits, arr);
-                    }
-                    b'7' => {
-                        combine(i + 1, n, prev.clone() + "p", digits, arr);
-                        combine(i + 1, n, prev.clone() + "q", digits, arr);
-                        combine(i + 1, n, prev.clone() + "r", digits, arr);
-                        combine(i + 1, n, prev.clone() + "s", digits, arr);
-                    }
-                    b'8' => {
-                        combine(i + 1, n, prev.clone() + "t", digits, arr);
-                        combine(i + 1, n, prev.clone() + "u", digits, arr);
-                        combine(i + 1, n, prev.clone() + "v", digits, arr);
-                    }
-                    _ => {
-                        combine(i + 1, n, prev.clone() + "w", digits, arr);
-                        combine(i + 1, n, prev.clone() + "x", digits, arr);
-                        combine(i + 1, n, prev.clone() + "y", digits, arr);
-                        combine(i + 1, n, prev.clone() + "z", digits, arr);
-                    }
+                for key in keyboard[(digits[i] - b'1') as usize].iter() {
+                    combine(i + 1, n, &(String::from(prev) + key), keyboard, digits, arr);
                 }
             }
         }
+
         if digits.len() < 1 { return Vec::new(); }
         let digits = digits.into_bytes();
         let n = digits.len();
+        let keyboard = vec![vec![], vec!["a", "b", "c"], vec!["d", "e", "f"],
+                            vec!["g", "h", "i"], vec!["j", "k", "l"], vec!["m", "n", "o"],
+                            vec!["p", "q", "r", "s"], vec!["t", "u", "v"], vec!["w", "x", "y", "z"]];
         let mut answer = Vec::new();
-        combine(0, n, String::new(), &digits, &mut answer);
+        combine(0, n, "", &keyboard, &digits, &mut answer);
         answer
     }
 }
