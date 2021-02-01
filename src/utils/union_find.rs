@@ -35,8 +35,8 @@ impl UnionFind {
             }
             _ => {
                 self.parent[root_y] = root_x;
-                self.rank[root_x] += 1;
                 self.sz[root_x] += self.sz[root_y];
+                self.rank[root_x] += 1;
             }
         }
         self.set_count -= 1;
