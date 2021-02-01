@@ -13,6 +13,7 @@ impl Solution {
         // 属于同一个集合，那么则说明这个等式组是矛盾的
         // 那么返回false
         // 都检查完了，不矛盾，那么返回true
+        // AC 0ms 2.2mb
         let mut uf = UnionFind::new(26);
         let mut blocks = Vec::new();
         for equation in equations {
