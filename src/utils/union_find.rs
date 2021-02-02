@@ -19,7 +19,7 @@ impl UnionFind {
         self.parent[x]
     }
 
-    pub fn union(&mut self, x: usize, y: usize) -> bool {
+    pub fn unite(&mut self, x: usize, y: usize) -> bool {
         let root_x = self.find(x);
         let root_y = self.find(y);
         if root_x == root_y { return false; }
