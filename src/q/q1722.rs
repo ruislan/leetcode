@@ -6,50 +6,90 @@ impl Solution {
         // 方法1
         // 将所有可以交换的看成一个联通的网络
         // 在这个网络中所有的元素都是可以自由放在任意位置的
-        // 然后网络外的元素考虑相同位置是否不同
-        // 网络中的元素不考虑位置只考虑不同的
-        // 最后这两个不同就是结果
-        fn find(mut x: usize, parents: &mut Vec<usize>) -> usize {
-            if x != parents[x] {
-                parents[x] = find(parents[x], parents);
-            }
-            parents[x]
-        }
-
-        fn union(mut x: usize, mut y: usize, parents: &mut Vec<usize>) -> bool {
-            let mut root_x = find(x, parents);
-            let mut root_y = find(y, parents);
-            if root_x == root_y { return false; }
-            parents[root_y] = root_x;
-            true
-        }
-
+        // 联通之后就需要用hashmap存储source的元素的原始位置
+        // 当我们使用了一次替换后，就不能再使用这个数字了
+        // 也就是说，我们遇到不同那么就开始替换，能替换就减少网络中的一个可替换量
+        // 不能替换的，当然就结果+1
+        // 当然，如果这个数字在source中就没有出现过，那么也+1
+        // AC 76ms 15.3mb
         let n = source.len();
-        let mut parents = vec![0; n as usize];
-        for i in 0..n as usize { parents[i] = i; }
+        let mut uf = UnionFind::new(n);
 
-        let mut visited = std::collections::HashSet::new();
         for allow in allowed_swaps {
-            if union(allow[0] as usize, allow[1] as usize, &mut parents) {
-                visited.insert(allow[0] as usize);
-                visited.insert(allow[1] as usize);
-            }
+            uf.unite(allow[0] as usize, allow[1] as usize);
         }
-
-        let mut answer = 0;
-        let mut common = std::collections::HashMap::new();
+        let mut indices = std::collections::HashMap::new();
         for i in 0..n {
-            if visited.contains(&i) {
-                *common.entry(source[i]).or_insert(0_i32) += 1;
-                *common.entry(target[i]).or_insert(0_i32) -= 1;
-            } else if source[i] != target[i] {
+            indices.entry(source[i]).or_insert(Vec::new()).push(i);
+        }
+        let mut used = vec![false; n];
+        let mut answer = 0;
+        for i in 0..n {
+            let other = indices.get(&target[i]);
+            let mut check = || -> bool {
+                let v = other.unwrap();
+                for &j in v.iter() {
+                    if !used[j] && uf.check_connected(i, j) {
+                        used[j] = true;
+                        return true;
+                    }
+                }
+                false
+            };
+            if other.is_none() || !check() {
                 answer += 1;
             }
         }
-        let mut diff = 0;
-        for (_, v) in common {
-            if v != 0 { diff += v.abs(); }
+        answer
+    }
+}
+
+#[derive(Debug)]
+pub struct UnionFind {
+    parent: Vec<usize>,
+    rank: Vec<usize>,
+    sz: Vec<usize>,
+    pub set_count: usize,
+}
+
+#[allow(unused)]
+impl UnionFind {
+    pub fn new(n: usize) -> Self {
+        UnionFind { parent: (0..n).collect(), rank: vec![0; n], sz: vec![1; n], set_count: n }
+    }
+
+    pub fn find(&mut self, x: usize) -> usize {
+        if x != self.parent[x] {
+            self.parent[x] = self.find(self.parent[x]);
         }
-        answer + diff / 2
+        self.parent[x]
+    }
+
+    pub fn unite(&mut self, x: usize, y: usize) -> bool {
+        let root_x = self.find(x);
+        let root_y = self.find(y);
+        if root_x == root_y { return false; }
+
+        match self.rank[root_x].cmp(&self.rank[root_y]) {
+            std::cmp::Ordering::Greater => {
+                self.parent[root_y] = root_x;
+                self.sz[root_x] += self.sz[root_y];
+            }
+            std::cmp::Ordering::Less => {
+                self.parent[root_x] = root_y;
+                self.sz[root_y] += self.sz[root_x];
+            }
+            _ => {
+                self.parent[root_y] = root_x;
+                self.sz[root_x] += self.sz[root_y];
+                self.rank[root_x] += 1;
+            }
+        }
+        self.set_count -= 1;
+        true
+    }
+
+    pub fn check_connected(&mut self, x: usize, y: usize) -> bool {
+        self.find(x) == self.find(y)
     }
 }
