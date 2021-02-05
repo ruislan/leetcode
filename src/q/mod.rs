@@ -37,6 +37,7 @@ mod q67;
 mod q69;
 mod q70;
 mod q75;
+mod q76;
 mod q77;
 mod q82;
 mod q85;
