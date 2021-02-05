@@ -321,6 +321,7 @@ mod q993;
 mod q997;
 mod q999;
 mod q1002;
+mod q1004;
 mod q1005;
 mod q1009;
 mod q1010;
