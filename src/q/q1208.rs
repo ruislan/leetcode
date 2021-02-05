@@ -19,7 +19,7 @@ impl Solution {
         let mut answer = 0;
         while right < n {
             window_cost += (s[right] as i32 - t[right] as i32).abs();
-            if window_cost > max_cost {
+            while window_cost > max_cost {
                 window_cost -= (s[left] as i32 - t[left] as i32).abs();
                 left += 1;
             }
