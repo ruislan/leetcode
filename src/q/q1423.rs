@@ -2,7 +2,8 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
+    // 方法名与1422一样，修改为max_score_card_points
+    pub fn max_score_card_points(card_points: Vec<i32>, k: i32) -> i32 {
         // 方法1
         // 把问题转换一下就变成了求n - k个连续子数组的和最小的
         // 这样左右两边拿走的k张牌自然就是最大的

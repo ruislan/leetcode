@@ -314,6 +314,7 @@ mod q970;
 mod q973;
 mod q976;
 mod q977;
+mod q978;
 mod q985;
 mod q989;
 mod q990;
