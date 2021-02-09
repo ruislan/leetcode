@@ -17,6 +17,7 @@ impl Solution {
         // 这个时候只需要在出窗口的时候将字符的频率减去
         // 入窗口的时候将字符的频率加上
         // 然后再进行比较就可以了
+        // AC 0ms 2mb
         if s1.len() > s2.len() { return false; }
 
         let mut freq = vec![0; 26];
@@ -24,20 +25,15 @@ impl Solution {
         let s2 = s2.into_bytes();
 
         let mut window_freq = vec![0; 26];
-        let mut window = std::collections::VecDeque::new();
         let k = s1.len();
         for i in 0..k {
             window_freq[s2[i] as usize - 97] += 1;
-            window.push_back(s2[i]);
         }
         if window_freq == freq { return true; }
 
         for i in k..s2.len() {
-            let remove = window.pop_front().unwrap();
-            let add = s2[i];
-            window_freq[remove as usize - 97] -= 1;
-            window.push_back(add);
-            window_freq[add as usize - 97] += 1;
+            window_freq[s2[i - k] as usize - 97] -= 1;
+            window_freq[s2[i] as usize - 97] += 1;
             if window_freq == freq { return true; }
         }
         false
