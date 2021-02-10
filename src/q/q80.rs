@@ -2,7 +2,8 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+    // 由于方法重名，修改为remove_duplicates_ii
+    pub fn remove_duplicates_ii(nums: &mut Vec<i32>) -> i32 {
         // 方法1
         // 首先这个数组是增序排列的，也即是说出现过的数字后面不可能又出现
         // 只能用O(1)的空间，也即是说只有只能定义几个变量
