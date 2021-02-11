@@ -15,6 +15,7 @@ impl Solution {
         //      我们将这个数字替换掉lo位置的数字，同时lo的位置向前移动1
         //      一直到hi到达最后。
         // 最后，lo正好就是我们合格数字的长度
+        // AC 0ms 2.1mb
         let n = nums.len();
         let limit = 2;
         if n <= limit { return n as i32; }
