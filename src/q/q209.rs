@@ -8,6 +8,7 @@ impl Solution {
         // 当和< target的时候，扩展窗口
         // 当刚好>=target的时候，将窗口的长度(hi - lo + 1)与记录比较，取最小的
         // 然后将窗口左边收缩，一直到刚好< target
+        // AC 0ms 2.5mb
         let n = nums.len();
         let mut answer = n + 1;
         let mut lo = 0;
