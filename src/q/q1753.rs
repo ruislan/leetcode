@@ -7,6 +7,7 @@ impl Solution {
         // 始终取最大的两个数来处理
         // 直到出现2个0及以上
         // 利用大顶堆来获取顶上两个最大的，处理完后再放入堆
+        // AC 16ms 2mb （哈，可能每次迭代直接排序还要快点）
         let mut answer = 0;
         let mut heap = std::collections::BinaryHeap::new();
         heap.push(a);
