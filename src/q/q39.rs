@@ -13,8 +13,9 @@ impl Solution {
         // 这里可以将候选数字排序，这样一来，如果我们遇到第i个数字的和大于target的，
         // i后面的所有数字都可以取消，因为必然比这个和更大
         // 最后由于不能出现重复的组合，我们可以将每个结果排序，然后删除重复项，
-        // Rust有dedup()方法，kotlin有distinct()方法，实在不行就用hashset过滤一次
-        
+        // Rust有dedup()方法，kotlin有distinct()方法，
+        // 注意dedup()调用前要sort一下，Rust的dedup不是hashset的方式实现的
+
         fn combine(sum: i32, arr: Vec<i32>, candidates: &Vec<i32>, target: i32, answer: &mut Vec<Vec<i32>>) {
             for &x in candidates {
                 let new_sum = sum + x;
@@ -37,6 +38,7 @@ impl Solution {
         for v in answer.iter_mut() {
             v.sort_unstable();
         }
+        answer.sort_unstable();
         answer.dedup();
         answer
     }
