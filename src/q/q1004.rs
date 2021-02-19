@@ -12,19 +12,37 @@ impl Solution {
         // 当收缩的这个值是0时，我们减少0的个数，
         // 以便下一次扩展窗口处于正确的状态下
         // AC 8ms 2mb
+        // let n = a.len();
+        // let mut answer = 0;
+        // let mut lo = 0;
+        // let mut hi = 0;
+        // let mut zeros = 0;
+        // while hi < n {
+        //     if a[hi] != 1 { zeros += 1; }
+        //     hi += 1;
+        //     if zeros > k {
+        //         if a[lo] == 0 { zeros -= 1; }
+        //         lo += 1;
+        //     }
+        //     answer = answer.max(hi - lo)
+        // }
+        // answer as i32
+
+        // 方法2
+        // AC 12ms 2.3mb
         let n = a.len();
-        let mut answer = 0;
         let mut lo = 0;
-        let mut hi = 0;
+        let mut answer = 0;
         let mut zeros = 0;
-        while hi < n {
-            if a[hi] != 1 { zeros += 1; }
-            hi += 1;
-            if zeros > k {
-                if a[lo] == 0 { zeros -= 1; }
-                lo += 1;
+        for hi in 0..n {
+            if a[hi] == 0 {
+                zeros += 1;
+                while zeros > k {
+                    if a[lo] == 0 { zeros -= 1; }
+                    lo += 1;
+                }
             }
-            answer = answer.max(hi - lo)
+            answer = answer.max(hi - lo + 1);
         }
         answer as i32
     }

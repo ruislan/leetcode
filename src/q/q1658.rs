@@ -10,24 +10,25 @@ impl Solution {
         // 如果窗口内部的值大于sum，我们就窗口左边向右滑动
         // 减去出窗口的值直到内部的值小于等于sum
         // 如果窗口内部的值与sum相等，说明我们找到了最小操作数
+        // AC 20ms 2.8mb
         let n = nums.len();
         let mut sum = nums.iter().sum::<i32>() - x;
+        if sum == 0 { return n as i32; }
+        if sum < 0 { return -1; }
+
         let mut lo = 0;
-        let mut hi = 0;
-        let mut sub_sum = 0;
-        let mut found = false;
-        while hi < n {
-            sub_sum += nums[hi];
-            while sub_sum > sum {
-                sub_sum -= nums[lo];
+        let mut window_sum = 0;
+        let mut window_max_size = 0;
+        for hi in 0..n {
+            window_sum += nums[hi];
+            while window_sum > sum {
+                window_sum -= nums[lo];
                 lo += 1;
             }
-            if sub_sum == sum {
-                found = true;
-                break;
+            if window_sum == sum {
+                window_max_size = window_max_size.max(hi - lo + 1);
             }
-            hi += 1;
         }
-        if found { (n - (hi - lo + 1)) as i32 } else { -1 }
+        if window_max_size == 0 { -1 } else { (n - window_max_size) as i32 }
     }
 }
