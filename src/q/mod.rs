@@ -353,6 +353,7 @@ mod q1038;
 mod q1046;
 mod q1047;
 mod q1051;
+mod q1052;
 mod q1071;
 mod q1078;
 mod q1089;
