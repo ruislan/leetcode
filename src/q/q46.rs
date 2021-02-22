@@ -19,6 +19,7 @@ impl Solution {
         //       ...
         //    选择3之后，[3]，可供选择是1|2
         //       ...
+        // AC 0ms 2.1mb
         fn backtrace(arr: &mut Vec<i32>, nums: &Vec<i32>, used: &mut std::collections::HashSet<i32>, answer: &mut Vec<Vec<i32>>) {
             if arr.len() == nums.len() {
                 answer.push(arr.clone());
