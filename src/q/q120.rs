@@ -6,6 +6,7 @@ impl Solution {
         // 方法1
         // 动态规划的入门基础，最小路径和
         // 只不过这里是三角形，只能得到上面和上面左面的值的最小值来转换即可
+        // AC 0ms 2.2mb
         let mut rows = triangle.len();
         let mut dp = triangle;
         for row in 1..rows {
