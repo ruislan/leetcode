@@ -6,6 +6,8 @@ impl Solution {
         // 方法1
         // 全排列看到第一想到的就是回溯
         // 标准模板套用之后，关键就是筛出合适的选择
+        // AC 508ms 2mb
+        // P.S 虽然AC了，但是看来剪枝做得还不够好，留作下次来剪枝吧
         use std::collections::{HashSet, HashMap};
         fn backtrace(path: &mut Vec<i32>, nums: &Vec<i32>, used: &mut Vec<i32>, answer: &mut HashSet<Vec<i32>>) {
             if path.len() == nums.len() {
