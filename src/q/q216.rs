@@ -10,6 +10,7 @@ impl Solution {
         // 然后我们可以从1-9遍历，因为不存在重复的数字，
         // 所以，我们每次路径的选择列表都可以通过从减少已经选择过的数字来剪枝
         // 在这里就是1-3选择了，选择列表就从4-9就好了
+        // AC 0ms 2.1mb
         fn backtrace(path: &mut Vec<i32>, k: usize, sum: i32, n: i32, x: i32, answer: &mut Vec<Vec<i32>>) {
             if path.len() == k {
                 if sum == n { answer.push(path.clone()); }
