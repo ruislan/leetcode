@@ -13,7 +13,7 @@ impl SegmentTree {
         st
     }
 
-    pub fn sum_of_range(&self, l: usize, r: usize) -> i32 {
+    pub fn sum_range(&self, l: usize, r: usize) -> i32 {
         self.query_tree(0, 0, self.arr.len() - 1, l, r)
     }
 
