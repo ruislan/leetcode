@@ -7,23 +7,23 @@ impl Solution {
         // 暴力解法，每次都循环找出下一个最大的数字
         // O(n^2)
         // AC 552ms 2mb
-        let n = nums.len();
-        let mut answer = vec![0; n];
-        for i in 0..n {
-            let mut j = i + 1;
-            j %= n;
-            while j != i {
-                if nums[i] < nums[j] { break; }
-                j += 1;
-                j %= n;
-            }
-            if j == i {
-                answer[i] = -1;
-            } else {
-                answer[i] = nums[j];
-            }
-        }
-        answer
+        // let n = nums.len();
+        // let mut answer = vec![0; n];
+        // for i in 0..n {
+        //     let mut j = i + 1;
+        //     j %= n;
+        //     while j != i {
+        //         if nums[i] < nums[j] { break; }
+        //         j += 1;
+        //         j %= n;
+        //     }
+        //     if j == i {
+        //         answer[i] = -1;
+        //     } else {
+        //         answer[i] = nums[j];
+        //     }
+        // }
+        // answer
 
         // 方法2
         // 依然是暴力法，但是略微优化了一下
