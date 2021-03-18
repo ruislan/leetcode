@@ -8,6 +8,7 @@ impl Solution {
         // 每次看下一步是否是障碍
         // 如果是障碍，那么就不用继续执行这个命令了
         // 如果不是障碍，就在这个方向上继续前进
+        // AC 16ms 2.9mb
         enum Direction { North, South, East, West }
         let mut obstacle_set = std::collections::HashSet::new();
         for obstacle in obstacles {
@@ -15,6 +16,7 @@ impl Solution {
         }
         let mut direction = Direction::North;
         let mut position = (0, 0);
+        let mut max = 0;
         for cmd in commands {
             match cmd {
                 -1 => direction = match direction {
@@ -41,10 +43,11 @@ impl Solution {
                             break;
                         }
                         position = next_position;
+                        max = max.max(position.0 * position.0 + position.1 * position.1);
                     }
                 }
             }
         }
-        position.0 * position.0 + position.1 * position.1
+        max
     }
 }
