@@ -21,6 +21,7 @@ impl Solution {
         // 最后将结果n推入到栈
         // 当所有的字符都结束的时候
         // 我们栈内的数字全部加起来就是结果（因为有可能是()()这样平行的情况，所以还要加一次）
+        // AC 0ms 2mb
         let mut stack = Vec::new();
         for ch in s.chars() {
             if ch == '(' {
