@@ -8,6 +8,7 @@ pub struct TreeNode {
     pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
+#[allow(unused)]
 impl TreeNode {
     #[inline]
     pub fn new(val: i32) -> Self {
@@ -31,6 +32,7 @@ impl TreeNode {
 #[derive(Default)]
 struct BSTIterator {}
 
+#[allow(unused)]
 impl BSTIterator {
     fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self { BSTIterator::default() }
 
