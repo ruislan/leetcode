@@ -19,7 +19,8 @@ impl ListNode {
 
 #[allow(unused)]
 impl Solution {
-    pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    // 名字重复了，更名成add_two_numbers_ii
+    pub fn add_two_numbers_ii(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // 方法1
         // 简单来说就是将两个list分别存入a,b两个数组
         // 然后利用a,b进行计算到c数组里面，然后翻转c
