@@ -27,6 +27,7 @@ impl Solution {
         // 否则就node = node.next继续判断
         // 这样一个遍历就能完成
         // kotlin代码
+        // AC 228ms 34.8mb
         // var dm:ListNode? = ListNode(0)
         // dm?.next = head
         // var node = dm
@@ -44,6 +45,7 @@ impl Solution {
 
         // 方法2
         // 两次遍历，统计值出现的频率，如果节点值的频率超过1，则不要该节点
+        // AC 0ms 2mb
         let mut freq = std::collections::HashMap::new();
         let mut ptr = head.as_ref();
         while let Some(node) = ptr {
