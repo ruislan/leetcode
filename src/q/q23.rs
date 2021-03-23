@@ -48,16 +48,7 @@ impl Solution {
         fn merge(mut l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
             let mut dummy = Some(Box::new(ListNode { val:0, next:None }));
             let mut ptr = dummy.as_mut();
-            while l1.is_some() || l2.is_some() {
-                if l2.is_none() {
-                    ptr.as_mut().unwrap().next = l1;
-                    break;
-                } 
-                if l1.is_none() {
-                    ptr.as_mut().unwrap().next = l2;
-                    break;
-                } 
-                
+            while l1.is_some() && l2.is_some() { 
                 if l1.as_ref().unwrap().val < l2.as_ref().unwrap().val {
                     let l1_next = l1.as_mut().unwrap().next.take();
                     ptr.as_mut().unwrap().next = l1;
@@ -69,6 +60,7 @@ impl Solution {
                 }
                 ptr = ptr.unwrap().next.as_mut();
             }
+            ptr.unwrap().next = l1.or(l2);
             dummy.unwrap().next
         }
 
