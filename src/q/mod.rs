@@ -38,6 +38,7 @@ mod q55;
 mod q57;
 mod q58;
 mod q59;
+mod q61;
 mod q62;
 mod q64;
 mod q66;
