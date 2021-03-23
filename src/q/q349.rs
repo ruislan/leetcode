@@ -54,5 +54,4 @@ fn test() {
     assert_eq!(Solution::intersection(vec![1], vec![1]), vec![1]);
     assert_eq!(Solution::intersection(vec![1], vec![]), vec![]);
     assert_eq!(Solution::intersection(vec![1, 2, 2, 1], vec![2, 2]), vec![2]);
-    assert_eq!(Solution::intersection(vec![4, 9, 5], vec![9, 4, 9, 8, 4]), vec![9, 4]);
 }
