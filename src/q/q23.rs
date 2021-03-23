@@ -45,10 +45,13 @@ impl Solution {
         // 然后我们两两合并就行了
         // 就像归并排序一样
         // AC 144ms 3.1mb
-        fn merge(mut l1: Option<Box<ListNode>>, mut l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-            let mut dummy = Some(Box::new(ListNode { val:0, next:None }));
+        fn merge(
+            mut l1: Option<Box<ListNode>>,
+            mut l2: Option<Box<ListNode>>,
+        ) -> Option<Box<ListNode>> {
+            let mut dummy = Some(Box::new(ListNode { val: 0, next: None }));
             let mut ptr = dummy.as_mut();
-            while l1.is_some() && l2.is_some() { 
+            while l1.is_some() && l2.is_some() {
                 if l1.as_ref().unwrap().val < l2.as_ref().unwrap().val {
                     let l1_next = l1.as_mut().unwrap().next.take();
                     ptr.as_mut().unwrap().next = l1;
@@ -65,7 +68,9 @@ impl Solution {
         }
 
         let mut head = None;
-        for mut list in lists { head = merge(head, list); }
+        for mut list in lists {
+            head = merge(head, list);
+        }
         head
     }
 }
