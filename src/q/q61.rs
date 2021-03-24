@@ -22,6 +22,7 @@ impl Solution {
         // 如果余数是0，那就等于没转，直接返回head就行
         // 否则，将链表分成A,B两段，分段点就在n - k的位置
         // 然后将AB变成BA，返回即可
+        // AC 0ms 2.2mb
         let mut n = 0;
         let mut ptr = head.as_ref();
         while let Some(node) = ptr {
