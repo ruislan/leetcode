@@ -19,7 +19,7 @@ impl ListNode {
 
 #[allow(unused)]
 impl Solution {
-    pub fn delete_duplicates(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    pub fn delete_duplicates_ii(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
         // 方法1
         // 设置一个ptr为下一个节点，如果ptr与ptr下一个节点相同，那么ptr移动
         // 一直到ptr不与最初的节点值相同，
@@ -42,27 +42,47 @@ impl Solution {
         //     else node = node?.next
         // }
         // return dm?.next
+        // 今天的每日一题，把这个Rust的解法给补了，上面kotlin的代码就留着吧
+        // AC 0ms 2mb
+        let mut dummy = Some(Box::new(ListNode { val: 0, next: head }));
+        let mut node = dummy.as_mut();
+        while node.as_ref().unwrap().next.is_some() {
+            let mut ptr = node.as_mut().unwrap().next.as_mut();
+            let mut val = ptr.as_mut().unwrap().val;
+            let mut dup = false;
+            while ptr.as_mut().unwrap().next.is_some() 
+                && ptr.as_mut().unwrap().next.as_mut().unwrap().val == val {
+                ptr = ptr.unwrap().next.as_mut();
+                dup = true;
+            }
+            if dup { 
+                node.as_mut().unwrap().next = ptr.unwrap().next.take();
+            } else {
+                node = node.unwrap().next.as_mut();
+            }
+        }
+        dummy.unwrap().next    
 
         // 方法2
         // 两次遍历，统计值出现的频率，如果节点值的频率超过1，则不要该节点
         // AC 0ms 2mb
-        let mut freq = std::collections::HashMap::new();
-        let mut ptr = head.as_ref();
-        while let Some(node) = ptr {
-            *freq.entry(node.val).or_insert(0) += 1;
-            ptr = node.next.as_ref();
-        }
+        // let mut freq = std::collections::HashMap::new();
+        // let mut ptr = head.as_ref();
+        // while let Some(node) = ptr {
+        //     *freq.entry(node.val).or_insert(0) += 1;
+        //     ptr = node.next.as_ref();
+        // }
 
-        let mut dummy = ListNode { val: 0, next: None };
-        let mut ptr = &mut dummy;
-        let mut head = head;
-        while let Some(mut node) = head {
-            head = node.next.take();
-            if freq.get(&node.val) == Some(&1) {
-                ptr.next = Some(node);
-                ptr = ptr.next.as_mut().unwrap();
-            }
-        }
-        dummy.next
+        // let mut dummy = ListNode { val: 0, next: None };
+        // let mut ptr = &mut dummy;
+        // let mut head = head;
+        // while let Some(mut node) = head {
+        //     head = node.next.take();
+        //     if freq.get(&node.val) == Some(&1) {
+        //         ptr.next = Some(node);
+        //         ptr = ptr.next.as_mut().unwrap();
+        //     }
+        // }
+        // dummy.next
     }
 }

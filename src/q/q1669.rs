@@ -24,6 +24,7 @@ impl Solution {
         // 到b - 1的位置，取下ptr2.next，这个就是尾部要保留的tail
         // 然后ptr1.next = list2, 然后将ptr1迭代到ptr1.next = null的位置
         // 将ptr1.next = tail，最后返回dummy.next即可
+        // AC 56ms 3.4mb
         let mut i = 0;
         let mut dummy = Some(Box::new(ListNode { val: 0, next: list1 }));
         let mut ptr1 = dummy.as_mut();
