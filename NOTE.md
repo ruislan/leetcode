@@ -232,18 +232,18 @@ fn pre_order_iter(node: Node) {
     in_order(node.right);
 }
 
-fn in_order_iter(node: Node) {
+fn in_order_iter(root: Node) {
     let mut stack = vec![node];
-    while !stack.is_empty() {
-        node = stack.pop();
-        if node != None {
-            if node.left != None {
-                stack.push(node);
-                stack.push(node.left);
-            } else {
-                process(node);
-                stack.push(node.right);
-            }
+    let mut node = root;
+    while (node != null || !stack.is_empty()) {
+        while (node != null) {
+            stack.push(node);
+            node = node.left;
+        }
+        if (!stack.isEmpty()) {
+            node = stack.pop();
+            process(node);
+            node = node.right;
         }
     }
 }
@@ -254,7 +254,32 @@ fn in_order_iter(node: Node) {
     post_order(node.left);
     post_order(node.right);
     process(node);
-}
+  }
+
+  fn post_order_iter(root: Node) {
+    let mut treeNodeStack = vec![root];
+    let mut node = root;
+    let mut lastVisit = root;
+    while node != null || !treeNodeStack.is_empty() {
+        while node != null {
+            treeNodeStack.push(node);
+            node = node.left;
+        }
+        //查看当前栈顶元素
+        node = treeNodeStack.peek();
+        //如果其右子树也为空，或者右子树已经访问
+        //则可以直接输出当前节点的值
+        if node.right == null || node.right == lastVisit {
+            process(node);
+            treeNodeStack.pop();
+            lastVisit = node;
+            node = null;
+        } else {
+            //否则，继续遍历右子树
+            node = node.right;
+        }
+    }      
+  }
 ```
 
 注意：很多Rust的初学者可能都知道clone是一个昂贵的操作，它会拷贝所有的内容，但是Rc不一样， 它只会新增一个指针和引用计数，并不昂贵，所以我刚开始做树的题的时候也觉得clone是不是拷贝了
