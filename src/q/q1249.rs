@@ -5,6 +5,7 @@ impl Solution {
     pub fn min_remove_to_make_valid(s: String) -> String {
         // 方法1
         // 用栈来做()的匹配，只有匹配的和字母才保留
+        // AC 4ms 2.7mb
         let n = s.len();
         let mut stack = Vec::new();
         let mut keep = vec![false; n];
