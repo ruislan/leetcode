@@ -16,38 +16,60 @@ impl Solution {
         //      一直到hi到达最后。
         // 最后，lo正好就是我们合格数字的长度
         // AC 0ms 2.1mb
+        // let n = nums.len();
+        // let limit = 2;
+        // if n <= limit { return n as i32; }
+        // let mut lo = 0;
+        // let mut cur_freq = 1;
+        // let mut cur = nums[0];
+        // for hi in 1..n {
+        //     if cur == nums[hi] {
+        //         cur_freq += 1;
+        //     } else {
+        //         cur = nums[hi];
+        //         cur_freq = 1;
+        //     }
+        //     if cur_freq > limit {
+        //         lo = hi;
+        //         break;
+        //     }
+        // }
+
+        // if lo < 2 { return n as i32; }
+
+        // for hi in lo + 1..n {
+        //     if cur == nums[hi] {
+        //         cur_freq += 1;
+        //     } else {
+        //         cur = nums[hi];
+        //         cur_freq = 1;
+        //     }
+        //     if cur_freq <= limit {
+        //         nums[lo] = nums[hi];
+        //         lo += 1;
+        //     }
+        // }
+        // lo as i32
+
+        // 方法2
+        // 方法1复杂了点，我们简化一下
+        // 其实我们的双指针可以从索引2开始（注意这里lo指要被替换的位置，hi指向正在检查的位置）
+        // 这样我们只需要检查hi指针所指向的数字与lo指针的前2位数字（即nums[lo - 2]）是否相等
+        // 如果相等，则说明是要被删除的数字
+        // 如果不相等，则说明是要将nums[hi]移动到nums[lo]，同时lo的位置要向前移动一格
+        // AC 0ms 2mb
         let n = nums.len();
-        let limit = 2;
-        if n <= limit { return n as i32; }
-        let mut lo = 0;
-        let mut cur_freq = 1;
-        let mut cur = nums[0];
-        for hi in 1..n {
-            if cur == nums[hi] {
-                cur_freq += 1;
-            } else {
-                cur = nums[hi];
-                cur_freq = 1;
-            }
-            if cur_freq > limit {
-                lo = hi;
-                break;
-            }
+        if n <= 2 {
+            return n as i32;
         }
-
-        if lo < 2 { return n as i32; }
-
-        for hi in lo + 1..n {
-            if cur == nums[hi] {
-                cur_freq += 1;
-            } else {
-                cur = nums[hi];
-                cur_freq = 1;
-            }
-            if cur_freq <= limit {
+        let mut lo = 2;
+        let mut hi = 2;
+        while hi < n {
+            if nums[hi] != nums[lo - 2] {
                 nums[lo] = nums[hi];
                 lo += 1;
             }
+            hi += 1;
         }
         lo as i32
     }
