@@ -2,7 +2,8 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn search(nums: Vec<i32>, target: i32) -> bool {
+    // 方法与q33重名，改为search_ii
+    pub fn search_ii(nums: Vec<i32>, target: i32) -> bool {
         // 方法1
         // 旋转了数组相当于把一个升序数组分成了两个升序数组
         // 而nums[0]就正好是分界点，把大于等于nums[0]的叫big数组
