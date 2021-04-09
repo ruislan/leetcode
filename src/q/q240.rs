@@ -3,7 +3,8 @@ use crate::q::Solution;
 /// 无rust提交，用kotlin或者Java代替
 #[allow(unused)]
 impl Solution {
-    pub fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {
+    // 方法与74重名，更改为search_matrix_ii
+    pub fn search_matrix_ii(matrix: Vec<Vec<i32>>, target: i32) -> bool {
         // 方法1
         // 直接迭代matrix，因为有序，内部vec采用二分查找，存在target即返回true
         // 迭代完返回false
@@ -29,7 +30,7 @@ impl Solution {
 #[test]
 fn test() {
     // assert_eq!(Solution::find_number_in2_d_array(vec![vec![]], 1), false);
-    assert_eq!(Solution::search_matrix(vec![
+    assert_eq!(Solution::search_matrix_ii(vec![
         vec![1, 4, 7, 11, 15],
         vec![2, 5, 8, 12, 19],
         vec![3, 6, 9, 16, 22],
@@ -37,7 +38,7 @@ fn test() {
         vec![18, 21, 23, 26, 30],
     ], 5), true);
 
-    assert_eq!(Solution::search_matrix(vec![
+    assert_eq!(Solution::search_matrix_ii(vec![
         vec![1, 4, 7, 11, 15],
         vec![2, 5, 8, 12, 19],
         vec![3, 6, 9, 16, 22],
@@ -45,7 +46,7 @@ fn test() {
         vec![18, 21, 23, 26, 30],
     ], 20), false);
 
-    assert_eq!(Solution::search_matrix(vec![
+    assert_eq!(Solution::search_matrix_ii(vec![
         vec![1, 4, 7, 11, 15],
         vec![2, 5, 8, 12, 19],
         vec![3, 6, 9, 16, 22],
@@ -53,7 +54,7 @@ fn test() {
         vec![18, 21, 23, 26, 30],
     ], 30), true);
 
-    assert_eq!(Solution::search_matrix(vec![
+    assert_eq!(Solution::search_matrix_ii(vec![
         vec![1, 4, 7, 11, 15],
         vec![2, 5, 8, 12, 19],
         vec![3, 6, 9, 16, 22],
