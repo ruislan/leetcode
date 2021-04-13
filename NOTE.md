@@ -246,7 +246,7 @@ fn pre_order_iter(node: Node) {
 }
 
 fn in_order_iter(root: Node) {
-    let mut stack = vec![node];
+    let mut stack = Vec::new();
     let mut node = root;
     while (node != null || !stack.is_empty()) {
         while (node != null) {
