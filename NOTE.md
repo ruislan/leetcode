@@ -194,6 +194,7 @@ fn backtrace(path: &mut Vec<i32>, list: &Vec<i32>, used: &mut HashSet<i32>, answ
 ### 其他
 
 * offer62，这是一道约瑟夫环的算法解决问题。有兴趣可以模拟每次计算进行公式推导。
+* q287， Floyd环巧妙的解决了重复的问题
 * q395， 我觉得还算典型的一个分治
 * q448， 不使用额外空间解决问题
 * q665， 极其容易错的一道easy题，很锻炼整体思维
