@@ -43,7 +43,7 @@ impl Solution {
         let mut nums = nums;
         nums.sort_unstable();
         let n = nums.len();
-        let mut memo = vec![vec![]; nums.len()];
+        let mut memo = vec![vec![]; n];
         for i in 0..n {
             memo[i].push(nums[i]);
         }
