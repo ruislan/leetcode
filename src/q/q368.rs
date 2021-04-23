@@ -50,12 +50,10 @@ impl Solution {
         let mut answer = 0;
         for i in 0..n {
             for j in 0..i {
-                if nums[i] % nums[j] == 0 {
-                    if memo[j].len() + 1 > memo[i].len() {
-                        let mut v = memo[j].clone();
-                        v.push(nums[i]);
-                        memo[i] = v;
-                    }
+                if nums[i] % nums[j] == 0 && memo[j].len() + 1 > memo[i].len() {
+                    let mut v = memo[j].clone();
+                    v.push(nums[i]);
+                    memo[i] = v;
                 }
             }
             if memo[i].len() > memo[answer].len() {
