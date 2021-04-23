@@ -201,6 +201,7 @@ mod q424;
 mod q434;
 mod q435;
 mod q441;
+mod q442;
 mod q443;
 mod q445;
 mod q448;
