@@ -426,6 +426,7 @@ mod q1217;
 mod q1221;
 mod q1232;
 mod q1237;
+mod q1248;
 mod q1249;
 mod q1252;
 mod q1260;
