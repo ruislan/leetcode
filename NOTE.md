@@ -62,7 +62,6 @@
 * q338， 位操作没啥说的，多练多看就熟悉了。
 * offer56_ii，这是一道经典的位操作应用。
 
-
 ### 字符串
 
 * q179，字符串组合后的字典排序
@@ -85,7 +84,8 @@
 
 ### 双指针
 
-* q80,   双指针的经典应用，值得回味。
+* q15, 双指针可以有效解决搜索问题。
+* q80, 双指针的经典应用，值得回味。
 * q1248, 双指针，什么条件下，如何移动左或右指针，值得回味。
 
 ### 滑动窗口
@@ -133,7 +133,8 @@ fn solution(nums: Vec<i32>, k: i32) -> i32 {
 
 ### 回溯
 
-我自己的感觉回溯就是一个优雅的暴力解法，将每个可能的路径都走一遍，不行了就退到上一步，然后继续走。 所以这里能做文章的地方就在于选择，题目可能给在选择的地方给你限制，比如列表不重复、列表重复、相同数字只能用一次之类的。 回溯的标准模板如下：
+我自己的感觉回溯就是一个优雅的暴力解法，将每个可能的路径都走一遍，不行了就退到上一步，然后继续走。 所以这里能做文章的地方就在于选择， 题目可能给在选择的地方给你限制，比如列表不重复、列表重复、相同数字只能用一次之类的。
+回溯的标准模板如下：
 
 ```rust
 
@@ -166,8 +167,8 @@ fn backtrace(path: &mut Vec<i32>, list: &Vec<i32>, used: &mut HashSet<i32>, answ
 
 * offer42，这道题算是一道动态规划题，也算是一道总结规律的题，非常具有启发性。
 * q64/q120， 动态规划，最短路径
-* q87，  记忆化搜索也是动态规划的一种
-* q91,   记忆化搜索，合理的记忆化才是正确结果的保证。
+* q87， 记忆化搜索也是动态规划的一种
+* q91, 记忆化搜索，合理的记忆化才是正确结果的保证。
 * q115， 字符串的动态规划总是很经典的。
 * q123， 购买股票的最佳时机系列，这个系列全都是动态规划，可以一次性复习。
 * q132， 回文的dp解决方法，值得回味。
@@ -256,12 +257,12 @@ fn pre_order_iter(node: Node) {
 fn in_order_iter(root: Node) {
     let mut stack = Vec::new();
     let mut node = root;
-    while (node != null || !stack.is_empty()) {
-        while (node != null) {
+    while node != null || !stack.is_empty() {
+        while node != null {
             stack.push(node);
             node = node.left;
         }
-        if (!stack.isEmpty()) {
+        if !stack.isEmpty() {
             node = stack.pop();
             process(node);
             node = node.right;
@@ -275,32 +276,32 @@ fn in_order_iter(root: Node) {
     post_order(node.left);
     post_order(node.right);
     process(node);
-  }
+}
 
-  fn post_order_iter(root: Node) {
-    let mut treeNodeStack = vec![root];
+fn post_order_iter(root: Node) {
+    let mut tree_node_stack = vec![root];
     let mut node = root;
-    let mut lastVisit = root;
-    while node != null || !treeNodeStack.is_empty() {
+    let mut last_visit = root;
+    while node != null || !tree_node_stack.is_empty() {
         while node != null {
-            treeNodeStack.push(node);
+            tree_node_stack.push(node);
             node = node.left;
         }
         //查看当前栈顶元素
-        node = treeNodeStack.peek();
+        node = tree_node_stack.peek();
         //如果其右子树也为空，或者右子树已经访问
         //则可以直接输出当前节点的值
-        if node.right == null || node.right == lastVisit {
+        if node.right == null || node.right == last_visit {
             process(node);
-            treeNodeStack.pop();
-            lastVisit = node;
+            tree_node_stack.pop();
+            last_visit = node;
             node = null;
         } else {
             //否则，继续遍历右子树
             node = node.right;
         }
-    }      
-  }
+    }
+}
 ```
 
 注意：很多Rust的初学者可能都知道clone是一个昂贵的操作，它会拷贝所有的内容，但是Rc不一样， 它只会新增一个指针和引用计数，并不昂贵，所以我刚开始做树的题的时候也觉得clone是不是拷贝了
