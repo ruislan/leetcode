@@ -80,17 +80,20 @@ impl Solution {
         // lo
 
         // 方法2的另外一种优化
-        // 这里我们用hashset来记录时间累计其实挺费时间的，我们可以直接给当前这个时间定一个标志
-        // 如果这个时间积累出现过了，那么就不用给他了，否则就给他
+        // 这里我们用hashset来记录时间累计其实挺费时间的，我们可以换个思路，
+        // 如果这个工作分配给了一个空闲的工人，那么我们就不用再分配给另外一个空闲的人了
+        // 因为分配给一个空闲工人的后续分支计算是一摸一样的，所以我们完全没必要再给空闲工人了
+        // 所以我们再分配任务之前，设置一个标记表示是否分配给空闲工人过，有的话就不用部分配了
+        // 没有的话，就分配给他进行尝试
         // AC 4ms 1.9mb
         // fn backtrace(workers: &mut Vec<i32>, max: i32, i: usize, jobs: &Vec<i32>, k: usize) -> bool {
         //     if i == jobs.len() { return true; }
-        //     let mut flag = 0;
+        //     let mut assigned_to_idle = false;
         //     for j in 0..k {
         //         if workers[j] + jobs[i] > max { continue; }
         //
         //         if workers[j] == 0 {
-        //             if flag == 1 { continue; } else { flag = 1; }
+        //             if assigned_to_idle { continue; } else { assigned_to_idle = true; }
         //         }
         //
         //         workers[j] += jobs[i];
@@ -118,12 +121,12 @@ impl Solution {
         // AC 0ms 2mb
         fn backtrace(workers: &mut Vec<i32>, max: i32, i: usize, jobs: &Vec<i32>, k: usize) -> bool {
             if i == jobs.len() { return true; }
-            let mut flag = 0;
+            let mut assigned_to_idle = false;
             for j in 0..k {
                 if workers[j] + jobs[i] > max { continue; }
 
                 if workers[j] == 0 {
-                    if flag == 1 { continue; } else { flag = 1; }
+                    if assigned_to_idle { continue; } else { assigned_to_idle = true; }
                 }
 
                 workers[j] += jobs[i];
