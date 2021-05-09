@@ -491,6 +491,7 @@ mod q1464;
 mod q1470;
 mod q1475;
 mod q1480;
+mod q1482;
 mod q1486;
 mod q1489;
 mod q1491;
