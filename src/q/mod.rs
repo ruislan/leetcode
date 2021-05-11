@@ -551,6 +551,7 @@ mod q1722;
 mod q1723;
 mod q1725;
 mod q1732;
+mod q1734;
 mod q1753;
 
 pub struct Solution;
