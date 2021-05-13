@@ -441,6 +441,7 @@ mod q1249;
 mod q1252;
 mod q1260;
 mod q1266;
+mod q1269;
 mod q1275;
 mod q1281;
 mod q1287;
