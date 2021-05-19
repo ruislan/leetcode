@@ -286,6 +286,7 @@ mod q680;
 mod q682;
 mod q684;
 mod q686;
+mod q692;
 mod q693;
 mod q696;
 mod q697;
