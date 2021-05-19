@@ -9,7 +9,7 @@ impl Solution {
         // 我们求每一行，然后再每一列的
         // 例如： 5 2  -> 5，7 -> 5,7(5,2)
         //       1 6  -> 1,7 -> 4,0(1,6)
-        // AC 76ms 11.5mb
+        // AC 60ms 11.5mb
         let rows = matrix.len();
         let cols = matrix[0].len();
         let mut matrix = matrix;
