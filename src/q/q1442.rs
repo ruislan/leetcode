@@ -7,20 +7,20 @@ impl Solution {
         // 由于数据量最大只有300，可以尝试暴力求解
         // 实际上我们可能有4个循环，也就是O(n^4)
         // AC 1028ms 1.9mb
-        let n = arr.len();
-        let mut answer = 0;
-        for i in 0..n {
-            for j in i + 1..n {
-                let a = (i..j).fold(0, |acc, x| acc ^ arr[x]);
-                for k in j..n {
-                    let b = (j..=k).fold(0, |acc, x| acc ^ arr[x]);
-                    if a == b {
-                        answer += 1;
-                    }
-                }
-            }
-        }
-        answer
+        // let n = arr.len();
+        // let mut answer = 0;
+        // for i in 0..n {
+        //     for j in i + 1..n {
+        //         let a = (i..j).fold(0, |acc, x| acc ^ arr[x]);
+        //         for k in j..n {
+        //             let b = (j..=k).fold(0, |acc, x| acc ^ arr[x]);
+        //             if a == b {
+        //                 answer += 1;
+        //             }
+        //         }
+        //     }
+        // }
+        // answer
 
         // 方法2
         // 很明显暴力求解中存在大量的重复xor计算
