@@ -11,7 +11,7 @@ impl Solution {
         //  1  1 1 1
         //  2  1 1 2
         //  4  1 2 2
-        //
+        // AC 0ms 2.1mb
         let n1 = nums1.len();
         let n2 = nums2.len();
         let mut dp = vec![vec![0; n2 + 1]; n1 + 1];
