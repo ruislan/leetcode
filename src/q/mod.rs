@@ -145,6 +145,7 @@ mod q231;
 mod q232;
 mod q234;
 mod q235;
+mod q236;
 mod q237;
 mod q238;
 mod q239;
@@ -569,6 +570,7 @@ mod q1725;
 mod q1732;
 mod q1734;
 mod q1738;
+mod q1744;
 mod q1753;
 mod q1787;
 
