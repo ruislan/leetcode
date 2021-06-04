@@ -27,6 +27,7 @@ mod q31;
 mod q33;
 mod q34;
 mod q35;
+mod q36;
 mod q38;
 mod q39;
 mod q40;
