@@ -6,6 +6,7 @@ impl Solution {
         // 方法1
         // 先验证行，再验证列，再验证小3*3
         // let mut set_row = vec![bool; 9];
+        // AC 4ms 2mb
         for row in 0..9 {
             let mut set_col = vec![false; 9];
             for col in 0..9 {

@@ -249,6 +249,7 @@ mod q523;
 mod q525;
 mod q530;
 mod q532;
+mod q535;
 mod q538;
 mod q540;
 mod q541;
