@@ -70,3 +70,8 @@ pub fn is_ascii_palindrome(s: &str) -> bool {
 pub fn slice_to_string_vec(s: &[&str]) -> Vec<String> {
     s.into_iter().map(|x| x.to_string()).collect()
 }
+
+#[allow(unused)]
+pub fn gcd(d1: i32, d2: i32) -> i32 {
+    if d2 == 0 { d1 } else { gcd(d2, d1 % d2) }
+}
