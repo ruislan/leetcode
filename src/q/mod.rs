@@ -389,6 +389,7 @@ mod q924;
 mod q925;
 mod q928;
 mod q929;
+mod q930;
 mod q933;
 mod q937;
 mod q938;
