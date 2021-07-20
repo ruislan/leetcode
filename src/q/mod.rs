@@ -604,6 +604,7 @@ mod q1787;
 mod q1818;
 mod q1833;
 mod q1846;
+mod q1877;
 mod q5818;
 
 pub struct Solution;
