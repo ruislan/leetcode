@@ -270,6 +270,7 @@ mod q540;
 mod q541;
 mod q543;
 mod q551;
+mod q552;
 mod q554;
 mod q556;
 mod q557;
