@@ -212,6 +212,7 @@ fn backtrace(path: &mut Vec<i32>, list: &Vec<i32>, used: &mut HashSet<i32>, answ
 ### 贪心算法
 
 * q316， 字符串加贪心的应用
+* q502， 贪心算法与排序和优先级队列常常一起玩耍
 * q621， 贪心算法的应用
 * q659， 贪心算法的应用
 * q649， 贪心算法的应用
