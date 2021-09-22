@@ -336,6 +336,7 @@ mod q718;
 mod q720;
 mod q721;
 mod q724;
+mod q725;
 mod q728;
 mod q733;
 mod q738;
