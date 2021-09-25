@@ -14,7 +14,7 @@ impl Solution {
         let n = citations.len();
         let mut h = 0;
         let mut i = n - 1;
-        while i >= 0 && i < n && citations[i] > h {
+        while i < n && citations[i] > h {
             h += 1;
             i -= 1;
         }
