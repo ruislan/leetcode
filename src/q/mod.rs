@@ -164,6 +164,7 @@ mod q240;
 mod q242;
 mod q257;
 mod q258;
+mod q260;
 mod q263;
 mod q264;
 mod q268;
