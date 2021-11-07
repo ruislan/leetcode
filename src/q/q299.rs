@@ -4,61 +4,9 @@ use crate::q::Solution;
 impl Solution {
     pub fn get_hint(secret: String, guess: String) -> String {
         // 方法1
-        // let mut a_count = 0;
-        // let mut b_count = 0;
-        // let mut s_chars: Vec<char> = secret.chars().collect();
-        // let mut g_chars: Vec<char> = guess.chars().collect();
-        //
-        // let mut i = 0;
-        // loop {
-        //     let mut removed = false;
-        //     if i >= s_chars.len() { break; }
-        //     if s_chars[i] == g_chars[i] {
-        //         a_count += 1;
-        //         s_chars.remove(i);
-        //         g_chars.remove(i);
-        //         removed = true;
-        //         if i > 0 {
-        //             i -= 1;
-        //         }
-        //     }
-        //     if !removed {
-        //         i += 1;
-        //     }
-        // }
-        //
-        // let mut i = 0;
-        // loop {
-        //     if i >= s_chars.len() { break; }
-        //
-        //     let mut j = 0;
-        //     let mut removed = false;
-        //     loop {
-        //         if j >= g_chars.len() { break; }
-        //         if g_chars[j] == s_chars[i] {
-        //             b_count += 1;
-        //             s_chars.remove(i);
-        //             g_chars.remove(j);
-        //             removed = true;
-        //             if i > 0 {
-        //                 i -= 1;
-        //             }
-        //         }
-        //         j += 1;
-        //     }
-        //     if !removed {
-        //         i += 1;
-        //     }
-        // }
-        //
-        // let mut res = String::new();
-        // res.push_str(&a_count.to_string());
-        // res.push('A');
-        // res.push_str(&b_count.to_string());
-        // res.push('B');
-        // res
-
-        // 方法2
+        // 通过计数来记录0-9的频率，如果两个数组中的同一位置的数字相同，则不需要记录，但是bulls增加1
+        // 然后直接计算比对两个频率，取相同位置最小的那个就是cows的数量，最后再求和就是总的cows的数量
+        // AC 0ms 2.1mb 152/152
         let mut bulls = 0;
         let s_chars: Vec<char> = secret.chars().collect();
         let g_chars: Vec<char> = guess.chars().collect();
