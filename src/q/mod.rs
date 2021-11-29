@@ -373,6 +373,7 @@ mod q778;
 mod q781;
 mod q783;
 mod q784;
+mod q786;
 mod q788;
 mod q789;
 mod q796;
