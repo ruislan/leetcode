@@ -2,7 +2,7 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn check_record(n: i32) -> i32 {
+    pub fn check_record_2(n: i32) -> i32 {
         // 方法1
         // 回溯 + 记忆化
         // AC 340ms 29.3mb 用hashmap会超时：(

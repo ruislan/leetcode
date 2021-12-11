@@ -2,7 +2,7 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn single_number(nums: Vec<i32>) -> Vec<i32> {
+    pub fn single_number_3(nums: Vec<i32>) -> Vec<i32> {
         // 方法1
         // hashset
         // AC 0ms 2.2mb 32/32

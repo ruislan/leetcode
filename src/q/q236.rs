@@ -25,14 +25,14 @@ impl TreeNode {
 
 #[allow(unused)]
 impl Solution {
-    pub fn lowest_common_ancestor(root: Option<Rc<RefCell<TreeNode>>>, p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
+    pub fn lowest_common_ancestor_2(root: Option<Rc<RefCell<TreeNode>>>, p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeNode>>>) -> Option<Rc<RefCell<TreeNode>>> {
         // 方法1
         if root.is_none() { return None; }
         if root == p || root == q { return root; }
         let left = root.as_ref().unwrap().borrow().left.clone();
         let right = root.as_ref().unwrap().borrow().right.clone();
-        let left_parent = Self::lowest_common_ancestor(left, p.clone(), q.clone());
-        let right_parent = Self::lowest_common_ancestor(right, p.clone(), q.clone());
+        let left_parent = Self::lowest_common_ancestor_2(left, p.clone(), q.clone());
+        let right_parent = Self::lowest_common_ancestor_2(right, p.clone(), q.clone());
         if left_parent.is_none() { return right_parent; }
         if right_parent.is_none() { return left_parent; }
         root

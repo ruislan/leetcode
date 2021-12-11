@@ -2,7 +2,7 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn num_decodings(s: String) -> i32 {
+    pub fn num_decodings_2(s: String) -> i32 {
         // 方法1
         // 动态规划，这个是91题的进阶版本
         // AC 4ms 2.8mb

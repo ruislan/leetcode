@@ -2,7 +2,7 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn top_k_frequent(words: Vec<String>, k: i32) -> Vec<String> {
+    pub fn top_k_frequent_2(words: Vec<String>, k: i32) -> Vec<String> {
         // 方法1
         // 直接hashmap统计词频，然后按照词频排序再按照字母排序即可
         // AC 4ms 2.1mb

@@ -24,7 +24,7 @@ impl TreeNode {
 
 #[allow(unused)]
 impl Solution {
-    pub fn path_sum(root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32) -> i32 {
+    pub fn path_sum_2(root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32) -> i32 {
         // 方法1
         // dfs
         // 每次向下我们都将结果增加1位，然后遍历，如果结果正好等于target，就叠加计数

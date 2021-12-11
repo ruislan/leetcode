@@ -2,7 +2,7 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn next_greater_element(n: i32) -> i32 {
+    pub fn next_greater_element_2(n: i32) -> i32 {
         // 方法1
         // 这个算法还挺有名的哈，就叫next permutation
         // 简单来说

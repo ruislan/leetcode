@@ -2,7 +2,7 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn majority_element(nums: Vec<i32>) -> Vec<i32> {
+    pub fn majority_element_2(nums: Vec<i32>) -> Vec<i32> {
         // 方法1
         // 计数，O(n)空间，不是最佳
         // AC 0ms 2.3mb

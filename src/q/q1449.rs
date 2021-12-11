@@ -2,7 +2,7 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn largest_number(cost: Vec<i32>, target: i32) -> String {
+    pub fn largest_number_2(cost: Vec<i32>, target: i32) -> String {
         // 方法1
         // 还是个动态规划的典型题目
         // 这里我们核心要考虑的是两个数字比较，谁大？

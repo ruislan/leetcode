@@ -2,7 +2,7 @@ use crate::q::Solution;
 
 #[allow(unused)]
 impl Solution {
-    pub fn h_index(citations: Vec<i32>) -> i32 {
+    pub fn h_index_2(citations: Vec<i32>) -> i32 {
         // 方法1
         // 和q274基本相同，这里用二分方法来处理
         // AC 0ms 2.7mb
