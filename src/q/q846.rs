@@ -14,7 +14,6 @@ impl Solution {
         let n = hand.len();
         let mut hand = hand;
         hand.sort_unstable();
-        Ï
         let mut freq = HashMap::new();
         for i in 0..n {
             *freq.entry(hand[i]).or_insert(0) += 1;
