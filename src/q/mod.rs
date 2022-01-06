@@ -50,6 +50,7 @@ mod q66;
 mod q67;
 mod q69;
 mod q70;
+mod q71;
 mod q73;
 mod q74;
 mod q75;
