@@ -210,6 +210,7 @@ mod q371;
 mod q374;
 mod q375;
 mod q377;
+mod q382;
 mod q383;
 mod q384;
 mod q386;
